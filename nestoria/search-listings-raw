@@ -1,0 +1,85 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+suffix='nestoria-listings.xml'
+
+output_prefix=''
+max_pages=1
+
+kmlpipe_parse_options --longoptions 'output-prefix:,max-pages:' <<EOF
+Fetches property listings from Nestoria. Basically, a thin wrapper around:
+  https://www.nestoria.co.uk/help/api-search-listings
+
+  --output-prefix PREFIX (required)
+    Each page will be written to PREFIX.N.$suffix, where N is the page number
+    (indexed from 1).
+
+  --max-pages N (default: $max_pages)
+    Don't fetch more than N pages.
+
+Any parameters after -- are passed down to curl. To specify Nestoria API
+parameters, use the --data curl option. For example:
+  --data listing_type=buy
+See the above URL for the Nestoria API reference. Parameters that you'll most
+likely want to use include number_of_results, sort, centre_point, radius,
+listing_type and price_max.
+
+The output is the raw XML output from the Nestoria listings search API (not
+KML).
+
+You probably don't want to run this directly; the search-listings wrapper will
+handle the KML conversion and the page merging for you.
+
+Note that the Nestoria uses a naive pagination mechanism, which means listings
+might be dropped or duplicated in between pages due to race conditions.
+EOF
+set -- "${kmlpipe_args[@]}"
+
+while :
+do
+	arg="$1"
+	shift
+	case "$arg" in
+		'--output-prefix') output_prefix="$1"; shift;;
+		'--max-pages') max_pages="$1"; shift;;
+		'--') break;;
+		*) kmlpipe_usage_error "unhandled option: $1";;
+	esac
+done
+additional_curl_args=("$@")
+[[ -n "$output_prefix" ]] || kmlpipe_usage_error '--output-prefix is required'
+
+next_page=1
+while [[ "$next_page" -le "$max_pages" ]]
+do
+	kmlpipe_curl 'https://api.nestoria.co.uk/api' --get \
+		--data 'action=search_listings' --data 'encoding=xml' --data "page=$next_page" \
+		"${additional_curl_args[@]}" |
+	kmlpipe_output_xml \
+	> "$output_prefix.$next_page.$suffix"
+
+	{
+		read -r application_response_code
+		read -r application_response_text
+		read -r total_pages
+		read -r total_results
+	} < <(kmlpipe_xmlstarlet sel \
+		--template --match '/opt/response' \
+		--value-of '@application_response_code' --nl \
+		--value-of '@application_response_text' --nl \
+		--value-of '@total_pages' --nl \
+		--value-of '@total_results' --nl \
+		< "$output_prefix.$next_page.$suffix")
+
+	if [[ -z "$total_pages" ]]
+	then
+		kmlpipe_error "no pages received from Nestoria: $application_response_text ($application_response_code)"
+	fi
+
+	kmlpipe_info "Fetched page $next_page/$total_pages (total results: $total_results): $application_response_text ($application_response_code)"
+
+	[[ "$total_pages" -lt "$max_pages" ]] && max_pages="$total_pages"
+
+	next_page="$(( next_page + 1 ))"
+done

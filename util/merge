@@ -1,0 +1,42 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+kmlpipe_parse_options <<EOF
+Merges multiple KML files together. Basically, a thin wrapper around merge.xsl.
+Contrary to merge.xsl, can merge any number of KML files together (more than just 2).
+EOF
+set -- "${kmlpipe_args[@]}"
+
+while :
+do
+	arg="$1"
+	shift
+	case "$arg" in
+		'--') break;;
+		*) kmlpipe_usage_error "unhandled option: $1";;
+	esac
+done
+kml_files=("$@")
+
+[[ "${#kml_files[@]}" -gt 0 ]] || kmlpipe_usage_error 'at least one KML file must be specified'
+
+base_kml_file="${kml_files[0]}"
+
+if [[ "${#kml_files[@]}" -gt 1 ]]
+then
+	kmlpipe_create_tmpdir
+
+	destination_kml_file="$kmlpipe_tmpdir/merged.kml"
+	index=1
+	for kml_file in "${kml_files[@]:1}"
+	do
+		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge.xsl" -s "from=$kml_file" -s "merge-id=$kmlpipe_run_id:$index" "$base_kml_file" > "$destination_kml_file.new"
+		mv "$destination_kml_file.new" "$destination_kml_file"
+		base_kml_file="$destination_kml_file"
+		index="$(( index + 1 ))"
+	done
+fi
+
+kmlpipe_output_xml < "$base_kml_file"
+

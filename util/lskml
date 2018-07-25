@@ -1,0 +1,28 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+kmlpipe_parse_options <<EOF
+Basic utility that outputs the place ID and name (one per line) of each place
+in the specified KML files. Useful for quick manual inspection/sanity-checking.
+EOF
+set -- "${kmlpipe_args[@]}"
+
+while :
+do
+	arg="$1"
+	shift
+	case "$arg" in
+		'--') break;;
+		*) kmlpipe_usage_error "unhandled option: $1";;
+	esac
+done
+kml_files=("$@")
+
+[[ "${#kml_files[@]}" -gt 0 ]] || kmlpipe_usage_error 'at least one KML file must be specified'
+
+kmlpipe_xmlstarlet sel \
+	-N 'kml=http://www.opengis.net/kml/2.2' -N 'kmlpipe=http://edechamps.fr/kmlpipe' --template \
+	--match '/kml:kml/kml:Document/kml:Placemark' \
+	--value-of 'kmlpipe:Place/@place-id' --output ' ' --value-of 'kml:name' --nl \
+	"${kml_files[@]}"
