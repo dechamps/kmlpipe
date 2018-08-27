@@ -6,7 +6,7 @@ suffix='google.list.xml'
 
 output_prefix=''
 max_pages=1
-pagetoken_delay_seconds=1
+pagetoken_delay_seconds=2
 
 kmlpipe_parse_options --longoptions 'output-prefix:,max-pages:,pagetoken-delay-seconds:' <<EOF
 Calls a Google API. Expects the call to return a paginated list in XML form.
