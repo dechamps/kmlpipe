@@ -1,0 +1,77 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+suffix='google.list.xml'
+
+output_prefix=''
+max_pages=1
+pagetoken_delay_seconds=1
+
+kmlpipe_parse_options --longoptions 'output-prefix:,max-pages:,pagetoken-delay-seconds:' <<EOF
+Calls a Google API. Expects the call to return a paginated list in XML form.
+Automatically paginates through the list, and writes each page to a separate
+file under the provided prefix. Specifically, this script expects an API
+where the result XML document contains the root element contains a
+"next_page_token" child, and the API can be called with a "pagetoken"
+parameter.
+
+(Note: don't expect to get huge lists that way. For example, at the time of
+writing, the Google Maps Place Search APIs will only return a maximum of 3
+pages of 20 results each, for a total of 60 results.)
+
+  --output-prefix PREFIX (required)
+    Each page will be written to PREFIX.N.$suffix, where N is the page number
+    (indexed from 1).
+
+  --max-pages N (default: $max_pages)
+    Don't fetch more than N pages.
+
+  --pagetoken_delay_seconds N (default: $pagetoken_delay_seconds)
+    Wait this many seconds before fetching the next page. Google page tokens
+    only become valid after a certain amount of time has passed; setting this
+    too low will cause problems when fetching more than one page.
+
+Any parameters after -- are passed down to curl. The only parameter that this
+script will provide for you is "pagetoken"; everything else is up to you,
+including the URL. use the --data curl option to specify parameters.
+EOF
+set -- "${kmlpipe_args[@]}"
+
+while :
+do
+	arg="$1"
+	shift
+	case "$arg" in
+		'--output-prefix') output_prefix="$1"; shift;;
+		'--max-pages') max_pages="$1"; shift;;
+		'--pagetoken-delay-seconds') wait_between_pages="$1"; shift;;
+		'--') break;;
+		*) kmlpipe_usage_error "unhandled option: $1";;
+	esac
+done
+curl_args=("$@")
+[[ -n "$output_prefix" ]] || kmlpipe_usage_error '--output-prefix is required'
+
+next_page=1
+pagetoken=''
+while [[ "$next_page" -le "$max_pages" ]]
+do
+	output_file="$output_prefix.$next_page.$suffix"
+
+	if [[ -z "$pagetoken" ]]
+	then
+		kmlpipe_curl "${curl_args[@]}"
+	else
+		kmlpipe_curl --data "pagetoken=$pagetoken" "${curl_args[@]}"
+	fi |
+	kmlpipe_output_xml \
+	> "$output_file"
+
+	pagetoken="$(kmlpipe_xmlstarlet sel --template \
+		--match '/*/next_page_token' --value-of . \
+		"$output_file")" || break
+	sleep "$pagetoken_delay_seconds"
+
+	next_page="$(( next_page + 1 ))"
+done
