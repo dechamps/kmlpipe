@@ -7,8 +7,8 @@ max_pages=1
 
 kmlpipe_parse_options <<EOF
 Sends a Place Search Google Maps API request, and converts the results to a
-single KML document on standard output. Equivalent to running paginate,
-place-search-response-to-kml and merge.
+single KML document on standard output, with one folder per page. Equivalent to
+running paginate, place-search-response-to-kml and merge.
 
 Any parameters after -- are passed down to paginate.
 
@@ -44,9 +44,11 @@ kmlpipe_create_tmpdir
 
 "${BASH_SOURCE%/*}/paginate" --output-prefix "$kmlpipe_tmpdir/page" "${additional_args[@]}"
 
-for PAGE in "$kmlpipe_tmpdir"/page.*.google.list.xml
+for page in "$kmlpipe_tmpdir"/page.*.google.list.xml
 do
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/place-search-response-to-kml.xsl" "$PAGE" > "$PAGE.kml"
+	page_number="${page##*/page.}"
+	page_number="${page_number%.google.list.xml}"
+	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/place-search-response-to-kml.xsl" -s "folder-name=Google Place Search Results Page $page_number" "$page" > "$page.kml"
 done
 
 "${BASH_SOURCE%/*}/../util/merge" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |

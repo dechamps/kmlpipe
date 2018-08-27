@@ -7,8 +7,8 @@ max_pages=1
 
 kmlpipe_parse_options <<EOF
 Fetches property listings from Nestoria, and convert the results to a single KML
-document on standard output. Equivalent to running search-listings-raw,
-listings-to-kml and merge.
+document on standard output, with one KML Folder per page. Equivalent to running
+search-listings-raw, listings-to-kml and merge.
 
 Any parameters after -- are passed down to search-listings-raw.
 
@@ -39,9 +39,11 @@ kmlpipe_create_tmpdir
 
 "${BASH_SOURCE%/*}/search-listings-raw" --output-prefix "$kmlpipe_tmpdir/page" "${additional_args[@]}"
 
-for PAGE in "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml
+for page in "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml
 do
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/listings-to-kml.xsl" "$PAGE" > "$PAGE.kml"
+	page_number="${page##*/page.}"
+	page_number="${page_number%.nestoria-listings.xml}"
+	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/listings-to-kml.xsl" -s "folder-name=Nestoria Listings Page $page_number" "$page" > "$page.kml"
 done
 
 "${BASH_SOURCE%/*}/../util/merge" "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |

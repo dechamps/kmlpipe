@@ -7,8 +7,8 @@
 #   jq --raw-output --from-file sainsburys-map.jq \
 #     sainsburys-london-main-closest25-20180725.json
 "<?xml version='1.0' encoding='UTF-8'?>\n" +
-"<kml xmlns='http://www.opengis.net/kml/2.2' xmlns:kmlpipe='http://edechamps.fr/kmlpipe'><Document>\n" +
-"<name>Sainsbury's store locator results</name>" +
+"<kml xmlns='http://www.opengis.net/kml/2.2' xmlns:kmlpipe='http://edechamps.fr/kmlpipe'><Document><Folder>" +
+"<name>Sainsbury's Store Locator Results Page</name>" +
 (.results | map(
 	"<Placemark>" +
 	@html "<name>\(.name)</name>" +
@@ -19,5 +19,5 @@
 	"</Placemark>\n"
 ) | join("")) +
 @html "<kmlpipe:Sainsburys>\(. | del(.results))</kmlpipe:Sainsburys>" +
-"</Document>" +
+"</Folder></Document>" +
 "</kml>"

@@ -1,75 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
-	Merges a KML Annex document into the main KML document.
+	Merges two KML documents.
 
-	Given a <kml> input, and a <kml> annex, this appends the <Document>
-	children (such as <Placemark>s) from the annex to the main input. The
-	<Annex> is retained, but its <Document> children are removed to avoid
-	useless duplication of data.
-
-	See annex.xsl for how to add annexes to an XML document.
-
-	You probably want to use the "merge" command instead of this stylesheet,
-	as it's easier to use and supports more then 2 operands.
+	Given a KML input and a KML "from" document, appends the KML Folders
+	in the from document to the input.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
-	<xsl:param name="annex-id" />
+	<xsl:param name="from" />
+	<xsl:variable name="from-document" select="document($from)" />
+	<xsl:variable name="input-document" select="/" />
 
-	<xsl:key name="annex-id" match="/kml:kml/kmlpipe:Annex" use="@annex-id" />
+	<xsl:key name="folder-name" match="/kml:kml/kml:Document/kml:Folder" use="kml:name" />
 
 	<xsl:template match="/">
 		<xsl:if test="not(/kml:kml/kml:Document)">
 			<xsl:message terminate="yes">ERROR: input does not look like valid KML</xsl:message>
 		</xsl:if>
-		<xsl:if test="not($annex-id)">
-			<xsl:message terminate="yes">ERROR: must specify the annex-id to merge from</xsl:message>
-		</xsl:if>
-		<xsl:if test="not(key('annex-id', $annex-id))">
-			<xsl:message terminate="yes">ERROR: annex "<xsl:value-of select="$annex-id" />" not found in input</xsl:message>
-		</xsl:if>
-		<xsl:if test="not(key('annex-id', $annex-id)/kml:kml/kml:Document)">
-			<xsl:message terminate="yes">ERROR: annex "<xsl:value-of select="$annex-id" />" does not look like valid KML</xsl:message>
+		<xsl:if test="not($from-document/kml:kml/kml:Document)">
+			<xsl:message terminate="yes">ERROR: from document "<xsl:value-of select="$from" />" does not look like valid KML</xsl:message>
 		</xsl:if>
 
 		<xsl:apply-templates select="@*|node()" />
 	</xsl:template>
 
+	<xsl:template match="/kml:kml">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" />
+
+			<kmlpipe:Merged>
+				<xsl:attribute name="from"><xsl:value-of select="$from" /></xsl:attribute>
+				<xsl:apply-templates select="$from-document" mode="from" />
+			</kmlpipe:Merged>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="/kml:kml/kml:Document/kml:Folder/kml:name" mode="from">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" mode="from" />
+		</xsl:copy>
+	</xsl:template>
+	<xsl:template match="/kml:kml/kml:Document/kml:Folder/*" mode="from" />
+
 	<xsl:template match="/kml:kml/kml:Document">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
-			<xsl:apply-templates select="key('annex-id', $annex-id)/kml:kml/kml:Document/*" mode="merge" />
+			<xsl:apply-templates select="$from-document/kml:kml/kml:Document/kml:Folder" mode="merge-from" />
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="/kml:kml/kmlpipe:Annex/kml:kml/kml:Document/*" mode="merge">
+	<xsl:template match="/kml:kml/kml:Document/kml:Folder" mode="merge-from">
+		<xsl:variable name="folder-name" select="kml:name" />
+		<xsl:for-each select="$input-document">
+			<xsl:if test="key('folder-name', $folder-name)">
+				<xsl:message terminate="yes">ERROR: folder name "<xsl:value-of select="$folder-name" />" exists both in input and from document</xsl:message>
+			</xsl:if>
+		</xsl:for-each>
+
 		<xsl:copy>
-			<xsl:apply-templates select="@*|node()" />
-			<kmlpipe:MergedFrom>
-				<xsl:attribute name="annex-id"><xsl:value-of select="$annex-id" /></xsl:attribute>
-			</kmlpipe:MergedFrom>
+			<xsl:apply-templates select="@*|node()" mode="merge-from" />
+
+			<kmlpipe:Merged>
+				<xsl:attribute name="from"><xsl:value-of select="$from" /></xsl:attribute>
+			</kmlpipe:Merged>
 		</xsl:copy>
-	</xsl:template>
-
-	<xsl:template match="/kml:kml/kmlpipe:Annex">
-		<xsl:if test="@annex-id = $annex-id">
-			<xsl:copy>
-				<xsl:apply-templates select="@*|node()" />
-				<kmlpipe:Merged />
-			</xsl:copy>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match="/kml:kml/kmlpipe:Annex/kml:kml/kml:Document/*">
-		<xsl:if test="../../@annex-id != $annex-id">
-			<xsl:copy>
-				<xsl:apply-templates select="@*|node()" />
-			</xsl:copy>
-		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="@*|node()">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:template>
+	<xsl:template match="@*|node()" mode="merge-from">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" mode="merge-from" />
+		</xsl:copy>
+	</xsl:template>
+	<xsl:template match="@*|node()" mode="from">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" mode="from" />
 		</xsl:copy>
 	</xsl:template>
 </xsl:stylesheet>
