@@ -3,8 +3,9 @@
 source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 kmlpipe_parse_options <<EOF
-Merges multiple KML files together. Basically, a thin wrapper around merge.xsl.
-Contrary to merge.xsl, can merge any number of KML files together (more than just 2).
+Merges multiple KML files together. Equivalent to running annex.xsl and
+merge.xsl in sequence for each input file.
+Can merge any number of KML files together, not just 2.
 EOF
 set -- "${kmlpipe_args[@]}"
 
@@ -31,7 +32,9 @@ then
 	index=1
 	for kml_file in "${kml_files[@]:1}"
 	do
-		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge.xsl" -s "from=$kml_file" -s "merge-id=$kmlpipe_run_id:$index" "$base_kml_file" > "$destination_kml_file.new"
+		annex_id="merge:$kmlpipe_run_id:$index"
+		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/annex.xsl" -s "from=$kml_file" -s "annex-id=$annex_id" "$base_kml_file" |
+		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge.xsl" -s "annex-id=$annex_id" > "$destination_kml_file.new"
 		mv "$destination_kml_file.new" "$destination_kml_file"
 		base_kml_file="$destination_kml_file"
 		index="$(( index + 1 ))"
