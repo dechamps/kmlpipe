@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
+
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-lnglat.xsl" -s link-set-name="Link Set" "$kmlpipe_script_dir/input.kml" | kmlpipe_check_golden "$kmlpipe_script_dir/output.txt"

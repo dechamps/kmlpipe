@@ -1,0 +1,51 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+link_set_name=''
+
+kmlpipe_parse_options --longoptions 'link-set-name:' <<EOF
+For each Link from the selected Link Sets, calculates the great-circle
+("as the crow flies") distance between the Places on both sides of the
+Link. The result is added to the Link element.
+
+  --link-set-name NAME (required)
+    Only process the Link Sets bearing the specified name.
+EOF
+set -- "${kmlpipe_args[@]}"
+
+while :
+do
+	arg="$1"
+	shift
+	case "$arg" in
+		'--link-set-name') link_set_name="$1"; shift;;
+		'--') break;;
+		*) kmlpipe_usage_error "unhandled option: $1";;
+	esac
+done
+[[ -n "$link_set_name" ]] || kmlpipe_usage_error '--link-set-name is required'
+[[ "$#" -eq 1 ]] || kmlpipe_usage_error 'input KML file must be specified'
+input_file="$1"
+
+kmlpipe_create_tmpdir
+
+distances_file="$kmlpipe_tmpdir/distances.xml"
+
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/link-lnglat.xsl" -s link-set-name="$link_set_name" "$input_file" |
+while read -r source_coordinates destination_coordinates
+do
+	echo "lnglat_distance($source_coordinates,$destination_coordinates)"
+done |
+bc --mathlib "$kmlpipe_dir/lib/lib.bc" |
+{
+	echo '<?xml version="1.0" encoding="UTF-8"?>'
+	echo '<Distances>'
+	while read -r distance_meters
+	do
+		echo "<Distance meters='$distance_meters' />"
+	done
+	echo '</Distances>'
+} > "$distances_file"
+
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/distance.xsl" -s "distances-file=$distances_file" -s link-set-name="$link_set_name" "$input_file" | kmlpipe_output_xml

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <Placemark>
+        <name>Buckingham Palace</name>
+        <kmlpipe:Place place-id="buckingham"/>
+        <Point>
+          <coordinates>-0.14189,51.501364</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="shard">
+            <kmlpipe:Distance meters="3849.70058184301570344000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <name>The Shard</name>
+        <kmlpipe:Place place-id="shard"/>
+        <Point>
+          <coordinates>-0.08649999999999999,51.50449999999999</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="stpauls">
+            <kmlpipe:Distance meters="1323.80533314453843876000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Another Link Set">
+          <kmlpipe:Link place-id="shard"/>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <name>St. Paul's Cathedral</name>
+        <kmlpipe:Place place-id="stpauls"/>
+        <Point>
+          <coordinates>-0.0983506,51.5138453</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="buckingham">
+            <kmlpipe:Distance meters="3317.56134477604937182000"/>
+          </kmlpipe:Link>
+          <kmlpipe:Link place-id="shard">
+            <kmlpipe:Distance meters="1323.80533314453843876000"/>
+          </kmlpipe:Link>
+          <kmlpipe:Link place-id="stpauls">
+            <kmlpipe:Distance meters="0"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+    </Folder>
+  </Document>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</kml>
