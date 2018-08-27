@@ -63,6 +63,7 @@ do
 	then
 		kmlpipe_curl "${curl_args[@]}"
 	else
+		sleep "$pagetoken_delay_seconds"
 		kmlpipe_curl --data "pagetoken=$pagetoken" "${curl_args[@]}"
 	fi |
 	kmlpipe_output_xml \
@@ -71,7 +72,6 @@ do
 	pagetoken="$(kmlpipe_xmlstarlet sel --template \
 		--match '/*/next_page_token' --value-of . \
 		"$output_file")" || break
-	sleep "$pagetoken_delay_seconds"
 
 	next_page="$(( next_page + 1 ))"
 done
