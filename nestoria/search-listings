@@ -2,8 +2,6 @@
 
 source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
-suffix='nestoria-listings.xml'
-
 output_prefix=''
 max_pages=1
 
