@@ -11,12 +11,7 @@
 	data is thrown away.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
-	<xsl:param name="folder-name" />
-
 	<xsl:template match="/">
-		<xsl:if test="not($folder-name)">
-			<xsl:message terminate="yes">ERROR: no folder name specified</xsl:message>
-		</xsl:if>
 		<xsl:if test="not(/opt/response/@total_results)">
 			<xsl:message terminate="yes">ERROR: input does not look like a healthy Nestoria search listing response</xsl:message>
 		</xsl:if>
@@ -24,7 +19,7 @@
 		<kml:kml>
 			<kml:Document>
 				<kml:Folder>
-					<kml:name><xsl:value-of select="$folder-name" /></kml:name>
+					<kml:name>Nestoria Listings Page</kml:name>
 					<xsl:apply-templates select="/opt/response/listings" />
 					<kmlpipe:Nestoria>
 						<xsl:apply-templates select="/" mode="copy" />

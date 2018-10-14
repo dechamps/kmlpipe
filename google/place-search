@@ -48,7 +48,8 @@ for page in "$kmlpipe_tmpdir"/page.*.google.list.xml
 do
 	page_number="${page##*/page.}"
 	page_number="${page_number%.google.list.xml}"
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/place-search-response-to-kml.xsl" -s "folder-name=Google Place Search Results Page $page_number" "$page" > "$page.kml"
+	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/place-search-response-to-kml.xsl" "$page" |
+	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results Page $page_number" > "$page.kml"
 done
 
 "${BASH_SOURCE%/*}/../util/merge" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
