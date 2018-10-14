@@ -27,10 +27,10 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
 
-			<kmlpipe:Merged>
+			<kmlpipe:MergedDocument>
 				<xsl:attribute name="from"><xsl:value-of select="$from" /></xsl:attribute>
 				<xsl:apply-templates select="$from-document" mode="from" />
-			</kmlpipe:Merged>
+			</kmlpipe:MergedDocument>
 		</xsl:copy>
 	</xsl:template>
 
@@ -59,9 +59,9 @@
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" mode="merge-from" />
 
-			<kmlpipe:Merged>
+			<kmlpipe:MergedDocument>
 				<xsl:attribute name="from"><xsl:value-of select="$from" /></xsl:attribute>
-			</kmlpipe:Merged>
+			</kmlpipe:MergedDocument>
 		</xsl:copy>
 	</xsl:template>
 

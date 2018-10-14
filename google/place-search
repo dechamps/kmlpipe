@@ -52,6 +52,6 @@ do
 	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results Page $page_number" > "$page.kml"
 done
 
-"${BASH_SOURCE%/*}/../util/merge" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
+"${BASH_SOURCE%/*}/../util/merge-documents" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
 kmlpipe_output_xml
 

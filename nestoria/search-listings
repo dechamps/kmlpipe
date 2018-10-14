@@ -47,6 +47,6 @@ do
 	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings Page $page_number" > "$page.kml" 
 done
 
-"${BASH_SOURCE%/*}/../util/merge" "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |
+"${BASH_SOURCE%/*}/../util/merge-documents" "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |
 kmlpipe_output_xml
 

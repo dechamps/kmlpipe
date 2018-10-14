@@ -3,8 +3,8 @@
 source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 kmlpipe_parse_options <<EOF
-Merges multiple KML files together. Equivalent to running merge.xsl
-in sequence for each input file.
+Merges multiple KML files together. Equivalent to running
+merge-documents.xsl in sequence for each input file.
 Can merge any number of KML files together, not just 2.
 EOF
 set -- "${kmlpipe_args[@]}"
@@ -34,7 +34,7 @@ then
 	do
 		# The semantics of relative URIs in XSLT document() will not match user expectations,
 		# so we make sure all external document paths are absolute.
-		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge.xsl" -s "from=$(realpath --canonicalize-existing -- "$kml_file")" "$base_kml_file" > "$destination_kml_file.new"
+		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge-documents.xsl" -s "from=$(realpath --canonicalize-existing -- "$kml_file")" "$base_kml_file" > "$destination_kml_file.new"
 		mv "$destination_kml_file.new" "$destination_kml_file"
 		base_kml_file="$destination_kml_file"
 		index="$(( index + 1 ))"
