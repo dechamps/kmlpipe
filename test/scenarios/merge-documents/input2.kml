@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" some-kml-attribute="2">
+	<kml:Document some-document-attribute="2">
+		<kml:Folder some-folder-attribute="2a">
+			<kml:name>Document 2, Folder A</kml:name>
+			<SomeFolderElement>2a</SomeFolderElement>
+		</kml:Folder>
+		<kml:Folder some-folder-attribute="2b">
+			<kml:name>Document 2, Folder B</kml:name>
+			<SomeFolderElement>2b</SomeFolderElement>
+		</kml:Folder>
+		<SomeDocumentElement>2</SomeDocumentElement>
+	</kml:Document>
+	<SomeKmlElement>2</SomeKmlElement>
+</kml:kml>

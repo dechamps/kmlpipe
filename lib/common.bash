@@ -54,10 +54,10 @@ kmlpipe_init() {
 	kmlpipe_debug "${0@Q} ${kmlpipe_args[*]@Q}"
 }
 
-[[ "${#BASH_SOURCE[@]}" -eq 2 ]] || kmlpipe_error "invalid kmlpipe common.bash invocation"
+[[ "${#BASH_SOURCE[@]}" -ge 2 ]] || kmlpipe_error "invalid kmlpipe common.bash invocation"
 kmlpipe_dir="${BASH_SOURCE[0]%/*}/.."
 [[ -n "$kmlpipe_dir" && -e "$kmlpipe_dir/lib/common.bash" ]] || kmlpipe_error "$kmlpipe_dir doesn't look like a valid kmlpipe distribution"
-kmlpipe_script_dir="${BASH_SOURCE[1]%/*}"
+kmlpipe_script_dir="${BASH_SOURCE[-1]%/*}"
 
 kmlpipe_tmpdir=''
 kmlpipe_create_tmpdir() {

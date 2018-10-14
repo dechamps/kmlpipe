@@ -1,0 +1,27 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+scenarios=("$kmlpipe_script_dir"/scenarios/*/run)
+failed_scenarios=()
+for scenario in "${scenarios[@]}"
+do
+	scenario_name="${scenario#"$kmlpipe_script_dir/scenarios/"}"
+	scenario_name="${scenario_name%/run}"
+	echo -n "$scenario_name "
+	if "$scenario" >&2
+	then
+		echo "OK"
+	else
+		echo "NOK"
+		failed_scenarios+=("$scenario_name")
+	fi
+done
+
+if [[ "${#failed_scenarios[@]}" -gt 0 ]]
+then
+	echo "${#failed_scenarios[@]}/${#scenarios[@]} test scenarios failed: ${failed_scenarios[*]}" >&2
+	exit 1
+else
+	echo "all ${#scenarios[@]} test scenarios succeeded :)" >&2 
+fi
