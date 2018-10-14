@@ -32,7 +32,9 @@ then
 	index=1
 	for kml_file in "${kml_files[@]:1}"
 	do
-		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge.xsl" -s "from=$kml_file" "$base_kml_file" > "$destination_kml_file.new"
+		# The semantics of relative URIs in XSLT document() will not match user expectations,
+		# so we make sure all external document paths are absolute.
+		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge.xsl" -s "from=$(realpath --canonicalize-existing -- "$kml_file")" "$base_kml_file" > "$destination_kml_file.new"
 		mv "$destination_kml_file.new" "$destination_kml_file"
 		base_kml_file="$destination_kml_file"
 		index="$(( index + 1 ))"
