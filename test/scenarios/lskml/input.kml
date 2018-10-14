@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+	<Document>
+		<Folder>
+			<name>Folder 1</name>
+			<Placemark>
+				<kmlpipe:Place place-id="place-id-1a" />
+				<name>Place 1A</name>
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Place place-id="place-id-1b" />
+				<name>Place 1B</name>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Folder 2</name>
+			<Placemark>
+				<kmlpipe:Place place-id="place-id-2a" />
+				<name>Place 2A</name>
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Place place-id="place-id-2b" />
+				<name>Place 2B</name>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

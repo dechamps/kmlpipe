@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
+
+"$kmlpipe_dir/util/lskml" "$kmlpipe_script_dir/input.kml" | kmlpipe_check_golden "$kmlpipe_script_dir/output.txt"
