@@ -37,18 +37,18 @@ additional_args=("$@")
 
 kmlpipe_create_tmpdir
 
-"${BASH_SOURCE%/*}/search-listings-raw" --output-prefix "$kmlpipe_tmpdir/page" "${additional_args[@]}"
+"$kmlpipe_script_dir/search-listings-raw" --output-prefix "$kmlpipe_tmpdir/page" "${additional_args[@]}"
 
 for page in "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml
 do
 	page_number="${page##*/page.}"
 	page_number="${page_number%.nestoria-listings.xml}"
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/listings-to-kml.xsl" "$page" |
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings Page $page_number" > "$page.kml" 
+	kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/listings-to-kml.xsl" "$page" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings Page $page_number" > "$page.kml"
 done
 
-"${BASH_SOURCE%/*}/../util/merge-documents" "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |
-kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/merge-folders.xsl" | 
-kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings" |
+"$kmlpipe_dir/util/merge-documents" "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings" |
 kmlpipe_output_xml
 

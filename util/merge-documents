@@ -34,7 +34,7 @@ then
 	do
 		# The semantics of relative URIs in XSLT document() will not match user expectations,
 		# so we make sure all external document paths are absolute.
-		kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/merge-documents.xsl" -s "from=$(realpath --canonicalize-existing -- "$kml_file")" "$base_kml_file" > "$destination_kml_file.new"
+		kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/merge-documents.xsl" -s "from=$(realpath --canonicalize-existing -- "$kml_file")" "$base_kml_file" > "$destination_kml_file.new"
 		mv "$destination_kml_file.new" "$destination_kml_file"
 		base_kml_file="$destination_kml_file"
 		index="$(( index + 1 ))"

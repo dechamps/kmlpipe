@@ -54,6 +54,11 @@ kmlpipe_init() {
 	kmlpipe_debug "${0@Q} ${kmlpipe_args[*]@Q}"
 }
 
+[[ "${#BASH_SOURCE[@]}" -eq 2 ]] || kmlpipe_error "invalid kmlpipe common.bash invocation"
+kmlpipe_dir="${BASH_SOURCE[0]%/*}/.."
+[[ -n "$kmlpipe_dir" && -e "$kmlpipe_dir/lib/common.bash" ]] || kmlpipe_error "$kmlpipe_dir doesn't look like a valid kmlpipe distribution"
+kmlpipe_script_dir="${BASH_SOURCE[1]%/*}"
+
 kmlpipe_tmpdir=''
 kmlpipe_create_tmpdir() {
 	local MKTEMP_ARGS=(--directory --suffix=".kmlpipe.$kmlpipe_run_id")
@@ -129,7 +134,7 @@ kmlpipe_xmlstarlet() {
 kmlpipe_output_xml() {
 	local now
 	printf -v now '%(%Y-%m-%dT%H:%M:%S%z)T' -1
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/command.xsl" -s "name=${0@Q}" -s "args=${kmlpipe_args[*]@Q}" -s "time=$now" -s "run-id=$kmlpipe_run_id" "$@" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/lib/command.xsl" -s "name=${0@Q}" -s "args=${kmlpipe_args[*]@Q}" -s "time=$now" -s "run-id=$kmlpipe_run_id" "$@" |
 	kmlpipe_xmlstarlet fo --nsclean "$@"
 }
  

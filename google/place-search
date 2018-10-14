@@ -42,18 +42,18 @@ additional_args=("$@")
 
 kmlpipe_create_tmpdir
 
-"${BASH_SOURCE%/*}/paginate" --output-prefix "$kmlpipe_tmpdir/page" "${additional_args[@]}"
+"$kmlpipe_script_dir/paginate" --output-prefix "$kmlpipe_tmpdir/page" "${additional_args[@]}"
 
 for page in "$kmlpipe_tmpdir"/page.*.google.list.xml
 do
 	page_number="${page##*/page.}"
 	page_number="${page_number%.google.list.xml}"
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/place-search-response-to-kml.xsl" "$page" |
-	kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results Page $page_number" > "$page.kml"
+	kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/place-search-response-to-kml.xsl" "$page" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results Page $page_number" > "$page.kml"
 done
 
-"${BASH_SOURCE%/*}/../util/merge-documents" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
-kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/merge-folders.xsl" |
-kmlpipe_xmlstarlet tr "${BASH_SOURCE%/*}/../util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results" |
+"$kmlpipe_dir/util/merge-documents" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results" |
 kmlpipe_output_xml
 
