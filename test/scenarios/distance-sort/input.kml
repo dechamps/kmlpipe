@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<kml:Document>
+	<kml:Folder>
+		<kml:Placemark>
+			<kml:name>Place 1</kml:name>
+			<kmlpipe:Place place-id="place1" />
+			<kmlpipe:LinkSet name="Link Set">
+				<Before />
+				<kmlpipe:Link place-id="place2"><kmlpipe:Distance meters="4" /></kmlpipe:Link>
+				<Between />
+				<kmlpipe:Link place-id="place3"><kmlpipe:Distance meters="1" /></kmlpipe:Link>
+				<After />
+			</kmlpipe:LinkSet>
+			<kmlpipe:LinkSet name="Another Link Set">
+				<kmlpipe:Link place-id="other"><kmlpipe:Distance meters="6" /></kmlpipe:Link>
+				<kmlpipe:Link place-id="other"><kmlpipe:Distance meters="2" /></kmlpipe:Link>
+			</kmlpipe:LinkSet>
+		</kml:Placemark>
+		<kml:Placemark>
+			<kml:name>Place 2</kml:name>
+			<kmlpipe:Place place-id="place2" />
+			<kmlpipe:LinkSet name="Link Set">
+				<Before />
+				<kmlpipe:Link place-id="place2"><kmlpipe:Distance meters="3" /></kmlpipe:Link>
+				<Between />
+				<kmlpipe:Link place-id="place2"><kmlpipe:Distance meters="5" /></kmlpipe:Link>
+				<After />
+			</kmlpipe:LinkSet>
+		</kml:Placemark>
+	</kml:Folder>
+</kml:Document>
+</kml:kml>
