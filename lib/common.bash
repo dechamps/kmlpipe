@@ -23,7 +23,10 @@ kmlpipe_debug() {
 }
 
 kmlpipe_info() {
-	kmlpipe_msg "[info] $*"
+	if [[ -z "${KMLPIPE_QUIET-}" ]]
+	then
+		kmlpipe_msg "[info] $*"
+	fi
 }
 
 kmlpipe_cmd_verbose() {
