@@ -9,7 +9,7 @@ do
 	scenario_name="${scenario#"$kmlpipe_script_dir/scenarios/"}"
 	scenario_name="${scenario_name%/run}"
 	echo -n "$scenario_name "
-	if "$scenario" >&2
+	if KMLPIPE_QUIET=1 "$scenario" >&2
 	then
 		echo "OK"
 	else
