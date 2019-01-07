@@ -53,7 +53,7 @@ additional_curl_args=("$@")
 next_page=1
 while [[ "$next_page" -le "$max_pages" ]]
 do
-	kmlpipe_curl 'https://api.nestoria.co.uk/api' --get \
+	"$kmlpipe_dir/util/fetch" -- 'https://api.nestoria.co.uk/api' --get \
 		--data 'action=search_listings' --data 'encoding=xml' --data "page=$next_page" \
 		"${additional_curl_args[@]}" |
 	kmlpipe_output_xml \

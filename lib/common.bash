@@ -113,20 +113,6 @@ kmlpipe_usage_error() {
 	exit 1
 }
 
-kmlpipe_curl() {
-	local args=()
-	if kmlpipe_debug_enabled
-	then
-		args+=(--verbose)
-	else
-		args+=(--silent --show-error)
-	fi
-	args+=(--user-agent 'kmlpipe')
-	args+=("$@")
-
-	kmlpipe_cmd_verbose curl "${args[@]}"
-}
-
 kmlpipe_xmlstarlet() {
 	kmlpipe_cmd xmlstarlet "$@"
 }

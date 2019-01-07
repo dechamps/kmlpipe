@@ -61,10 +61,10 @@ do
 
 	if [[ -z "$pagetoken" ]]
 	then
-		kmlpipe_curl "${curl_args[@]}"
+		"$kmlpipe_dir/util/fetch" --  "${curl_args[@]}"
 	else
 		sleep "$pagetoken_delay_seconds"
-		kmlpipe_curl --data "pagetoken=$pagetoken" "${curl_args[@]}"
+		"$kmlpipe_dir/util/fetch" --  --data "pagetoken=$pagetoken" "${curl_args[@]}"
 	fi |
 	kmlpipe_output_xml \
 	> "$output_file"

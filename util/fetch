@@ -1,0 +1,93 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+kmlpipe_parse_options <<EOF
+Fetches a URL using curl.
+
+Recognizes the following environment variables:
+
+  KMLPIPE_FETCH_WRITE_DIR:
+    If set, the command line and output will be logged to the specified
+    directory, in files named after a hash of the command line. The directory
+    can then be used with KMLPIPE_FETCH_REPLAY_DIR. Note that multiple
+    invocations with the exact same command line will overwrite each other.
+
+  KMLPIPE_FETCH_REPLAY_DIR:
+    If set, this command will never actually run curl. Instead, it will try to
+    find a matching command line inside the specified directory (see above) and
+    then return the corresponding output. If the command line cannot be found,
+    fails.
+
+KMLPIPE_FETCH_WRITE_DIR and KMLPIPE_FETCH_REPLAY_DIR are useful to run tests
+deterministically, hermetically and without using external services.
+
+Any parameters after -- are passed down to curl.
+EOF
+set -- "${kmlpipe_args[@]}"
+
+while :
+do
+	arg="$1"
+	shift
+	case "$arg" in
+		'--') break;;
+		*) kmlpipe_usage_error "unhandled option: $1";;
+	esac
+done
+additional_curl_args=("$@")
+
+if [[ -n "${KMLPIPE_FETCH_REPLAY_DIR-}" || -n "${KMLPIPE_FETCH_WRITE_DIR-}" ]]
+then
+	request_string="${additional_curl_args[@]@Q}"
+	read -r request_hash dummy < <(echo "$request_string" | sha1sum)
+	if [[ -z "$request_hash" ]]
+	then
+		kmlpipe_error "unable to compute request hash for: $request_string"
+	fi
+	request_string_filename="$request_hash.cmdline"
+	request_output_filename="$request_hash.output"
+fi
+
+if [[ -n "${KMLPIPE_FETCH_REPLAY_DIR-}" ]]
+then
+	request_string_file="$KMLPIPE_FETCH_REPLAY_DIR/$request_string_filename"
+	request_output_file="$KMLPIPE_FETCH_REPLAY_DIR/$request_output_filename"
+	if ! [[ -e "$request_string_file" ]]
+	then
+		kmlpipe_error "cannot find replay request file '$request_string_file' for: $request_string"
+	fi
+	if ! echo "$request_string" | cmp "$request_string_file"
+	then
+		kmlpipe_error "replay request file '$request_string_file' doesn't match request: $request_string"
+	fi
+	if ! [[ -e "$request_output_file" ]]
+	then
+		kmlpipe_error "cannot find replay output file '$request_output_file' for: $request_string"
+	fi
+	cat "$request_output_file"
+	exit 0
+fi
+
+curl_command=(kmlpipe_cmd_verbose curl --user-agent 'kmlpipe')
+if kmlpipe_debug_enabled
+then
+	curl_command+=(--verbose)
+else
+	curl_command+=(--silent --show-error)
+fi
+curl_command+=("${additional_curl_args[@]}")
+
+if [[ -z "${KMLPIPE_FETCH_WRITE_DIR-}" ]]
+then
+	"${curl_command[@]}"
+else
+	request_string_file="$KMLPIPE_FETCH_WRITE_DIR/$request_string_filename"
+	request_output_file="$KMLPIPE_FETCH_WRITE_DIR/$request_output_filename"
+	echo "$request_string" > "$request_string_file.new"
+	"${curl_command[@]}" | tee --output-error=exit-nopipe -- "$request_output_file.new"
+	mv "$request_output_file.new" "$request_output_file"
+	mv "$request_string_file.new" "$request_string_file"
+fi
+
+
