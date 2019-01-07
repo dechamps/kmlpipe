@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opt>
+	<response application_response_code="100" application_response_text="test response text 1" total_pages="3" total_results="9">
+		<listings id="1" />
+		<listings id="2" />
+		<listings id="3" />
+	</response>
+</opt>

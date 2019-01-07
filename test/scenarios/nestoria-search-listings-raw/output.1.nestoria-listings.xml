@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<opt>
+  <response application_response_code="100" application_response_text="test response text 1" total_pages="3" total_results="9">
+    <listings id="1"/>
+    <listings id="2"/>
+    <listings id="3"/>
+  </response>
+  <kmlpipe:Command xmlns:kmlpipe="http://edechamps.fr/kmlpipe" name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</opt>
