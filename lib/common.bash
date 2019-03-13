@@ -12,7 +12,10 @@ kmlpipe_debug_enabled() {
 }
 
 kmlpipe_msg() {
-	printf '[kmlpipe] %(%Y-%m-%dT%H:%M:%S%z)T %s %s\n' -1 "$kmlpipe_run_id" "$*" >&2
+	while IFS='' read -r line
+	do
+		printf '[kmlpipe] %(%Y-%m-%dT%H:%M:%S%z)T %s %s\n' -1 "$kmlpipe_run_id" "$line" >&2
+	done <<< "$*"
 }
 
 kmlpipe_debug() {
@@ -105,7 +108,7 @@ kmlpipe_onerror() {
 		kmlpipe_msg "  $caller"
 	done
 
-	kmlpipe_msg $'\n' "$(pstree -a -A -T -s -l -p $$ || true)"
+	kmlpipe_msg "$(pstree -a -A -T -s -l -p $$ || true)"
 
 	exit 1
 }
