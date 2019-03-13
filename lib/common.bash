@@ -1,11 +1,9 @@
-set -o errexit
 set -o errtrace
 set -o noclobber
 set -o nounset
 set -o pipefail
 shopt -s dotglob
 shopt -s extglob
-shopt -s inherit_errexit
 shopt -s globstar
 shopt -s nullglob
 
@@ -48,7 +46,7 @@ kmlpipe_dump_args() {
 
 kmlpipe_error() {
 	kmlpipe_msg "[ERROR] $*"
-	exit 1
+	kmlpipe_onerror
 }
 
 kmlpipe_run_id=''
@@ -76,13 +74,8 @@ kmlpipe_create_tmpdir() {
 	printf '%(%Y-%m-%dT%H:%M:%S%z)T %s %s\n' -1 "$kmlpipe_run_id" "${0@Q} ${kmlpipe_args[*]@Q}" > "$kmlpipe_tmpdir/KMLPIPE_COMMAND"
 }
 
-kmlpipe_onexit_errcount=0
 kmlpipe_onexit() {
-	local reason="$1"
-
-	kmlpipe_debug "onexit($reason)"
-
-	[[ "$$" = "$BASHPID" ]] || return
+	kmlpipe_debug "EXITING from ${0@Q} ${kmlpipe_args[*]@Q}"
 
 	if [[ -n "$kmlpipe_tmpdir" ]]
 	then
@@ -94,13 +87,14 @@ kmlpipe_onexit() {
 			rm -rf "$kmlpipe_tmpdir"
 		fi
 	fi
+}
 
-	[[ "$reason" != 'EXIT' ]] || return
+kmlpipe_onerror() {
+	local status="$?"
 
-	[[ "$kmlpipe_onexit_errcount" -eq 0 ]] || return
-	kmlpipe_onexit_errcount="$(( kmlpipe_onexit_errcount + 1 ))"
+	kmlpipe_msg "FATAL ERROR ($status) in ${0@Q} ${kmlpipe_args[*]@Q}"
 
-	kmlpipe_msg "EXITING ($reason) from ${0@Q} ${kmlpipe_args[*]@Q}"
+	exit 1
 }
 
 kmlpipe_parse_options() {
@@ -129,8 +123,5 @@ kmlpipe_output_xml() {
  
 kmlpipe_args=("$@")
 kmlpipe_init
-for signal_spec in EXIT ERR SIGHUP SIGINT SIGPIPE SIGALRM SIGUSR1 SIGUSR2
-do
-	trap "kmlpipe_onexit $signal_spec" "$signal_spec"
-done
-
+trap kmlpipe_onexit EXIT
+trap kmlpipe_onerror ERR
