@@ -95,7 +95,7 @@ kmlpipe_onexit() {
 kmlpipe_onerror() {
 	local status="$?"
 
-	kmlpipe_msg "FATAL ERROR ($status) in ${0@Q} ${kmlpipe_args[*]@Q}"
+	kmlpipe_msg "FATAL ERROR ($status) in $BASHPID ${0@Q} ${kmlpipe_args[*]@Q}"
 
 	local frame caller
 	for (( frame=0; ; frame++ ))
