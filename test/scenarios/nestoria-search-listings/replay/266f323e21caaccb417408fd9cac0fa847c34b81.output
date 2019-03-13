@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opt>
+	<response application_response_code="100" application_response_text="test response text" total_pages="2" total_results="6">
+		<listings lister_url="https://www.nestoria.co.uk/detail/3/title/foo" />
+		<listings lister_url="https://www.nestoria.co.uk/detail/4/title/foo" />
+	</response>
+</opt>

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
+
+KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/nestoria/search-listings" -- --max-pages 2 -- --data 'some_nestoria_parameter=value' > "$kmlpipe_tmpdir/output.kml"
+kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
+kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.kml" < "$kmlpipe_tmpdir/output.kml"
+
