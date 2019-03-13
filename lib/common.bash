@@ -105,6 +105,8 @@ kmlpipe_onerror() {
 		kmlpipe_msg "  $caller"
 	done
 
+	kmlpipe_msg $'\n' "$(pstree -a -A -T -s -l -p $$ || true)"
+
 	exit 1
 }
 
