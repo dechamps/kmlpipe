@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opt>
+	<response application_response_code="100" application_response_text="test response text" total_pages="2" total_results="6">
+		<listings lister_url="https://www.nestoria.co.uk/detail/1/title/foo" title="Place 1" longitude="1" latitude="10" />
+		<listings lister_url="https://www.nestoria.co.uk/detail/2/title/foo" title="Place 2" longitude="2" latitude="20" />
+		<listings lister_url="https://www.nestoria.co.uk/detail/3/title/foo" title="Place 3" longitude="3" latitude="30" />
+		<SomeOtherElement attr="value">text</SomeOtherElement>
+	</response>
+</opt>
