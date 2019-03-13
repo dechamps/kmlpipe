@@ -94,6 +94,17 @@ kmlpipe_onerror() {
 
 	kmlpipe_msg "FATAL ERROR ($status) in ${0@Q} ${kmlpipe_args[*]@Q}"
 
+	local frame caller
+	for (( frame=0; ; frame++ ))
+	do
+		caller="$(caller "$frame" || true)"
+		if [[ -z "$caller" ]]
+		then
+			break
+		fi
+		kmlpipe_msg "  $caller"
+	done
+
 	exit 1
 }
 
