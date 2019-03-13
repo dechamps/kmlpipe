@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <kml:Document some-document-attribute="document">
+    <kml:Folder>
+      <kml:name>New Folder</kml:name>
+      <kmlpipe:Renamed from="Old Folder"/>
+    </kml:Folder>
+    <SomeDocumentElement>document</SomeDocumentElement>
+  </kml:Document>
+</kml:kml>
