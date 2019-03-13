@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe" some-kml-attribute="1">
+  <kml:Document some-document-attribute="1">
+    <kml:Folder some-folder-attribute="1">
+      <kml:name>Folder 1</kml:name>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="place-id-1a"/>
+        <name>Place 1A</name>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="place-id-1b"/>
+        <name>Place 1B</name>
+      </kml:Placemark>
+      <SomeFolderElement>1</SomeFolderElement>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="place-id-2a"/>
+        <name>Place 2A</name>
+        <kmlpipe:MergedFolder name="Folder 2"/>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="place-id-2b"/>
+        <name>Place 2B</name>
+        <kmlpipe:MergedFolder name="Folder 2"/>
+      </kml:Placemark>
+      <kmlpipe:MergedFolder some-folder-attribute="2">
+        <kml:name>Folder 2</kml:name>
+        <SomeFolderElement>2</SomeFolderElement>
+      </kmlpipe:MergedFolder>
+    </kml:Folder>
+    <SomeDocumentElement>document</SomeDocumentElement>
+  </kml:Document>
+  <SomeKmlElement>kml</SomeKmlElement>
+</kml:kml>
