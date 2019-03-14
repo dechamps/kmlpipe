@@ -45,7 +45,7 @@ do
 	case "$arg" in
 		'--output-prefix') output_prefix="$1"; shift;;
 		'--max-pages') max_pages="$1"; shift;;
-		'--pagetoken-delay-seconds') wait_between_pages="$1"; shift;;
+		'--pagetoken-delay-seconds') pagetoken_delay_seconds="$1"; shift;;
 		'--') break;;
 		*) kmlpipe_usage_error "unhandled option: $1";;
 	esac
