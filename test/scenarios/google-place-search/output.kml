@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <kml:Document>
+    <kml:Folder>
+      <kml:name>Google Place Search Results</kml:name>
+      <kmlpipe:Renamed from="Google Place Search Results Page 1"/>
+      <kmlpipe:Renamed from="Google Place Search Response Page"/>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="google-place-id:test_place_id_a1"/>
+        <kml:name>Test Place A1</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=1111.2222,3333.4444&amp;query_place_id=test_place_id_a1</kml:description>
+        <kml:Point>
+          <coordinates>3333.4444,1111.2222</coordinates>
+        </kml:Point>
+        <kmlpipe:Google>
+          <result>
+            <name>Test Place A1</name>
+            <geometry>
+              <location>
+                <lat>1111.2222</lat>
+                <lng>3333.4444</lng>
+              </location>
+            </geometry>
+            <place_id>test_place_id_a1</place_id>
+          </result>
+        </kmlpipe:Google>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="google-place-id:test_place_id_a2"/>
+        <kml:name>Test Place A2</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=5555.6666,7777.8888&amp;query_place_id=test_place_id_a2</kml:description>
+        <kml:Point>
+          <coordinates>7777.8888,5555.6666</coordinates>
+        </kml:Point>
+        <kmlpipe:Google>
+          <result>
+            <name>Test Place A2</name>
+            <geometry>
+              <location>
+                <lat>5555.6666</lat>
+                <lng>7777.8888</lng>
+              </location>
+            </geometry>
+            <place_id>test_place_id_a2</place_id>
+          </result>
+        </kmlpipe:Google>
+      </kml:Placemark>
+      <kmlpipe:Google>
+        <PlaceSearchResponse some-response-attribute="a">
+          <status>OK</status>
+          <SomeResponseElement>a</SomeResponseElement>
+          <next_page_token>test_page_token_1</next_page_token>
+          <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+        </PlaceSearchResponse>
+      </kmlpipe:Google>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="google-place-id:test_place_id_b1"/>
+        <kml:name>Test Place B1</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=2222.3333,4444.5555&amp;query_place_id=test_place_id_b1</kml:description>
+        <kml:Point>
+          <coordinates>4444.5555,2222.3333</coordinates>
+        </kml:Point>
+        <kmlpipe:Google>
+          <result>
+            <name>Test Place B1</name>
+            <geometry>
+              <location>
+                <lat>2222.3333</lat>
+                <lng>4444.5555</lng>
+              </location>
+            </geometry>
+            <place_id>test_place_id_b1</place_id>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Google Place Search Results Page 2"/>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="google-place-id:test_place_id_b2"/>
+        <kml:name>Test Place B2</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=6666.7777,8888.9999&amp;query_place_id=test_place_id_b2</kml:description>
+        <kml:Point>
+          <coordinates>8888.9999,6666.7777</coordinates>
+        </kml:Point>
+        <kmlpipe:Google>
+          <result>
+            <name>Test Place B2</name>
+            <geometry>
+              <location>
+                <lat>6666.7777</lat>
+                <lng>8888.9999</lng>
+              </location>
+            </geometry>
+            <place_id>test_place_id_b2</place_id>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Google Place Search Results Page 2"/>
+      </kml:Placemark>
+      <kmlpipe:MergedFolder>
+        <kml:name>Google Place Search Results Page 2</kml:name>
+        <kmlpipe:Renamed from="Google Place Search Response Page"/>
+        <kmlpipe:Google>
+          <PlaceSearchResponse some-response-attribute="b">
+            <status>OK</status>
+            <SomeResponseElement>b</SomeResponseElement>
+            <next_page_token>test_page_token_2</next_page_token>
+            <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+          </PlaceSearchResponse>
+        </kmlpipe:Google>
+        <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+      </kmlpipe:MergedFolder>
+    </kml:Folder>
+  </kml:Document>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml:kml>
+      <kml:Document>
+        <kml:Folder>
+          <kml:name>Google Place Search Results Page 2</kml:name>
+        </kml:Folder>
+      </kml:Document>
+    </kml:kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</kml:kml>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PlaceSearchResponse some-response-attribute="a">
+  <status>OK</status>
+  <result>
+    <name>Test Place A1</name>
+    <geometry>
+      <location>
+        <lat>1111.2222</lat>
+        <lng>3333.4444</lng>
+      </location>
+    </geometry>
+    <place_id>test_place_id_a1</place_id>
+  </result>
+  <result>
+    <name>Test Place A2</name>
+    <geometry>
+      <location>
+        <lat>5555.6666</lat>
+        <lng>7777.8888</lng>
+      </location>
+    </geometry>
+    <place_id>test_place_id_a2</place_id>
+  </result>
+  <SomeResponseElement>a</SomeResponseElement>
+  <next_page_token>test_page_token_1</next_page_token>
+</PlaceSearchResponse>
