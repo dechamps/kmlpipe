@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <kml:Document>
+    <kml:Folder>
+      <kml:name>Google Place Search Response Page</kml:name>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="google-place-id:test_place_id_1"/>
+        <kml:name>Test Place 1</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=1111.2222,3333.4444&amp;query_place_id=test_place_id_1</kml:description>
+        <kml:Point>
+          <coordinates>3333.4444,1111.2222</coordinates>
+        </kml:Point>
+        <kml:address>Test Vicinity 1</kml:address>
+        <kmlpipe:Google>
+          <result some-result-attribute="1">
+            <name>Test Place 1</name>
+            <vicinity>Test Vicinity 1</vicinity>
+            <geometry>
+              <location>
+                <lat>1111.2222</lat>
+                <lng>3333.4444</lng>
+              </location>
+            </geometry>
+            <place_id>test_place_id_1</place_id>
+            <SomeOtherResultElement>1</SomeOtherResultElement>
+          </result>
+        </kmlpipe:Google>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="google-place-id:test_place_id_2"/>
+        <kml:name>Test Place 2</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=5555.6666,7777.8888&amp;query_place_id=test_place_id_2</kml:description>
+        <kml:Point>
+          <coordinates>7777.8888,5555.6666</coordinates>
+        </kml:Point>
+        <kml:address>Test Vicinity 2</kml:address>
+        <kmlpipe:Google>
+          <result some-result-attribute="2">
+            <name>Test Place 2</name>
+            <vicinity>Test Vicinity 2</vicinity>
+            <geometry>
+              <location>
+                <lat>5555.6666</lat>
+                <lng>7777.8888</lng>
+              </location>
+            </geometry>
+            <place_id>test_place_id_2</place_id>
+            <SomeOtherResultElement>2</SomeOtherResultElement>
+          </result>
+        </kmlpipe:Google>
+      </kml:Placemark>
+      <kmlpipe:Google>
+        <PlaceSearchResponse some-response-attribute="response">
+          <status>OK</status>
+          <SomeResponseElement>response</SomeResponseElement>
+        </PlaceSearchResponse>
+      </kmlpipe:Google>
+    </kml:Folder>
+  </kml:Document>
+</kml:kml>

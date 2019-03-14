@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<PlaceSearchResponse some-response-attribute="response">
+  <status>OK</status>
+  <result some-result-attribute="1">
+    <name>Test Place 1</name>
+    <vicinity>Test Vicinity 1</vicinity>
+    <geometry>
+      <location>
+        <lat>1111.2222</lat>
+        <lng>3333.4444</lng>
+      </location>
+    </geometry>
+    <place_id>test_place_id_1</place_id>
+    <SomeOtherResultElement>1</SomeOtherResultElement>
+  </result>
+  <result some-result-attribute="2">
+    <name>Test Place 2</name>
+    <vicinity>Test Vicinity 2</vicinity>
+    <geometry>
+      <location>
+        <lat>5555.6666</lat>
+        <lng>7777.8888</lng>
+      </location>
+    </geometry>
+    <place_id>test_place_id_2</place_id>
+    <SomeOtherResultElement>2</SomeOtherResultElement>
+  </result>
+  <SomeResponseElement>response</SomeResponseElement>
+</PlaceSearchResponse>
