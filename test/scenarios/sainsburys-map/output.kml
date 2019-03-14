@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Sainsbury's Store Locator Results Page</name>
+      <Placemark>
+        <name>Test Sainsburys 1</name>
+        <description>Type: main</description>
+        <Point>
+          <coordinates>3333.4444,1111.2222</coordinates>
+        </Point>
+        <kmlpipe:Sainsburys>{"name":"Test Sainsburys 1","contact":{"address1":"Test Address 1","city":"Test City 1","post_code":"Test Postcode 1"},"location":{"lat":"1111.2222","lon":"3333.4444"},"store_type":"main","other_key":"other_value1"}</kmlpipe:Sainsburys>
+        <address>Test Address 1 Test City 1 Test Postcode 1</address>
+      </Placemark>
+      <Placemark>
+        <name>Test Sainsburys 2</name>
+        <description>Type: main</description>
+        <Point>
+          <coordinates>7777.8888,5555.6666</coordinates>
+        </Point>
+        <kmlpipe:Sainsburys>{"name":"Test Sainsburys 2","contact":{"address1":"Test Address 2","city":"Test City 2","post_code":"Test Postcode 2"},"location":{"lat":"5555.6666","lon":"7777.8888"},"store_type":"main","other_key":"other_value2"}</kmlpipe:Sainsburys>
+        <address>Test Address 2 Test City 2 Test Postcode 2</address>
+      </Placemark>
+      <kmlpipe:Sainsburys>{"some_data":{"some_key1":"some_value1","some_key2":"some_value2"}}</kmlpipe:Sainsburys>
+    </Folder>
+  </Document>
+</kml>

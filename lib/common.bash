@@ -130,6 +130,10 @@ kmlpipe_xmlstarlet() {
 	kmlpipe_cmd xmlstarlet "$@"
 }
 
+kmlpipe_jq() {
+	kmlpipe_cmd jq "$@"
+}
+
 kmlpipe_output_xml() {
 	local now
 	printf -v now '%(%Y-%m-%dT%H:%M:%S%z)T' -1
