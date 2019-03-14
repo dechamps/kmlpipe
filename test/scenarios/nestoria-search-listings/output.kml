@@ -24,6 +24,16 @@
           <listings lister_url="https://www.nestoria.co.uk/detail/2/title/foo"/>
         </kmlpipe:Nestoria>
       </kml:Placemark>
+      <kmlpipe:Nestoria>
+        <opt>
+          <response application_response_code="100" application_response_text="test response text" total_pages="2" total_results="6">
+    
+    
+  </response>
+          <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+        </opt>
+      </kmlpipe:Nestoria>
+      <kmlpipe:Renamed from="Nestoria Listings Page"/>
       <kml:Placemark>
         <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/3"/>
         <kml:name/>
@@ -49,6 +59,15 @@
         <kmlpipe:MergedFolder name="Nestoria Listings Page 2"/>
       </kml:Placemark>
       <kmlpipe:MergedFolder>
+        <kmlpipe:Nestoria>
+          <opt>
+            <response application_response_code="100" application_response_text="test response text" total_pages="2" total_results="6">
+    
+    
+  </response>
+            <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+          </opt>
+        </kmlpipe:Nestoria>
         <kml:name>Nestoria Listings Page 2</kml:name>
         <kmlpipe:Renamed from="Nestoria Listings Page"/>
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>

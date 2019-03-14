@@ -24,7 +24,7 @@
 
 	<xsl:template match="/kml:kml/kml:Document/kml:Folder">
 		<xsl:copy>
-			<xsl:apply-templates select="(@*|node())[count(.|kml:name) != 1]" />
+			<xsl:apply-templates select="(@*|node())[count(.|../kml:name) != 1]" />
 			<kml:name><xsl:value-of select="$new-folder-name" /></kml:name>
 
 			<kmlpipe:Renamed>
