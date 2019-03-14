@@ -2,24 +2,21 @@
 
 source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
-kmlpipe_parse_options <<EOF
+kmlpipe_usage_define <<EOF
 Merges multiple KML files together. Equivalent to running
 merge-documents.xsl in sequence for each input file.
 Can merge any number of KML files together, not just 2.
 EOF
-set -- "${kmlpipe_args[@]}"
 
 while :
 do
-	arg="$1"
-	shift
-	case "$arg" in
-		'--') break;;
-		*) kmlpipe_usage_error "unhandled option: $1";;
-	esac
+        kmlpipe_args_pop_or_error argument
+        case "$argument" in
+                --) break;;
+                *) kmlpipe_usage_error;;
+        esac
 done
-kml_files=("$@")
-
+kml_files=("${kmlpipe_args_stack[@]}")
 [[ "${#kml_files[@]}" -gt 0 ]] || kmlpipe_usage_error 'at least one KML file must be specified'
 
 base_kml_file="${kml_files[0]}"

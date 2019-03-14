@@ -5,7 +5,7 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 output_prefix=''
 max_pages=1
 
-kmlpipe_parse_options <<EOF
+kmlpipe_usage_define <<EOF
 Sends a Place Search Google Maps API request, and converts the results to a
 single KML document on standard output, with one folder per page. Equivalent to
 running paginate, place-search-response-to-kml and merge.
@@ -25,20 +25,17 @@ $ place-search -- \\
 	--data 'keyword=waitrose' \\
 	https://maps.googleapis.com/maps/api/place/nearbysearch/xml
 EOF
-set -- "${kmlpipe_args[@]}"
 
 while :
 do
-	arg="$1"
-	shift
-	case "$arg" in
-		'--') break;;
-		*) kmlpipe_usage_error "unhandled option: $1";;
-	esac
+        kmlpipe_args_pop_or_error argument
+        case "$argument" in
+                --) break;;
+                *) kmlpipe_usage_error;;
+        esac
 done
-additional_args=("$@")
-
-[[ "${#additional_args[@]}" -gt 0 ]] || kmlpipe_usage_error 'must specify arguments for paginate'
+additional_args=("${kmlpipe_args_stack[@]}")
+[[ "${#additional_args[@]}" -gt 0 ]] || kmlpipe_usage_error
 
 kmlpipe_create_tmpdir
 
@@ -52,7 +49,7 @@ do
 	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results Page $page_number" > "$page.kml"
 done
 
-"$kmlpipe_dir/util/merge-documents" "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir"/page.*.google.list.xml.kml |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Google Place Search Results" |
 kmlpipe_output_xml

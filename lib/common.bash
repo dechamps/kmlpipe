@@ -113,17 +113,38 @@ kmlpipe_onerror() {
 	exit 1
 }
 
-kmlpipe_parse_options() {
-	kmlpipe_usage="$(cat)"
-	options="$(getopt --shell bash --name "$0" --options '' "$@" -- "${kmlpipe_args[@]}")" || kmlpipe_usage_error 'could not parse options'
-	eval "kmlpipe_args=($options)"
+kmlpipe_usage_define() {
+	read -r -d '' kmlpipe_usage || true
 }
 
 kmlpipe_usage_error() {
-	echo "$kmlpipe_usage" >&2
+	kmlpipe_msg "invalid command line: $0 ${kmlpipe_args[*]@Q}"
 	echo >&2
-	kmlpipe_error "bad usage: $*"
+	echo "$kmlpipe_usage" >&2
 	exit 1
+}
+
+kmlpipe_args_pop() {
+	if [[ "${#kmlpipe_args_stack[@]}" -lt 1 ]]
+	then
+		return 1
+	fi
+	printf -v "$1" %s "${kmlpipe_args_stack[0]}"
+	kmlpipe_args_stack=("${kmlpipe_args_stack[@]:1}")
+}
+
+kmlpipe_args_pop_or_error() {
+	if ! kmlpipe_args_pop "$@"
+	then
+		kmlpipe_usage_error
+	fi
+}
+
+kmlpipe_args_end() {
+	if [[ "${#kmlpipe_args_stack[@]}" -gt 0 ]]
+	then
+		kmlpipe_usage_error
+	fi
 }
 
 kmlpipe_xmlstarlet() {
@@ -142,6 +163,7 @@ kmlpipe_output_xml() {
 }
  
 kmlpipe_args=("$@")
+kmlpipe_args_stack=("$@")
 kmlpipe_init
 trap kmlpipe_onexit EXIT
 trap kmlpipe_onerror ERR

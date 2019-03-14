@@ -5,7 +5,7 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 output_prefix=''
 max_pages=1
 
-kmlpipe_parse_options <<EOF
+kmlpipe_usage_define <<EOF
 Fetches property listings from Nestoria, and convert the results to a single KML
 folder on standard output. Equivalent to running search-listings-raw,
 listings-to-kml, merge-documents and merge-folders.
@@ -20,20 +20,17 @@ $ search-listings -- \\
 	--data 'listing_type=buy' --data 'price_max=1000000' \\
 	--data 'number_of_results=50'
 EOF
-set -- "${kmlpipe_args[@]}"
 
 while :
 do
-	arg="$1"
-	shift
-	case "$arg" in
-		'--') break;;
-		*) kmlpipe_usage_error "unhandled option: $1";;
-	esac
+        kmlpipe_args_pop_or_error argument
+        case "$argument" in
+                --) break;;
+                *) kmlpipe_usage_error;;
+        esac
 done
-additional_args=("$@")
-
-[[ "${#additional_args[@]}" -gt 0 ]] || kmlpipe_usage_error 'must specify arguments for search-listings-raw'
+additional_args=("${kmlpipe_args_stack[@]}")
+[[ "${#additional_args[@]}" -gt 0 ]] || kmlpipe_usage_error
 
 kmlpipe_create_tmpdir
 
@@ -47,7 +44,7 @@ do
 	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings Page $page_number" > "$page.kml"
 done
 
-"$kmlpipe_dir/util/merge-documents" "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir"/page.*.nestoria-listings.xml.kml |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings" |
 kmlpipe_output_xml
