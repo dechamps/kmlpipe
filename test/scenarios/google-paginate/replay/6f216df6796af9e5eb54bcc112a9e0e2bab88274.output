@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestGoogleResponse>
+ <SomeTestElement>test2</SomeTestElement>
+ <next_page_token>test_page_token_2</next_page_token>
+</TestGoogleResponse>

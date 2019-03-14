@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TestGoogleResponse>
+  <SomeTestElement>test1</SomeTestElement>
+  <next_page_token>test_page_token_1</next_page_token>
+  <kmlpipe:Command xmlns:kmlpipe="http://edechamps.fr/kmlpipe" name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</TestGoogleResponse>

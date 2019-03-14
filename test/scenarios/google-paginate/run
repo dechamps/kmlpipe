@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
+
+KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/google/paginate" --output-prefix "$kmlpipe_tmpdir/output" --max-pages 2 --pagetoken-delay-seconds 0 -- --data 'test_google_parameter=test_value' 'test://host/path'
+kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.1.google.list.xml" < "$kmlpipe_tmpdir/output.1.google.list.xml"
+kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.2.google.list.xml" < "$kmlpipe_tmpdir/output.2.google.list.xml"
+
