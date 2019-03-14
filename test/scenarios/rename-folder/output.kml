@@ -2,9 +2,9 @@
 <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
   <kml:Document some-document-attribute="document">
     <kml:Folder some-folder-attribute="folder">
-      <SomeFolderElement>folder</SomeFolderElement>
       <kml:name>New Folder</kml:name>
       <kmlpipe:Renamed from="Old Folder"/>
+      <SomeFolderElement>folder</SomeFolderElement>
     </kml:Folder>
     <SomeDocumentElement>document</SomeDocumentElement>
   </kml:Document>

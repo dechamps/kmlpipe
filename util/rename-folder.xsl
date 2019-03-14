@@ -24,12 +24,14 @@
 
 	<xsl:template match="/kml:kml/kml:Document/kml:Folder">
 		<xsl:copy>
-			<xsl:apply-templates select="(@*|node())[count(.|../kml:name) != 1]" />
-			<kml:name><xsl:value-of select="$new-folder-name" /></kml:name>
+			<xsl:apply-templates select="@*" />
 
+			<kml:name><xsl:value-of select="$new-folder-name" /></kml:name>
 			<kmlpipe:Renamed>
 				<xsl:attribute name="from"><xsl:value-of select="kml:name" /></xsl:attribute>
 			</kmlpipe:Renamed>
+
+			<xsl:apply-templates select="node()[count(.|../kml:name) != 1]" />
 		</xsl:copy>
 	</xsl:template>
 
