@@ -27,7 +27,7 @@ pages of 20 results each, for a total of 60 results.)
   --max-pages N (default: $max_pages)
     Don't fetch more than N pages.
 
-  --pagetoken_delay_seconds N (default: $pagetoken_delay_seconds)
+  --pagetoken-delay-seconds N (default: $pagetoken_delay_seconds)
     Wait this many seconds before fetching the next page. Google page tokens
     only become valid after a certain amount of time has passed; setting this
     too low will cause problems when fetching more than one page.
