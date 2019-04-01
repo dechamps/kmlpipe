@@ -40,13 +40,6 @@ kmlpipe_cmd() {
 	"$@"
 }
 
-kmlpipe_dump_args() {
-	for arg in "${kmlpipe_args[@]}"
-	do
-		kmlpipe_msg "[arg] $arg"
-	done
-}
-
 kmlpipe_error() {
 	kmlpipe_msg "[ERROR] $*"
 	kmlpipe_onerror
