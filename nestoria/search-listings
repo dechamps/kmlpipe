@@ -16,7 +16,7 @@ Example:
 
 $ search-listings -- \\
 	--max-pages 3 -- \\
-	--data 'centre_point=51.540,-0.093' --data 'radius=1km' \\
+	--data 'centre_point=51.540,-0.093,1km' \\
 	--data 'listing_type=buy' --data 'price_max=1000000' \\
 	--data 'number_of_results=50'
 EOF
