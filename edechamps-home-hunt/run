@@ -3,6 +3,7 @@
 source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 input_zones_file=''
+input_workplace_file=''
 listing_type=''
 price_max=''
 max_listings_pages_per_zone=''
@@ -13,6 +14,9 @@ Runs the Edechamps Home Hunt Pipeline.
 
   --input-zones-file FILE (required)
     Zones to search for properties in.
+
+  --input-workplace-file FILE (required)
+    KML file describing the workplace (commute destination).
 
   --listing-type TYPE
     Nestoria listing type (e.g. 'buy').
@@ -28,7 +32,7 @@ Runs the Edechamps Home Hunt Pipeline.
 
 Example:
 
-$ run --input-zones-file zones.kml \
+$ run --input-zones-file zones.kml --workplace-file workplace.kml \
 	--listing-type buy --price-max 1000000 \
 	--max-listings-pages-per-zone 1 --max-listings-per-page 5
 EOF
@@ -41,6 +45,7 @@ do
 	fi
 	case "$argument" in
 		--input-zones-file) kmlpipe_args_pop_or_error input_zones_file;;
+		--input-workplace-file) kmlpipe_args_pop_or_error input_workplace_file;;
 		--listing-type) kmlpipe_args_pop_or_error listing_type;;
 		--price-max) kmlpipe_args_pop_or_error price_max;;
 		--max-listings-pages-per-zone) kmlpipe_args_pop_or_error max_listings_pages_per_zone;;
@@ -50,7 +55,10 @@ do
 	esac
 done
 [[ -n "$input_zones_file" ]] || kmlpipe_usage_error
+[[ -n "$input_workplace_file" ]] || kmlpipe_usage_error
 kmlpipe_args_end
+
+kmlpipe_create_tmpdir
 
 search_listings_raw_args=()
 search_listings_curl_args=()
@@ -73,7 +81,11 @@ then
 fi
 
 # TODO: adjust Nestoria sorting parameters.
-"$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file"
+"$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" > "$kmlpipe_tmpdir/listings.kml"
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$input_workplace_file" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s "source-folder-name=Nestoria Listings" -s "destination-folder-name=Workplace"  -s 'link-set-name=Workplace' > "$kmlpipe_tmpdir/listings-with-workplace.kml"
+"$kmlpipe_dir/util/distance" --link-set-name 'Workplace' -- "$kmlpipe_tmpdir/listings-with-workplace.kml" |
+kmlpipe_output_xml
 
 # TODO: deal with duplicate listings (either from Nestoria pagination inconsistencies, or from overlapping zones).
 # TODO: compute commute time.

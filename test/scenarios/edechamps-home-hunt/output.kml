@@ -17,6 +17,11 @@
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/pancras1/title/foo" latitude="51.536374" longitude="-0.128269"/>
         </kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:Distance meters="379.98045890332717476000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/pancras2"/>
@@ -28,6 +33,11 @@
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo" latitude="51.531300" longitude="-0.122405"/>
         </kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:Distance meters="330.88952845401646518000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kmlpipe:Nestoria>
         <opt>
@@ -49,6 +59,11 @@
           <listings lister_url="https://www.nestoria.co.uk/detail/stratford1/title/foo" latitude="51.546282" longitude="-0.005149"/>
         </kmlpipe:Nestoria>
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:Distance meters="8482.74463252649528298000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/stratford2"/>
@@ -61,6 +76,11 @@
           <listings lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo" latitude="51.537300" longitude="-0.003415"/>
         </kmlpipe:Nestoria>
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:Distance meters="8490.91348032709619494000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kmlpipe:MergedFolder>
         <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
@@ -79,6 +99,17 @@
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
     </kml:Folder>
+    <Folder xmlns="http://www.opengis.net/kml/2.2">
+      <name>Workplace</name>
+      <Placemark>
+        <kmlpipe:Place place-id="workplace"/>
+        <name>Workplace</name>
+        <Point>
+          <coordinates>-0.126003,51.533261</coordinates>
+        </Point>
+      </Placemark>
+      <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+    </Folder>
   </kml:Document>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
@@ -93,6 +124,18 @@
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
     </kml:kml>
   </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Document>
+        <Folder>
+          <name>Workplace</name>
+        </Folder>
+      </Document>
+    </kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
 </kml:kml>

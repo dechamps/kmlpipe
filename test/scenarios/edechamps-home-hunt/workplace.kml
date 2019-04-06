@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe"><Document>
+	<Folder>
+		<name>Workplace</name>
+		<Placemark>
+			<kmlpipe:Place place-id="workplace" />
+			<name>Workplace</name>
+			<Point><coordinates>-0.126003,51.533261</coordinates></Point>
+		</Placemark>
+	</Folder>
+</Document></kml>

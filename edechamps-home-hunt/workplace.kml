@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:kmlpipe="http://edechamps.fr/kmlpipe"><Document>
+<Folder><name>Workplace</name>
+<Placemark id="1.2.1">
+	<kmlpipe:Place place-id="workplace" />
+	<name>Workplace (Google 6PS)</name>
+	<address>Six Pancras Square, Kings Cross, London N1C 4AG</address>
+	<phoneNumber>020 7031 3000</phoneNumber>
+	<snippet>Six Pancras Square, Kings Cross, London N1C 4AG</snippet>
+	<description><![CDATA[<!DOCTYPE html><html><head></head><body><script type="text/javascript">window.location.href="https://www.google.com/earth/rpc/entity?lat=51.53326099999999&lng=-0.12600299999999998&fid=0x48761b3c54efa6e1:0xc7053ab04745950d&hl=en&gl=gb&client=earth-client&cv=7.3.2.5776&useragent=GoogleEarth/7.3.2.5776(Windows;Microsoft Windows (6.2.9200.0);en;kml:2.2;client:Pro;type:default)";</script></body></html>]]></description>
+	<styleUrl>#listing_A</styleUrl>
+	<ExtendedData>
+		<Data name="placepageUri">
+			<value>https://www.google.com/earth/rpc/entity?lat=51.53326099999999&amp;lng=-0.12600299999999998&amp;fid=0x48761b3c54efa6e1:0xc7053ab04745950d&amp;hl=en&amp;gl=gb&amp;client=earth-client&amp;cv=7.3.2.5776&amp;useragent=GoogleEarth/7.3.2.5776(Windows;Microsoft Windows (6.2.9200.0);en;kml:2.2;client:Pro;type:default)</value>
+		</Data>
+	</ExtendedData>
+	<Point>
+		<coordinates>-0.126003,51.533261</coordinates>
+	</Point>
+</Placemark>
+</Folder></Document>
+</kml>
