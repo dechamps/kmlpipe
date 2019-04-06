@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+	<Document>
+		<Folder>
+			<Placemark>
+				<kmlpipe:Place place-id="zone:pancras" />
+				<Point><coordinates>-0.126,51.53326</coordinates></Point>
+				<kmlpipe:Radius miles="0.5" />
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Place place-id="zone:stratford" />
+				<Point><coordinates>-0.008730,51.544833</coordinates></Point>
+				<kmlpipe:Radius miles="1" />
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

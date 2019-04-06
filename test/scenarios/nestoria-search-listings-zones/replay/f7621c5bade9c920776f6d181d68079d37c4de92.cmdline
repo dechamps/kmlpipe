@@ -1,0 +1,1 @@
+'https://api.nestoria.co.uk/api' '--get' '--data' 'action=search_listings' '--data' 'encoding=xml' '--data' 'page=1' '--data' 'some_nestoria_parameter=value' '--data' 'radius=51.53326,-0.126,0.5mi'

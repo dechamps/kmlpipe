@@ -1,0 +1,79 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+output_prefix=''
+max_pages=1
+
+kmlpipe_usage_define <<EOF
+For each zone in the zones file provided on standard input, fetches property
+listings from Nestoria using the zone coordinates and radius. Merges the results
+into a single KML folder on standard output. Equivalent to running
+search-listings, merge-documents and merge-folders on each zone.
+
+Any parameters after -- are passed down to search-listings.
+
+Example:
+
+$ search-listings-zones -- -- \\
+	--max-pages 3 -- \\
+	--data 'listing_type=buy' --data 'price_max=1000000' \\
+	--data 'number_of_results=50 < zones.kml'
+EOF
+
+input_zones_file=''
+while :
+do
+        kmlpipe_args_pop_or_error argument
+        case "$argument" in
+                --) break;;
+                *) kmlpipe_usage_error;;
+        esac
+done
+additional_args=("${kmlpipe_args_stack[@]}")
+[[ "${#additional_args[@]}" -gt 0 ]] || kmlpipe_usage_error
+
+kmlpipe_create_tmpdir
+
+zone_count=0
+while read -r zone_id longlat radius_miles
+do
+	if [[ -z "$zone_id" ]]
+	then
+		kmlpipe_error 'missing zone place ID in zone file'
+	fi
+	if [[ -z "$longlat" ]]
+	then
+		kmlpipe_error "missing coordinates for $zone_id in zone file"
+	fi
+	if [[ -z "$radius_miles" ]]
+	then
+		kmlpipe_error "missing miles radius for $zone_id in zone file"
+	fi
+
+	longitude="${longlat%,*}"
+	latitude="${longlat#*,}"
+
+	kmlpipe_info "Fetching listings in $zone_id ($longlat $radius_miles miles)"
+	"$kmlpipe_script_dir/search-listings" "${additional_args[@]}" \
+		--data "radius=$latitude,$longitude,${radius_miles}mi" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s "new-folder-name=Nestoria Listings for zone $zone_id" \
+		> "$kmlpipe_tmpdir/nestoria-listings.zone$zone_count.kml"
+
+	zone_count="$(( zone_count + 1 ))"
+done < <(kmlpipe_xmlstarlet sel \
+	-N 'kml=http://www.opengis.net/kml/2.2' -N 'kmlpipe=http://edechamps.fr/kmlpipe' --template \
+		--match '/kml:kml/kml:Document/kml:Folder/kml:Placemark' \
+		--value-of 'kmlpipe:Place/@place-id' --output ' ' --value-of 'kml:Point/kml:coordinates' --output ' ' --value-of 'kmlpipe:Radius/@miles' --nl
+)
+
+kmlpipe_info "Done fetching listings for $zone_count zones"
+
+if [[ "$zone_count" -eq 0 ]]
+then
+	kmlpipe_error 'no zones fetched'
+fi
+
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/nestoria-listings.zone"*'.kml' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
+kmlpipe_output_xml
