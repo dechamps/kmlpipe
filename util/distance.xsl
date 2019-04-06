@@ -9,6 +9,8 @@
 	<xsl:param name="distances-file" />
 	<xsl:variable name="distances-document" select="document($distances-file)" />
 	<xsl:param name="link-set-name" />
+	<xsl:key name="place-id" match="/kml:kml/kml:Document/kml:Folder/kml:Placemark" use="kmlpipe:Place/@place-id" />
+	<xsl:key name="distance-from-coordinates" match="/Distances/Distance" use="concat(@source, ' ', @destination)" />
 
 	<xsl:variable name="link-sets" select="/kml:kml/kml:Document/kml:Folder/kml:Placemark/kmlpipe:LinkSet[@name = $link-set-name]" />
 	<xsl:variable name="links" select="$link-sets/kmlpipe:Link" />
@@ -24,9 +26,6 @@
 		<xsl:if test="not($link-sets)">
 			<xsl:message terminate="yes">ERROR: could not find any Link Sets named "<xsl:value-of select="$link-set-name" />"</xsl:message>
 		</xsl:if>
-		<xsl:if test="count($links) != count($distances)">
-			<xsl:message terminate="yes">ERROR: input contains <xsl:value-of select="count($links)" /> links under name "<xsl:value-of select="$link-set-name" />", but distances file contains <xsl:value-of select="count($distances)" /> distances</xsl:message>
-		</xsl:if>
 
 		<xsl:apply-templates select="@*|node()" />
 	</xsl:template>
@@ -36,15 +35,31 @@
 			<xsl:apply-templates select="@*|node()" />
 
 			<xsl:if test="../@name = $link-set-name">
-				<!-- TODO: this is O(N²). -->
-				<xsl:variable name="offset" select="count(preceding::kmlpipe:Link[../@name = $link-set-name]) + 1" />
-				<xsl:variable name="distance-meters" select="$distances[$offset]/@meters" />
-				<xsl:if test="not($distance-meters)">
-					<xsl:message terminate="yes">ERROR: unable to find distance for Link #<xsl:value-of select="$offset" /></xsl:message>
+				<xsl:variable name="source-coordinates" select="../../kml:Point/kml:coordinates" />
+				<xsl:if test="not($source-coordinates)">
+					<xsl:message terminate="yes">ERROR: place "<xsl:value-of select="../../kml:name" />" (place ID "<xsl:value-of select="../../kmlpipe:Place/@place-id" />") doesn't have Point coordinates</xsl:message>
 				</xsl:if>
-				<kmlpipe:Distance>
-					<xsl:attribute name="meters"><xsl:value-of select="$distance-meters" /></xsl:attribute>
-				</kmlpipe:Distance>
+
+				<xsl:variable name="destination" select="key('place-id', @place-id)" />
+				<xsl:if test="not($destination)">
+					<xsl:message terminate="yes">ERROR: Link refers to unknown Place ID "<xsl:value-of select="@place-id" />"</xsl:message>
+				</xsl:if>
+
+				<xsl:variable name="destination-coordinates" select="$destination/kml:Point/kml:coordinates" />
+					<xsl:if test="not($destination-coordinates)">
+					<xsl:message terminate="yes">ERROR: place "<xsl:value-of select="$destination/kml:name" />" (place ID "<xsl:value-of select="$destination/kmlpipe:Place/@place-id" />") doesn't have Point coordinates</xsl:message>
+				</xsl:if>
+
+				<xsl:for-each select="$distances-document">
+					<xsl:variable name="distance-meters" select="key('distance-from-coordinates', concat($source-coordinates, ' ', $destination-coordinates))/@meters" />
+					<xsl:if test="not($distance-meters)">
+						<xsl:message terminate="yes">ERROR: unable to find distance for source coordinates <xsl:value-of select="$source-coordinates" /> and destination coordinates <xsl:value-of select="$destination-coordinates" /></xsl:message>
+					</xsl:if>
+
+					<kmlpipe:Distance>
+						<xsl:attribute name="meters"><xsl:value-of select="$distance-meters" /></xsl:attribute>
+					</kmlpipe:Distance>
+				</xsl:for-each>
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>

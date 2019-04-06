@@ -32,15 +32,15 @@ distances_file="$kmlpipe_tmpdir/distances.xml"
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/link-lnglat.xsl" -s link-set-name="$link_set_name" "$input_file" |
 while read -r source_coordinates destination_coordinates
 do
-	echo "lnglat_distance($source_coordinates,$destination_coordinates)"
+	echo "\"$source_coordinates $destination_coordinates \"; lnglat_distance($source_coordinates,$destination_coordinates)"
 done |
-bc --mathlib "$kmlpipe_dir/lib/lib.bc" |
+BC_LINE_LENGTH=0 bc --mathlib "$kmlpipe_dir/lib/lib.bc" |
 {
 	echo '<?xml version="1.0" encoding="UTF-8"?>'
 	echo '<Distances>'
-	while read -r distance_meters
+	while read -r source_coordinates destination_coordinates distance_meters
 	do
-		echo "<Distance meters='$distance_meters' />"
+		echo "<Distance source='$source_coordinates' destination='$destination_coordinates' meters='$distance_meters' />"
 	done
 	echo '</Distances>'
 } > "$distances_file"
