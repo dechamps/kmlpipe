@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+	<Document>
+		<Folder>
+			<name>edechamps Home Hunt Test Zones</name>
+			<!-- TODO: this is a small testing set. Extend this. -->
+			<Placemark>
+				<kmlpipe:Place place-id="zone:oldstreet" />
+				<Point><coordinates>-0.087527,51.525710</coordinates></Point>
+				<kmlpipe:Radius miles="1" />
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Place place-id="zone:stratford" />
+				<Point><coordinates>-0.008730,51.544833</coordinates></Point>
+				<kmlpipe:Radius miles="1" />
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

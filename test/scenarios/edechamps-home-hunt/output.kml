@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <kml:Document>
+    <kml:Folder>
+      <kml:name>Nestoria Listings for zone zone:pancras</kml:name>
+      <kmlpipe:Renamed from="Nestoria Listings"/>
+      <kmlpipe:Renamed from="Nestoria Listings Page 1"/>
+      <kmlpipe:Renamed from="Nestoria Listings Page"/>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/pancras1"/>
+        <kml:name/>
+        <kml:description>https://www.nestoria.co.uk/detail/pancras1/title/foo</kml:description>
+        <kml:Point>
+          <kml:coordinates>-0.128269,51.536374</kml:coordinates>
+        </kml:Point>
+        <kmlpipe:Nestoria>
+          <listings lister_url="https://www.nestoria.co.uk/detail/pancras1/title/foo" latitude="51.536374" longitude="-0.128269"/>
+        </kmlpipe:Nestoria>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/pancras2"/>
+        <kml:name/>
+        <kml:description>https://www.nestoria.co.uk/detail/pancras2/title/foo</kml:description>
+        <kml:Point>
+          <kml:coordinates>-0.122405,51.531300</kml:coordinates>
+        </kml:Point>
+        <kmlpipe:Nestoria>
+          <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo" latitude="51.531300" longitude="-0.122405"/>
+        </kmlpipe:Nestoria>
+      </kml:Placemark>
+      <kmlpipe:Nestoria>
+        <opt>
+          <response application_response_code="100" total_pages="1" total_results="2">
+    
+    
+  </response>
+          <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+        </opt>
+      </kmlpipe:Nestoria>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/stratford1"/>
+        <kml:name/>
+        <kml:description>https://www.nestoria.co.uk/detail/stratford1/title/foo</kml:description>
+        <kml:Point>
+          <kml:coordinates>-0.005149,51.546282</kml:coordinates>
+        </kml:Point>
+        <kmlpipe:Nestoria>
+          <listings lister_url="https://www.nestoria.co.uk/detail/stratford1/title/foo" latitude="51.546282" longitude="-0.005149"/>
+        </kmlpipe:Nestoria>
+        <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
+      </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/stratford2"/>
+        <kml:name/>
+        <kml:description>https://www.nestoria.co.uk/detail/stratford2/title/foo</kml:description>
+        <kml:Point>
+          <kml:coordinates>-0.003415,51.537300</kml:coordinates>
+        </kml:Point>
+        <kmlpipe:Nestoria>
+          <listings lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo" latitude="51.537300" longitude="-0.003415"/>
+        </kmlpipe:Nestoria>
+        <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
+      </kml:Placemark>
+      <kmlpipe:MergedFolder>
+        <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
+        <kmlpipe:Renamed from="Nestoria Listings"/>
+        <kmlpipe:Renamed from="Nestoria Listings Page 1"/>
+        <kmlpipe:Renamed from="Nestoria Listings Page"/>
+        <kmlpipe:Nestoria>
+          <opt>
+            <response application_response_code="100" application_response_text="" total_pages="1" total_results="2">
+    
+    
+  </response>
+            <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+          </opt>
+        </kmlpipe:Nestoria>
+        <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+      </kmlpipe:MergedFolder>
+    </kml:Folder>
+  </kml:Document>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml:kml>
+      <kml:Document>
+        <kml:Folder>
+          <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
+        </kml:Folder>
+      </kml:Document>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+    </kml:kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</kml:kml>

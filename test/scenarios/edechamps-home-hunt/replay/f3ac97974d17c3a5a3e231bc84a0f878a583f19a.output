@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opt>
+	<response application_response_code="100" total_pages="1" total_results="2">
+		<listings lister_url="https://www.nestoria.co.uk/detail/pancras1/title/foo" latitude="51.536374" longitude="-0.128269" />
+		<listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo" latitude="51.531300" longitude="-0.122405" />
+	</response>
+</opt>

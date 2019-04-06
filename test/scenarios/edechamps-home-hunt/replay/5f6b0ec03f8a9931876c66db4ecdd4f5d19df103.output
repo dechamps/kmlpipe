@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opt>
+	<response application_response_code="100" application_response_text="" total_pages="1" total_results="2">
+		<listings lister_url="https://www.nestoria.co.uk/detail/stratford1/title/foo" latitude="51.546282" longitude="-0.005149" />
+		<listings lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo" latitude="51.537300" longitude="-0.003415" />
+	</response>
+</opt>
