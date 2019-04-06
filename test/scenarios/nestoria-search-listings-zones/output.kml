@@ -2,7 +2,8 @@
 <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
   <kml:Document>
     <kml:Folder>
-      <kml:name>Nestoria Listings for zone zone:pancras</kml:name>
+      <kml:name>Nestoria Listings</kml:name>
+      <kmlpipe:Renamed from="Nestoria Listings for zone zone:pancras"/>
       <kmlpipe:Renamed from="Nestoria Listings"/>
       <kmlpipe:Renamed from="Nestoria Listings Page 1"/>
       <kmlpipe:Renamed from="Nestoria Listings Page"/>

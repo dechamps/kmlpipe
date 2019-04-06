@@ -76,4 +76,5 @@ fi
 
 "$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/nestoria-listings.zone"*'.kml' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Nestoria Listings' |
 kmlpipe_output_xml
