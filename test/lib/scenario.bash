@@ -43,3 +43,5 @@ kmlpipe_check_golden_xml() {
 
 kmlpipe_create_tmpdir
 
+export KMLPIPE_FETCH_HERMETIC='test'
+

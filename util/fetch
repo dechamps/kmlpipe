@@ -5,22 +5,20 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 kmlpipe_usage_define <<EOF
 Fetches a URL using curl.
 
-Recognizes the following environment variables:
-
-  KMLPIPE_FETCH_WRITE_DIR:
-    If set, the command line and output will be logged to the specified
-    directory, in files named after a hash of the command line. The directory
-    can then be used with KMLPIPE_FETCH_REPLAY_DIR. Note that multiple
-    invocations with the exact same command line will overwrite each other.
+Recognizes the following environment variables, which are mostly useful for
+testing:
 
   KMLPIPE_FETCH_REPLAY_DIR:
-    If set, this command will never actually run curl. Instead, it will try to
-    find a matching command line inside the specified directory (see above) and
-    then return the corresponding output. If the command line cannot be found,
-    fails.
+    If set, this command will try to find files named after a hash of the
+    command line in the specified directory. If found, the corresponding output
+    is returned instead of running curl. If not found, curl is run and its
+    output is stored in this directory. Note that multiple invocations with the
+    exact same command line will overwrite each other.
 
-KMLPIPE_FETCH_WRITE_DIR and KMLPIPE_FETCH_REPLAY_DIR are useful to run tests
-deterministically, hermetically and without using external services.
+  KMLPIPE_FETCH_HERMETIC:
+    If set, this command will refuse to run curl. The only way to make this
+    command succeed in this mode is to provide a KMLPIPE_FETCH_REPLAY_DIR that
+    contains files matching the command line.
 
 Any parameters after -- are passed down to curl.
 EOF
@@ -36,7 +34,7 @@ done
 additional_curl_args=("${kmlpipe_args_stack[@]}")
 [[ "${#additional_curl_args[@]}" -gt 0 ]] || kmlpipe_usage_error
 
-if [[ -n "${KMLPIPE_FETCH_REPLAY_DIR-}" || -n "${KMLPIPE_FETCH_WRITE_DIR-}" ]]
+if [[ -n "${KMLPIPE_FETCH_REPLAY_DIR-}" ]]
 then
 	request_string="${additional_curl_args[@]@Q}"
 	read -r request_hash dummy < <(echo "$request_string" | sha1sum)
@@ -44,28 +42,33 @@ then
 	then
 		kmlpipe_error "unable to compute request hash for: $request_string"
 	fi
-	request_string_filename="$request_hash.cmdline"
-	request_output_filename="$request_hash.output"
-fi
+	request_string_file="$KMLPIPE_FETCH_REPLAY_DIR/$request_hash.cmdline"
+	request_output_file="$KMLPIPE_FETCH_REPLAY_DIR/$request_hash.output"
 
-if [[ -n "${KMLPIPE_FETCH_REPLAY_DIR-}" ]]
-then
-	request_string_file="$KMLPIPE_FETCH_REPLAY_DIR/$request_string_filename"
-	request_output_file="$KMLPIPE_FETCH_REPLAY_DIR/$request_output_filename"
 	if ! [[ -e "$request_string_file" ]]
 	then
-		kmlpipe_error "cannot find replay request file '$request_string_file' for: $request_string"
-	fi
-	if ! echo "$request_string" | cmp "$request_string_file"
+		error_message="cannot find replay request file '$request_string_file' for: $request_string"
+		if [[ -n "${KMLPIPE_FETCH_HERMETIC-}" ]]
+		then
+			kmlpipe_error "$error_message"
+		else
+			kmlpipe_info "$error_message"
+		fi
+	elif ! echo "$request_string" | cmp "$request_string_file"
 	then
 		kmlpipe_error "replay request file '$request_string_file' doesn't match request: $request_string"
-	fi
-	if ! [[ -e "$request_output_file" ]]
+	elif ! [[ -e "$request_output_file" ]]
 	then
 		kmlpipe_error "cannot find replay output file '$request_output_file' for: $request_string"
+	else
+		cat "$request_output_file"
+		exit 0
 	fi
-	cat "$request_output_file"
-	exit 0
+fi
+
+if [[ -n "${KMLPIPE_FETCH_HERMETIC-}" ]]
+then
+	kmlpipe_error "cannot fetch remotely in hermetic mode (did you mean to use KMLPIPE_FETCH_REPLAY_DIR?)"
 fi
 
 curl_command=(kmlpipe_cmd_verbose curl --user-agent 'kmlpipe')
@@ -77,12 +80,10 @@ else
 fi
 curl_command+=("${additional_curl_args[@]}")
 
-if [[ -z "${KMLPIPE_FETCH_WRITE_DIR-}" ]]
+if [[ -z "${KMLPIPE_FETCH_REPLAY_DIR-}" ]]
 then
 	"${curl_command[@]}"
 else
-	request_string_file="$KMLPIPE_FETCH_WRITE_DIR/$request_string_filename"
-	request_output_file="$KMLPIPE_FETCH_WRITE_DIR/$request_output_filename"
 	echo "$request_string" > "$request_string_file.new"
 	"${curl_command[@]}" | tee --output-error=exit-nopipe -- "$request_output_file.new"
 	mv "$request_output_file.new" "$request_output_file"
