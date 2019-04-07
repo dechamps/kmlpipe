@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address>Chroma Mansions, 11 Penny Brookes St, London E20 1BN, UK</origin_address>
+ <destination_address>Six Pancras Square, 6 Pancras Rd, Kings Cross, London N1C 4AG, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>795</value>
+    <text>13 mins</text>
+   </duration>
+   <distance>
+    <value>9871</value>
+    <text>9.9 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

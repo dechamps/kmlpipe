@@ -4,6 +4,8 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 input_zones_file=''
 input_workplace_file=''
+google_key=''
+cache_directory=''
 listing_type=''
 price_max=''
 max_listings_pages_per_zone=''
@@ -17,6 +19,12 @@ Runs the Edechamps Home Hunt Pipeline.
 
   --input-workplace-file FILE (required)
     KML file describing the workplace (commute destination).
+
+  --google-key KEY (required)
+    Google API Key.
+
+  --cache-directory DIR
+    Reusable cache directory (e.g. for distance calculations).
 
   --listing-type TYPE
     Nestoria listing type (e.g. 'buy').
@@ -46,6 +54,8 @@ do
 	case "$argument" in
 		--input-zones-file) kmlpipe_args_pop_or_error input_zones_file;;
 		--input-workplace-file) kmlpipe_args_pop_or_error input_workplace_file;;
+		--google-key) kmlpipe_args_pop_or_error google_key;;
+		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
 		--listing-type) kmlpipe_args_pop_or_error listing_type;;
 		--price-max) kmlpipe_args_pop_or_error price_max;;
 		--max-listings-pages-per-zone) kmlpipe_args_pop_or_error max_listings_pages_per_zone;;
@@ -56,6 +66,7 @@ do
 done
 [[ -n "$input_zones_file" ]] || kmlpipe_usage_error
 [[ -n "$input_workplace_file" ]] || kmlpipe_usage_error
+[[ -n "$google_key" ]] || kmlpipe_usage_error
 kmlpipe_args_end
 
 kmlpipe_create_tmpdir
@@ -84,11 +95,23 @@ fi
 "$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" > "$kmlpipe_tmpdir/listings.kml"
 "$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$input_workplace_file" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s "source-folder-name=Nestoria Listings" -s "destination-folder-name=Workplace"  -s 'link-set-name=Workplace' > "$kmlpipe_tmpdir/listings-with-workplace.kml"
-"$kmlpipe_dir/util/distance" --link-set-name 'Workplace' -- "$kmlpipe_tmpdir/listings-with-workplace.kml" |
+
+commute_distance_cache_args=()
+if [[ -n "$cache_directory" ]]
+then
+	commute_distance_cache_directory="$cache_directory/commute_distance"
+	if ! [[ -d "$commute_distance_cache_directory" ]]
+	then
+		mkdir "$commute_distance_cache_directory"
+	fi
+	commute_distance_cache_args+=(--cache-directory "$commute_distance_cache_directory")
+fi
+# TODO: use a consistent transit time of day
+"$kmlpipe_dir/google/distance" --link-set-name 'Workplace' "${commute_distance_cache_args[@]}" --input-file "$kmlpipe_tmpdir/listings-with-workplace.kml" -- \
+	--data "key=$google_key" --data 'mode=transit' |
 kmlpipe_output_xml
 
 # TODO: deal with duplicate listings (either from Nestoria pagination inconsistencies, or from overlapping zones).
-# TODO: compute commute time.
 # TODO: compute distance to closest supermarket.
 # TODO: implement a property scoring system.
 # TODO: implement a property blacklisting mechanism.

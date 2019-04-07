@@ -4,6 +4,7 @@ source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
 KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/edechamps-home-hunt/run" \
 	--input-zones-file "$kmlpipe_script_dir/zones.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" \
+	--google-key TEST_GOOGLE_KEY \
 	--listing-type buy --price-max 1000000 \
 	--max-listings-pages-per-zone 1 --max-listings-per-page 5 \
 	> "$kmlpipe_tmpdir/output.kml"

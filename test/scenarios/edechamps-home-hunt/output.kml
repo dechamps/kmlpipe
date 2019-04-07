@@ -19,7 +19,26 @@
         </kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
-            <kmlpipe:Distance meters="379.98045890332717476000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>Regent's Canal Towpath, Kings Cross, London N1C, UK</origin_address>
+                <destination_address>Six Pancras Square, 6 Pancras Rd, Kings Cross, London N1C 4AG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>403</value>
+                      <text>7 mins</text>
+                    </duration>
+                    <distance>
+                      <value>566</value>
+                      <text>0.6 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </kml:Placemark>
@@ -35,7 +54,26 @@
         </kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
-            <kmlpipe:Distance meters="330.88952845401646518000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>18 York Way, Kings Cross, London N1 9AA, UK</origin_address>
+                <destination_address>Six Pancras Square, 6 Pancras Rd, Kings Cross, London N1C 4AG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>453</value>
+                      <text>8 mins</text>
+                    </duration>
+                    <distance>
+                      <value>559</value>
+                      <text>0.6 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </kml:Placemark>
@@ -61,7 +99,26 @@
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
-            <kmlpipe:Distance meters="8482.74463252649528298000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>Chroma Mansions, 11 Penny Brookes St, London E20 1BN, UK</origin_address>
+                <destination_address>Six Pancras Square, 6 Pancras Rd, Kings Cross, London N1C 4AG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>795</value>
+                      <text>13 mins</text>
+                    </duration>
+                    <distance>
+                      <value>9871</value>
+                      <text>9.9 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </kml:Placemark>
@@ -78,7 +135,26 @@
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
-            <kmlpipe:Distance meters="8490.91348032709619494000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>236-252 High St, London E15 2JA, UK</origin_address>
+                <destination_address>Six Pancras Square, 6 Pancras Rd, Kings Cross, London N1C 4AG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>1470</value>
+                      <text>25 mins</text>
+                    </duration>
+                    <distance>
+                      <value>10768</value>
+                      <text>10.8 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </kml:Placemark>
