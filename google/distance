@@ -14,6 +14,9 @@ Any parameters after -- are passed down to curl.
   --link-set-name NAME (required)
     Only process the Link Sets bearing the specified name.
 
+  --cache-directory DIR
+    Use the specified directory as a source/destination result cache.
+
 Example:
 
 $ distance --input-file input.kml --link-set-name foo -- \
@@ -22,12 +25,14 @@ EOF
 
 input_file=''
 link_set_name=''
+cache_directory=''
 while :
 do
 	kmlpipe_args_pop_or_error argument
 	case "$argument" in
 		--input-file) kmlpipe_args_pop_or_error input_file;;
 		--link-set-name) kmlpipe_args_pop_or_error link_set_name;;
+		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
 		--) break;;
 		*) kmlpipe_usage_error;;
 	esac
@@ -55,7 +60,13 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-lnglat.xsl" -s link-set-name="$lin
 		destination_longitude="${destination_longlat%,*}"
 		destination_latitude="${destination_longlat#*,}"
 
-		"$kmlpipe_dir/util/fetch" -- --get 'https://maps.googleapis.com/maps/api/distancematrix/xml' \
+		cache_cmd_prefix=()
+		if [[ -n "$cache_directory" ]]
+		then
+			cache_cmd_prefix=("$kmlpipe_dir/util/cache" --cache-file "$cache_directory/kmlpipe_google_distance:$source_longlat:$destination_longlat" --)
+		fi
+
+		"${cache_cmd_prefix[@]}" "$kmlpipe_dir/util/fetch" -- --get 'https://maps.googleapis.com/maps/api/distancematrix/xml' \
 			--data "origins=$source_latitude,$source_longitude" --data "destinations=$destination_latitude,$destination_longitude" "${additional_curl_args[@]}" |
 		{ kmlpipe_xmlstarlet fo --omit-decl || true; } # https://bugs.debian.org/926598
 

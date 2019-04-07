@@ -1,0 +1,41 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+kmlpipe_usage_define <<EOF
+Runs the specified command, saving the standard output to a file. If the file
+already exists, the command is not run and the file is dumped to the stnadard
+output instead. This is primarily useful to cache results of expensive
+computation (in particular remote API calls).
+
+  --cache-file FILE
+    Path to the cache file.
+EOF
+
+cache_file=''
+while :
+do
+        kmlpipe_args_pop_or_error argument
+        case "$argument" in
+		--cache-file) kmlpipe_args_pop_or_error cache_file;;
+                --) break;;
+                *) kmlpipe_usage_error;;
+        esac
+done
+cmd=("${kmlpipe_args_stack[@]}")
+[[ "${#cmd[@]}" -gt 0 ]] || kmlpipe_usage_error
+
+if [[ -e "$cache_file" ]]
+then
+	cat "$cache_file"
+	exit 0
+fi
+
+if ! "${cmd[@]}" | tee --output-error=exit-nopipe -- "$cache_file.cache_new"
+then
+	exit_code="$?"
+	rm "$cache_file.cache_new"
+	exit "$exit_code"
+fi
+
+mv "$cache_file.cache_new" "$cache_file"
