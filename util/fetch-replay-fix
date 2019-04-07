@@ -1,0 +1,36 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+kmlpipe_usage_define <<EOF
+Fixes fetch replay files.
+
+Scans the specified directory for fetch replay files, and renames any files
+whose name does not match the hash of the command line. Useful when making
+manual changes to fetch replay command lines.
+EOF
+
+while :
+do
+        kmlpipe_args_pop_or_error argument
+        case "$argument" in
+                --) break;;
+                *) kmlpipe_usage_error;;
+        esac
+done
+kmlpipe_args_pop_or_error replay_directory
+kmlpipe_args_end
+
+sha1sum "$replay_directory"/*.cmdline |
+while read -r cmdline_hash cmdline_file
+do
+	basename="${cmdline_file%.cmdline}"
+	current_hash="${basename##*/}"
+	if [[ "$cmdline_hash" = "$current_hash" ]]
+	then
+		continue
+	fi
+
+	mv --verbose --no-clobber -- "$basename.cmdline" "$replay_directory/$cmdline_hash.cmdline"
+	mv --verbose --no-clobber -- "$basename.output" "$replay_directory/$cmdline_hash.output"
+done
