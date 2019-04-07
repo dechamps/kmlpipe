@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<Document>
+	<Folder>
+		<Placemark>
+			<name>Buckingham Palace</name>
+			<kmlpipe:Place place-id="buckingham" />
+			<Point><coordinates>-0.14189,51.501364</coordinates></Point>
+			<kmlpipe:LinkSet name="Link Set">
+				<kmlpipe:Link place-id="shard" />
+			</kmlpipe:LinkSet>
+		</Placemark>
+		<Placemark>
+			<name>The Shard</name>
+			<kmlpipe:Place place-id="shard" />
+			<Point><coordinates>-0.08649999999999999,51.50449999999999</coordinates></Point>
+			<kmlpipe:LinkSet name="Link Set">
+				<kmlpipe:Link place-id="stpauls" />
+			</kmlpipe:LinkSet>
+			<kmlpipe:LinkSet name="Another Link Set">
+				<kmlpipe:Link place-id="shard" />
+			</kmlpipe:LinkSet>
+		</Placemark>
+		<Placemark>
+			<name>St. Paul's Cathedral</name>
+			<kmlpipe:Place place-id="stpauls" />
+			<Point><coordinates>-0.0983506,51.5138453</coordinates></Point>
+			<kmlpipe:LinkSet name="Link Set">
+				<kmlpipe:Link place-id="buckingham" />
+				<kmlpipe:Link place-id="shard" />
+				<kmlpipe:Link place-id="stpauls" />
+			</kmlpipe:LinkSet>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

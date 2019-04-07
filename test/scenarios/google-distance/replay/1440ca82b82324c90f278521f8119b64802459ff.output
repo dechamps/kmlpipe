@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address></origin_address>
+ <destination_address>32 London Bridge St, London SE1 9SG, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>960</value>
+    <text>16 mins</text>
+   </duration>
+   <distance>
+    <value>1765</value>
+    <text>1.8 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

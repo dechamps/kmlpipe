@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address></origin_address>
+ <destination_address>Unnamed Road, London SW1A 1AA, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>1470</value>
+    <text>25 mins</text>
+   </duration>
+   <distance>
+    <value>4773</value>
+    <text>4.8 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

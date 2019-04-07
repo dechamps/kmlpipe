@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address></origin_address>
+ <destination_address>1 Paternoster Row, London EC4M 7DX, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>1093</value>
+    <text>18 mins</text>
+   </duration>
+   <distance>
+    <value>1822</value>
+    <text>1.8 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

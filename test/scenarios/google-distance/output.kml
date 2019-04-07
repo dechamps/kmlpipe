@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <Placemark>
+        <name>Buckingham Palace</name>
+        <kmlpipe:Place place-id="buckingham"/>
+        <Point>
+          <coordinates>-0.14189,51.501364</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="shard">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <status>OK</status>
+                <origin_address/>
+                <destination_address>32 London Bridge St, London SE1 9SG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>1186</value>
+                      <text>20 mins</text>
+                    </duration>
+                    <distance>
+                      <value>5245</value>
+                      <text>5.2 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <name>The Shard</name>
+        <kmlpipe:Place place-id="shard"/>
+        <Point>
+          <coordinates>-0.08649999999999999,51.50449999999999</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="stpauls">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <status>OK</status>
+                <origin_address/>
+                <destination_address>1 Paternoster Row, London EC4M 7DX, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>1093</value>
+                      <text>18 mins</text>
+                    </duration>
+                    <distance>
+                      <value>1822</value>
+                      <text>1.8 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Another Link Set">
+          <kmlpipe:Link place-id="shard"/>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <name>St. Paul's Cathedral</name>
+        <kmlpipe:Place place-id="stpauls"/>
+        <Point>
+          <coordinates>-0.0983506,51.5138453</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="buckingham">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <status>OK</status>
+                <origin_address/>
+                <destination_address>Unnamed Road, London SW1A 1AA, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>1470</value>
+                      <text>25 mins</text>
+                    </duration>
+                    <distance>
+                      <value>4773</value>
+                      <text>4.8 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+          <kmlpipe:Link place-id="shard">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <status>OK</status>
+                <origin_address/>
+                <destination_address>32 London Bridge St, London SE1 9SG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>960</value>
+                      <text>16 mins</text>
+                    </duration>
+                    <distance>
+                      <value>1765</value>
+                      <text>1.8 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+          <kmlpipe:Link place-id="stpauls">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <status>OK</status>
+                <origin_address/>
+                <destination_address>1 Paternoster Row, London EC4M 7DX, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>0</value>
+                      <text>1 min</text>
+                    </duration>
+                    <distance>
+                      <value>0</value>
+                      <text>1 m</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+    </Folder>
+  </Document>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</kml>

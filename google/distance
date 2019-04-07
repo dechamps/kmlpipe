@@ -1,0 +1,67 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+kmlpipe_usage_define <<EOF
+For each Link from the selected Link Sets, gets distance information using
+the Google Maps Distance Matrix API. The result is added to the Link element.
+
+Any parameters after -- are passed down to curl.
+
+  --input-file FILE (required)
+    Path to the input KML file.
+
+  --link-set-name NAME (required)
+    Only process the Link Sets bearing the specified name.
+
+Example:
+
+$ distance --input-file input.kml --link-set-name foo -- \
+	--data 'key=GOOGLE_API_KEY' --data 'mode=transit' --data 'departure_time=1554710400'
+EOF
+
+input_file=''
+link_set_name=''
+while :
+do
+	kmlpipe_args_pop_or_error argument
+	case "$argument" in
+		--input-file) kmlpipe_args_pop_or_error input_file;;
+		--link-set-name) kmlpipe_args_pop_or_error link_set_name;;
+		--) break;;
+		*) kmlpipe_usage_error;;
+	esac
+done
+[[ -n "$input_file" ]] || kmlpipe_usage_error
+[[ -n "$link_set_name" ]] || kmlpipe_usage_error
+additional_curl_args=("${kmlpipe_args_stack[@]}")
+[[ "${#additional_curl_args[@]}" -gt 0 ]] || kmlpipe_usage_error
+
+kmlpipe_create_tmpdir
+
+distances_file="$kmlpipe_tmpdir/distances.xml"
+
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-lnglat.xsl" -s link-set-name="$link_set_name" "$input_file" |
+{
+	echo '<?xml version="1.0" encoding="UTF-8"?>'
+	echo '<Distances>'
+	while read -r source_longlat destination_longlat
+	do
+		kmlpipe_info "Calling Google Distance Matrix API to resolve distance between $source_longlat and $destination_longlat"
+		echo "<GoogleDistance source='$source_longlat' destination='$destination_longlat'>"
+
+		source_longitude="${source_longlat%,*}"
+		source_latitude="${source_longlat#*,}"
+		destination_longitude="${destination_longlat%,*}"
+		destination_latitude="${destination_longlat#*,}"
+
+		"$kmlpipe_dir/util/fetch" -- --get 'https://maps.googleapis.com/maps/api/distancematrix/xml' \
+			--data "origins=$source_latitude,$source_longitude" --data "destinations=$destination_latitude,$destination_longitude" "${additional_curl_args[@]}" |
+		{ kmlpipe_xmlstarlet fo --omit-decl || true; } # https://bugs.debian.org/926598
+
+		echo '</GoogleDistance>'
+	done
+	echo '</Distances>'
+} > "$distances_file"
+
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/distance.xsl" -s "distances-file=$distances_file" -s link-set-name="$link_set_name" "$input_file" | kmlpipe_output_xml
