@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address>252 High St, London E15 2JB, UK</origin_address>
+ <destination_address>Craven House, 133 Kingsway, Holborn, London WC2B 6PA, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>7271</value>
+    <text>2 hours 1 min</text>
+   </duration>
+   <distance>
+    <value>9545</value>
+    <text>9.5 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

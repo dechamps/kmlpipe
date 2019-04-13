@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Supermarkets</name>
+      <Placemark>
+        <kmlpipe:Place place-id="supermarket1"/>
+        <name>Supermarket 1</name>
+        <Point>
+          <coordinates>-0.12065,51.51742</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="supermarket2"/>
+        <name>Supermarket 2</name>
+        <Point>
+          <coordinates>-0.13143,51.51743</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

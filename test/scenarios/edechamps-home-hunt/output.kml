@@ -41,6 +41,31 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link place-id="supermarket2">
+            <kmlpipe:Distance meters="2117.79686319253788692000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>1 Lewis Cubitt Walk, Kings Cross, London N1C 4BX, UK</origin_address>
+                <destination_address>256 A400, Fitzrovia, London W1T 1BG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>2263</value>
+                      <text>38 mins</text>
+                    </duration>
+                    <distance>
+                      <value>2934</value>
+                      <text>2.9 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/pancras2"/>
@@ -69,6 +94,31 @@
                     <distance>
                       <value>559</value>
                       <text>0.6 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link place-id="supermarket1">
+            <kmlpipe:Distance meters="1548.15410631518370944000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>18 York Way, Kings Cross, London N1 9AA, UK</origin_address>
+                <destination_address>Craven House, 133 Kingsway, Holborn, London WC2B 6PA, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>1657</value>
+                      <text>28 mins</text>
+                    </duration>
+                    <distance>
+                      <value>2092</value>
+                      <text>2.1 km</text>
                     </distance>
                   </element>
                 </row>
@@ -121,6 +171,31 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link place-id="supermarket1">
+            <kmlpipe:Distance meters="8609.92820022849644776000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>Chroma Mansions, 11 Penny Brookes St, East Village, London E20 1BN, UK</origin_address>
+                <destination_address>Craven House, 133 Kingsway, Holborn, London WC2B 6PA, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>7304</value>
+                      <text>2 hours 2 mins</text>
+                    </duration>
+                    <distance>
+                      <value>9606</value>
+                      <text>9.6 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/stratford2"/>
@@ -157,6 +232,31 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link place-id="supermarket1">
+            <kmlpipe:Distance meters="8406.05159936325877294000"/>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse>
+                <status>OK</status>
+                <origin_address>252 High St, London E15 2JB, UK</origin_address>
+                <destination_address>Craven House, 133 Kingsway, Holborn, London WC2B 6PA, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>7271</value>
+                      <text>2 hours 1 min</text>
+                    </duration>
+                    <distance>
+                      <value>9545</value>
+                      <text>9.5 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kmlpipe:MergedFolder>
         <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
@@ -186,6 +286,24 @@
       </Placemark>
       <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
     </Folder>
+    <Folder xmlns="http://www.opengis.net/kml/2.2">
+      <name>Supermarkets</name>
+      <Placemark>
+        <kmlpipe:Place place-id="supermarket1"/>
+        <name>Supermarket 1</name>
+        <Point>
+          <coordinates>-0.12065,51.51742</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="supermarket2"/>
+        <name>Supermarket 2</name>
+        <Point>
+          <coordinates>-0.13143,51.51743</coordinates>
+        </Point>
+      </Placemark>
+      <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+    </Folder>
   </kml:Document>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
@@ -211,6 +329,17 @@
       </Document>
     </kml>
   </kmlpipe:MergedDocument>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Document>
+        <Folder>
+          <name>Supermarkets</name>
+        </Folder>
+      </Document>
+    </kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>

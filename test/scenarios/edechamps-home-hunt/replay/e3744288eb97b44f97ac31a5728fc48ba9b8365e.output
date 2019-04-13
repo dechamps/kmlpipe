@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address>1 Lewis Cubitt Walk, Kings Cross, London N1C 4BX, UK</origin_address>
+ <destination_address>256 A400, Fitzrovia, London W1T 1BG, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>2263</value>
+    <text>38 mins</text>
+   </duration>
+   <distance>
+    <value>2934</value>
+    <text>2.9 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

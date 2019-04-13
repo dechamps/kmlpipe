@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address>Chroma Mansions, 11 Penny Brookes St, East Village, London E20 1BN, UK</origin_address>
+ <destination_address>Craven House, 133 Kingsway, Holborn, London WC2B 6PA, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>7304</value>
+    <text>2 hours 2 mins</text>
+   </duration>
+   <distance>
+    <value>9606</value>
+    <text>9.6 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

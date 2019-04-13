@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address>236-252 High St, London E15 2JA, UK</origin_address>
+ <destination_address>Six Pancras Square, 6 Pancras Rd, Kings Cross, London N1C 4AG, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>1753</value>
+    <text>29 mins</text>
+   </duration>
+   <distance>
+    <value>10895</value>
+    <text>10.9 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>

@@ -1,0 +1,1 @@
+'--get' 'https://maps.googleapis.com/maps/api/distancematrix/xml' '--data' 'origins=51.536374,-0.128269' '--data' 'destinations=51.51743,-0.13143' '--data' 'key=TEST_GOOGLE_KEY' '--data' 'mode=walking'

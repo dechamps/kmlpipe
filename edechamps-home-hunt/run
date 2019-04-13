@@ -4,6 +4,7 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 input_zones_file=''
 input_workplace_file=''
+input_supermarkets_file=''
 google_key=''
 cache_directory=''
 listing_type=''
@@ -19,6 +20,9 @@ Runs the Edechamps Home Hunt Pipeline.
 
   --input-workplace-file FILE (required)
     KML file describing the workplace (commute destination).
+
+  --input-supermarkets-file FILE (required)
+    KML file containing a list of supermarkets.
 
   --google-key KEY (required)
     Google API Key.
@@ -54,6 +58,7 @@ do
 	case "$argument" in
 		--input-zones-file) kmlpipe_args_pop_or_error input_zones_file;;
 		--input-workplace-file) kmlpipe_args_pop_or_error input_workplace_file;;
+		--input-supermarkets-file) kmlpipe_args_pop_or_error input_supermarkets_file;;
 		--google-key) kmlpipe_args_pop_or_error google_key;;
 		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
 		--listing-type) kmlpipe_args_pop_or_error listing_type;;
@@ -66,6 +71,7 @@ do
 done
 [[ -n "$input_zones_file" ]] || kmlpipe_usage_error
 [[ -n "$input_workplace_file" ]] || kmlpipe_usage_error
+[[ -n "$input_supermarkets_file" ]] || kmlpipe_usage_error
 [[ -n "$google_key" ]] || kmlpipe_usage_error
 kmlpipe_args_end
 
@@ -91,28 +97,54 @@ then
 	search_listings_curl_args+=(--data "number_of_results=$max_listings_per_page")
 fi
 
-# TODO: adjust Nestoria sorting parameters.
-"$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" > "$kmlpipe_tmpdir/listings.kml"
-"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$input_workplace_file" |
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s "source-folder-name=Nestoria Listings" -s "destination-folder-name=Workplace"  -s 'link-set-name=Workplace' > "$kmlpipe_tmpdir/listings-with-workplace.kml"
+current_file_index=0
+advance_file() {
+	current_file="$kmlpipe_tmpdir/$current_file_index.kml"
+	current_file_index="$(( current_file_index + 1 ))"
+	next_file="$kmlpipe_tmpdir/$current_file_index.kml"
+}
 
-commute_distance_cache_args=()
-if [[ -n "$cache_directory" ]]
-then
-	commute_distance_cache_directory="$cache_directory/commute_distance"
-	if ! [[ -d "$commute_distance_cache_directory" ]]
+# TODO: adjust Nestoria sorting parameters.
+advance_file
+"$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" > "$next_file"
+
+google_distance_cached() {
+	local name="$1"
+	shift
+	if [[ -n "$cache_directory" ]]
 	then
-		mkdir "$commute_distance_cache_directory"
+		local cache_directory="$cache_directory/google_distance_$name"
+		if ! [[ -d "$cache_directory" ]]
+		then
+			mkdir "$cache_directory"
+		fi
+		"$kmlpipe_dir/google/distance" --cache-directory "$cache_directory" "$@"
 	fi
-	commute_distance_cache_args+=(--cache-directory "$commute_distance_cache_directory")
-fi
+	"$kmlpipe_dir/google/distance" "$@"
+
+}
+
+advance_file
+"$kmlpipe_dir/util/merge-documents" -- "$current_file" "$input_workplace_file" "$input_supermarkets_file" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Workplace'  -s 'link-set-name=Workplace' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Supermarkets'  -s 'link-set-name=Supermarkets' > "$next_file"
+
+advance_file
+"$kmlpipe_dir/util/distance" --link-set-name 'Supermarkets' -- "$current_file" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance-sort.xsl" -s 'link-set-name=Supermarkets' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Supermarkets' -s 'keep-first=1' > "$next_file"
+
 # TODO: use a consistent transit time of day
-"$kmlpipe_dir/google/distance" --link-set-name 'Workplace' "${commute_distance_cache_args[@]}" --input-file "$kmlpipe_tmpdir/listings-with-workplace.kml" -- \
-	--data "key=$google_key" --data 'mode=transit' |
+advance_file
+google_distance_cached workplace --link-set-name 'Workplace' --input-file "$current_file" -- \
+	--data "key=$google_key" --data 'mode=transit' > "$next_file"
+
+advance_file
+google_distance_cached supermarket --link-set-name 'Supermarkets' --input-file "$current_file" -- \
+	--data "key=$google_key" --data 'mode=walking' |
 kmlpipe_output_xml
 
 # TODO: deal with duplicate listings (either from Nestoria pagination inconsistencies, or from overlapping zones).
-# TODO: compute distance to closest supermarket.
 # TODO: implement a property scoring system.
 # TODO: implement a property blacklisting mechanism.
 # TODO: adjust the resulting KML for pretty presentation.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DistanceMatrixResponse>
+ <status>OK</status>
+ <origin_address>18 York Way, Kings Cross, London N1 9AA, UK</origin_address>
+ <destination_address>Craven House, 133 Kingsway, Holborn, London WC2B 6PA, UK</destination_address>
+ <row>
+  <element>
+   <status>OK</status>
+   <duration>
+    <value>1657</value>
+    <text>28 mins</text>
+   </duration>
+   <distance>
+    <value>2092</value>
+    <text>2.1 km</text>
+   </distance>
+  </element>
+ </row>
+</DistanceMatrixResponse>
