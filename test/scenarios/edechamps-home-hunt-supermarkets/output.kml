@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Supermarkets</kml:name>
+      <kmlpipe:Renamed from="Sainsbury's Store Locator Results Page"/>
+      <Placemark>
+        <name>Holborn LL</name>
+        <description>Type: null</description>
+        <Point>
+          <coordinates>-0.12065,51.51742</coordinates>
+        </Point>
+        <kmlpipe:Sainsburys>{"location":{"lat":"51.51742","lon":"-0.12065"},"name":"Holborn LL"}</kmlpipe:Sainsburys>
+        <address>null null null</address>
+      </Placemark>
+      <Placemark>
+        <name>Tottenham Crt Rd LL</name>
+        <description>Type: null</description>
+        <Point>
+          <coordinates>-0.13143,51.51743</coordinates>
+        </Point>
+        <kmlpipe:Sainsburys>{"location":{"lat":"51.51743","lon":"-0.13143"},"name":"Tottenham Crt Rd LL"}</kmlpipe:Sainsburys>
+        <address>null null null</address>
+      </Placemark>
+      <kmlpipe:Sainsburys>{}</kmlpipe:Sainsburys>
+      <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
+        <kmlpipe:Place place-id="google-place-id:ChIJpx9o_1UbdkgRqRE9UDY-8_c"/>
+        <kml:name>Waitrose &amp; Partners</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5221979,-0.0920554&amp;query_place_id=ChIJpx9o_1UbdkgRqRE9UDY-8_c</kml:description>
+        <kml:Point>
+          <coordinates xmlns="">-0.0920554,51.5221979</coordinates>
+        </kml:Point>
+        <kml:address>Cherry Tree Walk Centre, London</kml:address>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Waitrose &amp; Partners</name>
+            <vicinity>Cherry Tree Walk Centre, London</vicinity>
+            <geometry>
+              <location>
+                <lat>51.5221979</lat>
+                <lng>-0.0920554</lng>
+              </location>
+            </geometry>
+            <place_id>ChIJpx9o_1UbdkgRqRE9UDY-8_c</place_id>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Google Place Search Results"/>
+      </kml:Placemark>
+      <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
+        <kmlpipe:Place place-id="google-place-id:ChIJI7h_SjcbdkgRfEULSbBs0iY"/>
+        <kml:name>Little Waitrose &amp; Partners</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5174679,-0.1186429&amp;query_place_id=ChIJI7h_SjcbdkgRfEULSbBs0iY</kml:description>
+        <kml:Point>
+          <coordinates xmlns="">-0.1186429,51.5174679</coordinates>
+        </kml:Point>
+        <kml:address>246 High Holborn, London</kml:address>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Little Waitrose &amp; Partners</name>
+            <vicinity>246 High Holborn, London</vicinity>
+            <geometry>
+              <location>
+                <lat>51.5174679</lat>
+                <lng>-0.1186429</lng>
+              </location>
+            </geometry>
+            <place_id>ChIJI7h_SjcbdkgRfEULSbBs0iY</place_id>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Google Place Search Results"/>
+      </kml:Placemark>
+      <kmlpipe:MergedFolder>
+        <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Google Place Search Results</kml:name>
+        <kmlpipe:Renamed from="Google Place Search Results Page 1"/>
+        <kmlpipe:Renamed from="Google Place Search Response Page"/>
+        <kmlpipe:Google>
+          <PlaceSearchResponse xmlns="">
+            <status>OK</status>
+            <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+          </PlaceSearchResponse>
+        </kmlpipe:Google>
+        <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+      </kmlpipe:MergedFolder>
+    </Folder>
+  </Document>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2">
+      <kml:Document>
+        <kml:Folder>
+          <kml:name>Google Place Search Results</kml:name>
+        </kml:Folder>
+      </kml:Document>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+    </kml:kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+</kml>

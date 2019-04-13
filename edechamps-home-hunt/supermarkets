@@ -1,0 +1,66 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+sainsburys_file=''
+google_key=''
+cache_directory=''
+
+kmlpipe_usage_define <<EOF
+Fetches supermarket data for the Edechamps Home Hunt Pipeline.
+
+  --sainsburys_file FILE
+    Extract Sainsbury's supermarket locations from JSON file.
+    (See sainsburys/README.md for details)
+
+  --google-key KEY (required)
+    Google API Key.
+
+  --cache-directory DIR
+    Reusable cache directory (e.g. for Google searches).
+
+EOF
+
+while :
+do
+	if ! kmlpipe_args_pop argument
+	then
+		break
+	fi
+	case "$argument" in
+		--sainsburys-file) kmlpipe_args_pop_or_error sainsburys_file;;
+		--google-key) kmlpipe_args_pop_or_error google_key;;
+		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
+		--) break;;
+		*) kmlpipe_usage_error;;
+	esac
+done
+[[ -n "$google_key" ]] || kmlpipe_usage_error
+kmlpipe_args_end
+
+kmlpipe_create_tmpdir
+
+kmlpipe_jq --raw-output --from-file "$kmlpipe_dir/sainsburys/sainsburys-map.jq" -- "$sainsburys_file" > "$kmlpipe_tmpdir/sainsburys.kml"
+
+cache() {
+	local name="$1"
+	shift
+	if [[ -z "$cache_directory" ]]
+	then
+		"$@"
+	else
+		"$kmlpipe_dir/util/cache" --cache-file "$cache_directory/kmlpipe_edechamps_supermarkets:$name" -- "$@"
+	fi
+}
+
+# Search for Waitroses in a 10 km radius around London.
+# TODO: filter out Little Waitroses.
+cache waitrose "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
+	--data 'location=51.540,-0.093' --data 'radius=10000' --data 'keyword=waitrose' \
+	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' > "$kmlpipe_tmpdir/waitrose.kml"
+
+# TODO: search for large Tescos.
+
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/sainsburys.kml" "$kmlpipe_tmpdir/waitrose.kml" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Supermarkets'

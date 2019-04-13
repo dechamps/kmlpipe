@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlaceSearchResponse>
+ <status>OK</status>
+ <result>
+  <name>Waitrose &amp; Partners</name>
+  <vicinity>Cherry Tree Walk Centre, London</vicinity>
+  <geometry>
+   <location>
+    <lat>51.5221979</lat>
+    <lng>-0.0920554</lng>
+   </location>
+  </geometry>
+  <place_id>ChIJpx9o_1UbdkgRqRE9UDY-8_c</place_id>
+ </result>
+ <result>
+  <name>Little Waitrose &amp; Partners</name>
+  <vicinity>246 High Holborn, London</vicinity>
+  <geometry>
+   <location>
+    <lat>51.5174679</lat>
+    <lng>-0.1186429</lng>
+   </location>
+  </geometry>
+  <place_id>ChIJI7h_SjcbdkgRfEULSbBs0iY</place_id>
+ </result>
+</PlaceSearchResponse>
