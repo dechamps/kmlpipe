@@ -1,6 +1,7 @@
 {
   "results": [
     {
+      "code": 4242,
       "name": "Test Sainsburys 1", 
       "contact": {
         "address1": "Test Address 1", 
@@ -15,6 +16,7 @@
       "other_key": "other_value1"
     }, 
     {
+      "code": 1337,
       "name": "Test Sainsburys 2", 
       "contact": {
         "address1": "Test Address 2", 

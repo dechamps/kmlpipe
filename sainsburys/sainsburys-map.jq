@@ -11,6 +11,7 @@
 "<name>Sainsbury's Store Locator Results Page</name>" +
 (.results | map(
 	"<Placemark>" +
+	@html "<kmlpipe:Place place-id='sainsburys:\(.code)'/>" +
 	@html "<name>\(.name)</name>" +
 	@html "<description>Type: \(.store_type)</description>" +
 	@html "<Point><coordinates>\(.location.lon),\(.location.lat)</coordinates></Point>" +

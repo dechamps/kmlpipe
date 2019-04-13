@@ -5,6 +5,7 @@
       <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Supermarkets</kml:name>
       <kmlpipe:Renamed from="Sainsbury's Store Locator Results Page"/>
       <Placemark>
+        <kmlpipe:Place place-id="sainsburys:null"/>
         <name>Holborn LL</name>
         <description>Type: null</description>
         <Point>
@@ -14,6 +15,7 @@
         <address>null null null</address>
       </Placemark>
       <Placemark>
+        <kmlpipe:Place place-id="sainsburys:null"/>
         <name>Tottenham Crt Rd LL</name>
         <description>Type: null</description>
         <Point>
