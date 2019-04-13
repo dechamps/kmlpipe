@@ -149,9 +149,13 @@ kmlpipe_jq() {
 }
 
 kmlpipe_output_xml() {
-	local now
+	local now args
 	printf -v now '%(%Y-%m-%dT%H:%M:%S%z)T' -1
-	kmlpipe_xmlstarlet tr "$kmlpipe_dir/lib/command.xsl" -s "name=${0@Q}" -s "args=${kmlpipe_args[*]@Q}" -s "time=$now" -s "run-id=$kmlpipe_run_id" "$@" |
+	args="${kmlpipe_args[*]@Q}"
+	# xmlstarlet tr does not support string arguments that contain both quotes and single-quotes. *facepalm*
+	# To work around this limitation, we replace " with '$'\042'', which should hopefully preserve the intent of the command line.
+	args="${args//\"/\'\$\'\\042\'\'}"
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/lib/command.xsl" -s "name=${0@Q}" -s "args=$args" -s "time=$now" -s "run-id=$kmlpipe_run_id" "$@" |
 	kmlpipe_xmlstarlet fo --nsclean "$@"
 }
  
