@@ -53,11 +53,11 @@ cache() {
 	fi
 }
 
-# Search for Waitroses in a 10 km radius around London.
-# TODO: filter out Little Waitroses.
+# Search for Waitroses in a 10 km radius around London. Filter the Little Waitroses out.
 cache waitrose "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
 	--data 'location=51.540,-0.093' --data 'radius=10000' --data 'keyword=waitrose' \
-	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' > "$kmlpipe_tmpdir/waitrose.kml"
+	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-keyword.xsl" -s 'keyword=Little' > "$kmlpipe_tmpdir/waitrose.kml"
 
 # TODO: search for large Tescos.
 
