@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<Document>
+	<Folder>
+		<Placemark>
+			<name>keyword</name>
+		</Placemark>
+		<Placemark>
+			<name>KEYWORD</name>
+		</Placemark>
+		<Placemark>
+			<name>foo keyword bar</name>
+		</Placemark>
+		<Placemark>
+			<name>foo keyword</name>
+		</Placemark>
+		<Placemark>
+			<name>keyword bar</name>
+		</Placemark>
+		<Placemark>
+			<name>akeyword</name>
+		</Placemark>
+		<Placemark>
+			<name>keywordb</name>
+		</Placemark>
+		<Placemark>
+			<name>no match</name>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

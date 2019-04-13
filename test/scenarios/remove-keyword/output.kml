@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <kmlpipe:RemovedFromKeyword keyword="keyword">
+        <Placemark>
+          <name>keyword</name>
+        </Placemark>
+      </kmlpipe:RemovedFromKeyword>
+      <Placemark>
+        <name>KEYWORD</name>
+      </Placemark>
+      <kmlpipe:RemovedFromKeyword keyword="keyword">
+        <Placemark>
+          <name>foo keyword bar</name>
+        </Placemark>
+      </kmlpipe:RemovedFromKeyword>
+      <kmlpipe:RemovedFromKeyword keyword="keyword">
+        <Placemark>
+          <name>foo keyword</name>
+        </Placemark>
+      </kmlpipe:RemovedFromKeyword>
+      <kmlpipe:RemovedFromKeyword keyword="keyword">
+        <Placemark>
+          <name>keyword bar</name>
+        </Placemark>
+      </kmlpipe:RemovedFromKeyword>
+      <Placemark>
+        <name>akeyword</name>
+      </Placemark>
+      <Placemark>
+        <name>keywordb</name>
+      </Placemark>
+      <Placemark>
+        <name>no match</name>
+      </Placemark>
+    </Folder>
+    <kmlpipe:RemovedKeyword keyword="keyword"/>
+  </Document>
+</kml>
