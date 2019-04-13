@@ -57,10 +57,16 @@ cache() {
 cache waitrose "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
 	--data 'location=51.540,-0.093' --data 'radius=10000' --data 'keyword=waitrose' \
 	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Waitrose supermarkets' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-keyword.xsl" -s 'keyword=Little' > "$kmlpipe_tmpdir/waitrose.kml"
 
-# TODO: search for large Tescos.
+# Search for Tesco Superstores in a 10 km radius around London.
+# TODO: Google seems to also return some spurious Tesco Metros in that search.
+cache tesco "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
+	--data 'location=51.540,-0.093' --data 'radius=10000' --data-urlencode 'keyword="Tesco Superstore"' \
+	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Tesco supermarkets' > "$kmlpipe_tmpdir/tesco.kml"
 
-"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/sainsburys.kml" "$kmlpipe_tmpdir/waitrose.kml" |
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/sainsburys.kml" "$kmlpipe_tmpdir/waitrose.kml" "$kmlpipe_tmpdir/tesco.kml" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Supermarkets'

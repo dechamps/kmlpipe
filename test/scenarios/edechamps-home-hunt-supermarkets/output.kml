@@ -44,10 +44,11 @@
             <place_id>ChIJpx9o_1UbdkgRqRE9UDY-8_c</place_id>
           </result>
         </kmlpipe:Google>
-        <kmlpipe:MergedFolder name="Google Place Search Results"/>
+        <kmlpipe:MergedFolder name="Waitrose supermarkets"/>
       </kml:Placemark>
       <kmlpipe:MergedFolder>
-        <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Google Place Search Results</kml:name>
+        <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Waitrose supermarkets</kml:name>
+        <kmlpipe:Renamed from="Google Place Search Results"/>
         <kmlpipe:Renamed from="Google Place Search Results Page 1"/>
         <kmlpipe:Renamed from="Google Place Search Response Page"/>
         <kmlpipe:RemovedFromKeyword keyword="Little">
@@ -82,15 +83,85 @@
         </kmlpipe:Google>
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
+      <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
+        <kmlpipe:Place place-id="google-place-id:ChIJl_PNVfscdkgRTAyzuMin3HM"/>
+        <kml:name>Tesco Superstore</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5468880,-0.0526980&amp;query_place_id=ChIJl_PNVfscdkgRTAyzuMin3HM</kml:description>
+        <kml:Point>
+          <coordinates xmlns="">-0.0526980,51.5468880</coordinates>
+        </kml:Point>
+        <kml:address>55 Morning Ln, London</kml:address>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Tesco Superstore</name>
+            <vicinity>55 Morning Ln, London</vicinity>
+            <geometry>
+              <location>
+                <lat>51.5468880</lat>
+                <lng>-0.0526980</lng>
+              </location>
+            </geometry>
+            <place_id>ChIJl_PNVfscdkgRTAyzuMin3HM</place_id>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Tesco supermarkets"/>
+      </kml:Placemark>
+      <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
+        <kmlpipe:Place place-id="google-place-id:ChIJZzp-xpIPdkgRtZn4TIVXxnk"/>
+        <kml:name>Tesco Superstore</kml:name>
+        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.4929371,-0.2018937&amp;query_place_id=ChIJZzp-xpIPdkgRtZn4TIVXxnk</kml:description>
+        <kml:Point>
+          <coordinates xmlns="">-0.2018937,51.4929371</coordinates>
+        </kml:Point>
+        <kml:address>W Cromwell Rd, London</kml:address>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Tesco Superstore</name>
+            <vicinity>W Cromwell Rd, London</vicinity>
+            <geometry>
+              <location>
+                <lat>51.4929371</lat>
+                <lng>-0.2018937</lng>
+              </location>
+            </geometry>
+            <place_id>ChIJZzp-xpIPdkgRtZn4TIVXxnk</place_id>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Tesco supermarkets"/>
+      </kml:Placemark>
+      <kmlpipe:MergedFolder>
+        <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Tesco supermarkets</kml:name>
+        <kmlpipe:Renamed from="Google Place Search Results"/>
+        <kmlpipe:Renamed from="Google Place Search Results Page 1"/>
+        <kmlpipe:Renamed from="Google Place Search Response Page"/>
+        <kmlpipe:Google>
+          <PlaceSearchResponse xmlns="">
+            <status>OK</status>
+            <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+          </PlaceSearchResponse>
+        </kmlpipe:Google>
+        <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+      </kmlpipe:MergedFolder>
     </Folder>
   </Document>
   <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
     <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2">
       <kml:Document>
         <kml:Folder>
-          <kml:name>Google Place Search Results</kml:name>
+          <kml:name>Waitrose supermarkets</kml:name>
         </kml:Folder>
         <kmlpipe:RemovedKeyword keyword="Little"/>
+      </kml:Document>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+    </kml:kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2">
+      <kml:Document>
+        <kml:Folder>
+          <kml:name>Tesco supermarkets</kml:name>
+        </kml:Folder>
       </kml:Document>
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
