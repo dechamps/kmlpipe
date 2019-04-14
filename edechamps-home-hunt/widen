@@ -75,9 +75,9 @@ google_distance_cached() {
 			mkdir "$cache_directory"
 		fi
 		"$kmlpipe_dir/google/distance" --cache-directory "$cache_directory" "$@"
+	else
+		"$kmlpipe_dir/google/distance" "$@"
 	fi
-	"$kmlpipe_dir/google/distance" "$@"
-
 }
 
 advance_stage link-folders
