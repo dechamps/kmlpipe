@@ -71,6 +71,7 @@ then
 	search_listings_curl_args+=(--data "number_of_results=$max_listings_per_page")
 fi
 
+# We deduplicate the output to avoid issues with overlapping zones and inconsistent Nestoria pagination.
 # TODO: adjust Nestoria sorting parameters.
-# TODO: deal with duplicate listings (either from Nestoria pagination inconsistencies, or from overlapping zones).
-exec "$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file"
+"$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-duplicates.xsl"

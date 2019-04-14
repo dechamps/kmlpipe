@@ -62,6 +62,20 @@
         </kmlpipe:Nestoria>
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
       </kml:Placemark>
+      <kmlpipe:RemovedDuplicate>
+        <kml:Placemark>
+          <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/pancras2"/>
+          <kml:name/>
+          <kml:description>https://www.nestoria.co.uk/detail/pancras2/title/duplicate-should-be-removed</kml:description>
+          <kml:Point>
+            <kml:coordinates>42,-42</kml:coordinates>
+          </kml:Point>
+          <kmlpipe:Nestoria>
+            <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/duplicate-should-be-removed" latitude="-42" longitude="42"/>
+          </kmlpipe:Nestoria>
+          <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
+        </kml:Placemark>
+      </kmlpipe:RemovedDuplicate>
       <kmlpipe:MergedFolder>
         <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
         <kmlpipe:Renamed from="Nestoria Listings"/>
@@ -72,6 +86,7 @@
             <response application_response_code="100" application_response_text="" total_pages="1" total_results="2">
     
     
+    
   </response>
             <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
           </opt>
@@ -79,6 +94,7 @@
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
     </kml:Folder>
+    <kmlpipe:RemovedDuplicates/>
   </kml:Document>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
