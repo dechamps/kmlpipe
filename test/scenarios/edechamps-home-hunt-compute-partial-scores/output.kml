@@ -22,7 +22,24 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>42</value>
+                      <text>supermarket 42 pancras1</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-13.4333333333333" description="Commute: 7 mins"/>
+        <kmlpipe:PartialScore value="-2.1" description="Supermarket: supermarket 42 pancras1"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
@@ -43,7 +60,24 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>1337</value>
+                      <text>supermarket 1337 pancras2</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-15.1" description="Commute: 8 mins"/>
+        <kmlpipe:PartialScore value="-66.85" description="Supermarket: supermarket 1337 pancras2"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford1"/>
@@ -64,7 +98,24 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>4242</value>
+                      <text>supermarket 4242 stratford1</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-26.5" description="Commute: 13 mins"/>
+        <kmlpipe:PartialScore value="-212.1" description="Supermarket: supermarket 4242 stratford1"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford2"/>
@@ -85,7 +136,24 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets">
+          <kmlpipe:Link>
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>1234</value>
+                      <text>supermarket 1234 stratford2</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-49" description="Commute: 25 mins"/>
+        <kmlpipe:PartialScore value="-61.7" description="Supermarket: supermarket 1234 stratford2"/>
       </Placemark>
     </Folder>
     <Folder>

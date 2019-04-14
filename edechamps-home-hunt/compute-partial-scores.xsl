@@ -2,7 +2,6 @@
 <!--
 	Assigns partial scores to each property based on various criteria, leveraging the annotations from the widening step.
 
-	TODO: take supermarket distance into account.
 	TODO: introduce zone weight and take them into account.
 	TODO: take listings keywords into account.
 -->
@@ -10,9 +9,16 @@
 	<!-- For each additional minute of commute, remove penalty-per-commute-minute points. -->
 	<xsl:param name="penalty-per-commute-minute" />
 
+	<!-- For each additional minute of supermarket walking time, remove penalty-per-supermarket-minute points. -->
+	<xsl:param name="penalty-per-supermarket-minute" />
+
 	<xsl:template match="/">
 		<xsl:if test="not($penalty-per-commute-minute)">
 			<xsl:message terminate="yes">ERROR: penalty-per-commute-minute must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($penalty-per-supermarket-minute)">
+			<xsl:message terminate="yes">ERROR: penalty-per-supermarket-minute must be specified</xsl:message>
 		</xsl:if>
 
 		<xsl:if test="not(/kml:kml/kml:Document)">
@@ -39,10 +45,18 @@
 			<xsl:if test="count($commute-duration/value) != 1">
 				<xsl:message terminate="yes">ERROR: invalid commute distance information on place ID <xsl:value-of select="$place-id" /></xsl:message>
 			</xsl:if>
-
 			<kmlpipe:PartialScore>
 				<xsl:attribute name="value"><xsl:value-of select="-($commute-duration/value div 60) * $penalty-per-commute-minute" /></xsl:attribute>
 				<xsl:attribute name="description">Commute: <xsl:value-of select="$commute-duration/text" /></xsl:attribute>
+			</kmlpipe:PartialScore>
+
+			<xsl:variable name="supermarket-duration" select="kmlpipe:LinkSet[@name='Supermarkets']/kmlpipe:Link/kmlpipe:GoogleDistance/DistanceMatrixResponse/row/element/duration" />
+			<xsl:if test="count($commute-duration/value) != 1">
+				<xsl:message terminate="yes">ERROR: invalid supermarket distance information on place ID <xsl:value-of select="$place-id" /></xsl:message>
+			</xsl:if>
+			<kmlpipe:PartialScore>
+				<xsl:attribute name="value"><xsl:value-of select="-($supermarket-duration/value div 60) * $penalty-per-supermarket-minute" /></xsl:attribute>
+				<xsl:attribute name="description">Supermarket: <xsl:value-of select="$supermarket-duration/text" /></xsl:attribute>
 			</kmlpipe:PartialScore>
 		</xsl:copy>
 	</xsl:template>
