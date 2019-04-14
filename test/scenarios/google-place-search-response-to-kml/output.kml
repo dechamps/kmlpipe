@@ -8,7 +8,7 @@
         <kml:name>Test Place 1</kml:name>
         <kml:description>https://www.google.com/maps/search/?api=1&amp;query=1111.2222,3333.4444&amp;query_place_id=test_place_id_1</kml:description>
         <kml:Point>
-          <coordinates>3333.4444,1111.2222</coordinates>
+          <kml:coordinates>3333.4444,1111.2222</kml:coordinates>
         </kml:Point>
         <kml:address>Test Vicinity 1</kml:address>
         <kmlpipe:Google>
@@ -31,7 +31,7 @@
         <kml:name>Test Place 2</kml:name>
         <kml:description>https://www.google.com/maps/search/?api=1&amp;query=5555.6666,7777.8888&amp;query_place_id=test_place_id_2</kml:description>
         <kml:Point>
-          <coordinates>7777.8888,5555.6666</coordinates>
+          <kml:coordinates>7777.8888,5555.6666</kml:coordinates>
         </kml:Point>
         <kml:address>Test Vicinity 2</kml:address>
         <kmlpipe:Google>

@@ -30,7 +30,7 @@
         <kml:name>Waitrose &amp; Partners</kml:name>
         <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5221979,-0.0920554&amp;query_place_id=ChIJpx9o_1UbdkgRqRE9UDY-8_c</kml:description>
         <kml:Point>
-          <coordinates xmlns="">-0.0920554,51.5221979</coordinates>
+          <kml:coordinates>-0.0920554,51.5221979</kml:coordinates>
         </kml:Point>
         <kml:address>Cherry Tree Walk Centre, London</kml:address>
         <kmlpipe:Google>
@@ -59,7 +59,7 @@
             <kml:name>Little Waitrose &amp; Partners</kml:name>
             <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5174679,-0.1186429&amp;query_place_id=ChIJI7h_SjcbdkgRfEULSbBs0iY</kml:description>
             <kml:Point>
-              <coordinates xmlns="">-0.1186429,51.5174679</coordinates>
+              <kml:coordinates>-0.1186429,51.5174679</kml:coordinates>
             </kml:Point>
             <kml:address>246 High Holborn, London</kml:address>
             <kmlpipe:Google>
@@ -90,7 +90,7 @@
         <kml:name>Tesco Superstore</kml:name>
         <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5468880,-0.0526980&amp;query_place_id=ChIJl_PNVfscdkgRTAyzuMin3HM</kml:description>
         <kml:Point>
-          <coordinates xmlns="">-0.0526980,51.5468880</coordinates>
+          <kml:coordinates>-0.0526980,51.5468880</kml:coordinates>
         </kml:Point>
         <kml:address>55 Morning Ln, London</kml:address>
         <kmlpipe:Google>
@@ -113,7 +113,7 @@
         <kml:name>Tesco Superstore</kml:name>
         <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.4929371,-0.2018937&amp;query_place_id=ChIJZzp-xpIPdkgRtZn4TIVXxnk</kml:description>
         <kml:Point>
-          <coordinates xmlns="">-0.2018937,51.4929371</coordinates>
+          <kml:coordinates>-0.2018937,51.4929371</kml:coordinates>
         </kml:Point>
         <kml:address>W Cromwell Rd, London</kml:address>
         <kmlpipe:Google>

@@ -39,7 +39,7 @@
 			</kmlpipe:Place>
 			<kml:name><xsl:value-of select="name" /></kml:name>
 			<kml:description>https://www.google.com/maps/search/?api=1&amp;query=<xsl:value-of select="geometry/location/lat" />,<xsl:value-of select="geometry/location/lng" />&amp;query_place_id=<xsl:value-of select="place_id" /></kml:description>
-			<kml:Point><coordinates><xsl:value-of select="geometry/location/lng" />,<xsl:value-of select="geometry/location/lat" /></coordinates></kml:Point>
+			<kml:Point><kml:coordinates><xsl:value-of select="geometry/location/lng" />,<xsl:value-of select="geometry/location/lat" /></kml:coordinates></kml:Point>
 			<xsl:if test="vicinity">
 				<kml:address><xsl:value-of select="vicinity" /></kml:address>
 			</xsl:if>
