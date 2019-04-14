@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <Placemark>
+        <name>place1</name>
+        <kmlpipe:TotalScore value="0"/>
+      </Placemark>
+      <Placemark>
+        <name>place2</name>
+        <kmlpipe:PartialScore value="2"/>
+        <kmlpipe:TotalScore value="2"/>
+      </Placemark>
+      <Placemark>
+        <name>place3</name>
+        <kmlpipe:PartialScore value="2"/>
+        <kmlpipe:PartialScore value="-1"/>
+        <kmlpipe:TotalScore value="1"/>
+      </Placemark>
+    </Folder>
+    <kmlpipe:ComputedTotalScores/>
+  </Document>
+</kml>
