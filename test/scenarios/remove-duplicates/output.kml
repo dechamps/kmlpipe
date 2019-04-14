@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <Placemark attr1="value1">
+        <kmlpipe:Place place-id="place1"/>
+        <Place1 iattr1="ivalue1"/>
+      </Placemark>
+      <Placemark attr2="value2">
+        <kmlpipe:Place place-id="place2"/>
+        <Place1 iattr2="ivalue2"/>
+      </Placemark>
+      <Placemark attr3="value3">
+        <kmlpipe:Place place-id="place3"/>
+        <Place1 iattr3="ivalue3"/>
+      </Placemark>
+      <kmlpipe:RemovedDuplicate>
+        <Placemark attr4="value4">
+          <kmlpipe:Place place-id="place2"/>
+          <Place1 iattr4="ivalue4"/>
+        </Placemark>
+      </kmlpipe:RemovedDuplicate>
+      <kmlpipe:RemovedDuplicate>
+        <Placemark attr5="value5">
+          <kmlpipe:Place place-id="place2"/>
+          <Place1 iattr5="ivalue5"/>
+        </Placemark>
+      </kmlpipe:RemovedDuplicate>
+      <kmlpipe:RemovedDuplicate>
+        <Placemark attr6="value6">
+          <kmlpipe:Place place-id="place1"/>
+          <Place1 iattr6="ivalue6"/>
+        </Placemark>
+      </kmlpipe:RemovedDuplicate>
+      <Placemark attr7="value7">
+        <kmlpipe:Place place-id="place4"/>
+        <Place1 iattr7="ivalue7"/>
+      </Placemark>
+    </Folder>
+    <kmlpipe:RemovedDuplicates/>
+  </Document>
+</kml>
