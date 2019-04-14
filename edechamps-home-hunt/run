@@ -129,6 +129,7 @@ advance_file
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Workplace'  -s 'link-set-name=Workplace' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Supermarkets'  -s 'link-set-name=Supermarkets' > "$next_file"
 
+# TODO: one issue with only considering the closest supermarket using great-circle distance is that it could reject supermarkets that are better in the walking distance metric (for example, if the "closest" supermarket happens to be on the other side of the Thames). Maybe we should consider the 3 closest supermarkets, for example.
 advance_file
 "$kmlpipe_dir/util/distance" --link-set-name 'Supermarkets' -- "$current_file" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance-sort.xsl" -s 'link-set-name=Supermarkets' |
