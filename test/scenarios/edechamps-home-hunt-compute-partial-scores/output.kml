@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Nestoria Listings</name>
+      <Placemark>
+        <kmlpipe:Place place-id="listings:pancras1"/>
+        <name>pancras1</name>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>403</value>
+                      <text>7 mins</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:PartialScore value="-13.4333333333333" description="Commute: 7 mins"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="listings:pancras2"/>
+        <name>pancras2</name>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>453</value>
+                      <text>8 mins</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:PartialScore value="-15.1" description="Commute: 8 mins"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="listings:stratford1"/>
+        <name>stratford1</name>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>795</value>
+                      <text>13 mins</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:PartialScore value="-26.5" description="Commute: 13 mins"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="listings:stratford2"/>
+        <name>stratford2</name>
+        <kmlpipe:LinkSet name="Workplace">
+          <kmlpipe:Link place-id="workplace">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <row>
+                  <element>
+                    <duration>
+                      <value>1470</value>
+                      <text>25 mins</text>
+                    </duration>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:PartialScore value="-49" description="Commute: 25 mins"/>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Other folder</name>
+      <Placemark>
+        <kmlpipe:Place place-id="unrelated"/>
+        <name>Unrelated</name>
+      </Placemark>
+    </Folder>
+    <kmlpipe:ComputedPartialScores/>
+  </Document>
+</kml>

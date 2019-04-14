@@ -101,6 +101,5 @@ google_distance_cached supermarket --link-set-name 'Supermarkets' --input-file "
 	--data "key=$google_key" --data 'mode=walking' |
 kmlpipe_output_xml
 
-# TODO: implement a property scoring system.
 # TODO: implement a property blacklisting mechanism.
 # TODO: adjust the resulting KML for pretty presentation.
