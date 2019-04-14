@@ -4,6 +4,7 @@ source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/edechamps-home-hunt/compute-partial-scores.xsl" \
 	-s 'penalty-per-commute-minute=2' -s 'penalty-per-supermarket-minute=3' \
+	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" \
 	"$kmlpipe_script_dir/input.kml" > "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
 kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.kml" < "$kmlpipe_tmpdir/output.kml"

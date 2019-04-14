@@ -3,7 +3,6 @@
 	Assigns partial scores to each property based on various criteria, leveraging the annotations from the widening step.
 
 	TODO: introduce zone weight and take them into account.
-	TODO: take listings keywords into account.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
 	<!-- For each additional minute of commute, remove penalty-per-commute-minute points. -->
@@ -12,6 +11,11 @@
 	<!-- For each additional minute of supermarket walking time, remove penalty-per-supermarket-minute points. -->
 	<xsl:param name="penalty-per-supermarket-minute" />
 
+	<!-- Load a keyword list from this file, adjust scores based on their presence. (See test scenario for an example of the syntax.) -->
+	<xsl:param name="keywords-file" />
+
+	<xsl:variable name="keywords" select="document($keywords-file)/Keywords" />
+
 	<xsl:template match="/">
 		<xsl:if test="not($penalty-per-commute-minute)">
 			<xsl:message terminate="yes">ERROR: penalty-per-commute-minute must be specified</xsl:message>
@@ -19,6 +23,10 @@
 
 		<xsl:if test="not($penalty-per-supermarket-minute)">
 			<xsl:message terminate="yes">ERROR: penalty-per-supermarket-minute must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($keywords)">
+			<xsl:message terminate="yes">ERROR: invalid keywords file</xsl:message>
 		</xsl:if>
 
 		<xsl:if test="not(/kml:kml/kml:Document)">
@@ -58,6 +66,20 @@
 				<xsl:attribute name="value"><xsl:value-of select="-($supermarket-duration/value div 60) * $penalty-per-supermarket-minute" /></xsl:attribute>
 				<xsl:attribute name="description">Supermarket: <xsl:value-of select="$supermarket-duration/text" /></xsl:attribute>
 			</kmlpipe:PartialScore>
+
+			<xsl:variable name="nestoria-keywords" select="kmlpipe:Nestoria/listings/@keywords" />
+			<xsl:if test="not($nestoria-keywords)">
+				<xsl:message terminate="yes">ERROR: no Nestoria keywords on place ID <xsl:value-of select="$place-id" /></xsl:message>
+			</xsl:if>
+
+			<xsl:for-each select="$keywords/Keyword">
+				<xsl:if test="contains(concat(', ', $nestoria-keywords, ', '), concat(', ', @word, ', '))">
+					<kmlpipe:PartialScore>
+						<xsl:attribute name="value"><xsl:value-of select="@value" /></xsl:attribute>
+						<xsl:attribute name="description">'<xsl:value-of select="@word" />' keyword</xsl:attribute>
+					</kmlpipe:PartialScore>
+				</xsl:if>
+			</xsl:for-each>
 		</xsl:copy>
 	</xsl:template>
 

@@ -6,6 +6,9 @@
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras1"/>
         <name>pancras1</name>
+        <kmlpipe:Nestoria>
+          <listings xmlns="" keywords="Noop1, Noop2"/>
+        </kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -44,6 +47,9 @@
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
         <name>pancras2</name>
+        <kmlpipe:Nestoria>
+          <listings xmlns="" keywords="Add2"/>
+        </kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -78,10 +84,14 @@
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-15.1" description="Commute: 8 mins"/>
         <kmlpipe:PartialScore value="-66.85" description="Supermarket: supermarket 1337 pancras2"/>
+        <kmlpipe:PartialScore value="2" description="'Add2' keyword"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford1"/>
         <name>stratford1</name>
+        <kmlpipe:Nestoria>
+          <listings xmlns="" keywords="Add2, Remove7"/>
+        </kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -116,10 +126,15 @@
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-26.5" description="Commute: 13 mins"/>
         <kmlpipe:PartialScore value="-212.1" description="Supermarket: supermarket 4242 stratford1"/>
+        <kmlpipe:PartialScore value="2" description="'Add2' keyword"/>
+        <kmlpipe:PartialScore value="-7" description="'Remove7' keyword"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford2"/>
         <name>stratford2</name>
+        <kmlpipe:Nestoria>
+          <listings xmlns="" keywords="Noop1, Add3, Noop2, Remove11, Noop3"/>
+        </kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -154,6 +169,8 @@
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-49" description="Commute: 25 mins"/>
         <kmlpipe:PartialScore value="-61.7" description="Supermarket: supermarket 1234 stratford2"/>
+        <kmlpipe:PartialScore value="3" description="'Add3' keyword"/>
+        <kmlpipe:PartialScore value="-11" description="'Remove11' keyword"/>
       </Placemark>
     </Folder>
     <Folder>

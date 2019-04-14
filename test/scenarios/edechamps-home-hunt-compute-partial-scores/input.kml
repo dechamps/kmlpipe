@@ -6,6 +6,9 @@
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras1"/>
         <name>pancras1</name>
+	<kmlpipe:Nestoria>
+		<listings keywords="Noop1, Noop2" xmlns="" />
+	</kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -42,6 +45,9 @@
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
         <name>pancras2</name>
+	<kmlpipe:Nestoria>
+		<listings keywords="Add2" xmlns="" />
+	</kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -78,6 +84,9 @@
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford1"/>
         <name>stratford1</name>
+	<kmlpipe:Nestoria>
+		<listings keywords="Add2, Remove7" xmlns="" />
+	</kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -114,6 +123,9 @@
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford2"/>
         <name>stratford2</name>
+	<kmlpipe:Nestoria>
+		<listings keywords="Noop1, Add3, Noop2, Remove11, Noop3" xmlns="" />
+	</kmlpipe:Nestoria>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
