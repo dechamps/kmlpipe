@@ -11,7 +11,7 @@
 	<!-- For each additional minute of supermarket walking time, remove penalty-per-supermarket-minute points. -->
 	<xsl:param name="penalty-per-supermarket-minute" />
 
-	<!-- Load a keyword list from this file, adjust scores based on their presence. (See test scenario for an example of the syntax.) -->
+	<!-- Load a keyword list from this file, adjust scores based on their presence. -->
 	<xsl:param name="keywords-file" />
 
 	<xsl:variable name="keywords" select="document($keywords-file)/Keywords" />

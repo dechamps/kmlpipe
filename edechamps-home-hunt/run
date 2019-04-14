@@ -1,0 +1,71 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+google_key=''
+cache_directory=''
+
+kmlpipe_usage_define <<EOF
+Runs the full, end-to-end Edechamps Home Hunt pipeline.
+
+  --google-key KEY (required)
+    Google API Key.
+
+  --cache-directory DIR (required)
+    Reusable cache directory (e.g. for distance calculations).
+EOF
+
+while :
+do
+	if ! kmlpipe_args_pop argument
+	then
+		break
+	fi
+	case "$argument" in
+		--google-key) kmlpipe_args_pop_or_error google_key;;
+		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
+		--) break;;
+		*) kmlpipe_usage_error;;
+	esac
+done
+[[ -n "$google_key" ]] || kmlpipe_usage_error
+[[ -n "$cache_directory" ]] || kmlpipe_usage_error
+kmlpipe_args_end
+
+kmlpipe_create_tmpdir
+
+run_cached() {
+	local step="$1"
+	shift
+	local script="$1"
+	shift
+
+	local step_cache_directory="$cache_directory/$step"
+	if ! [[ -d "$step_cache_directory" ]]
+	then
+		kmlpipe_info "no cache found for step $step, starting from scratch"
+		mkdir "$step_cache_directory"
+	fi
+
+	"$script" --cache-directory "$step_cache_directory" "$@"
+}
+
+run_cached get-supermarkets "$kmlpipe_script_dir/get-supermarkets" \
+	--sainsburys-file "$kmlpipe_dir/sainsburys/sainsburys-london-main-closest25-20180725.json" --google-key "$google_key" \
+	> "$kmlpipe_tmpdir/supermarkets.kml"
+
+# TODO: add a "production mode" that uses the full, final zones file and lifts listings count limits.
+"$kmlpipe_script_dir/get-listings" \
+	--input-zones-file "$kmlpipe_script_dir/zones.kml" \
+	--listing-type buy --price-max 1000000 \
+	--max-listings-pages-per-zone 1 --max-listings-per-page 5 > "$kmlpipe_tmpdir/listings.kml"
+
+run_cached widen "$kmlpipe_script_dir/widen" \
+	--input-listings-file "$kmlpipe_tmpdir/listings.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" --input-supermarkets-file "$kmlpipe_tmpdir/supermarkets.kml" \
+	--google-key "$google_key" |
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-partial-scores.xsl" \
+	-s 'penalty-per-commute-minute=1' -s 'penalty-per-supermarket-minute=2' \
+	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" |
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-total-scores.xsl" |
+kmlpipe_output_xml
+
