@@ -4,6 +4,7 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 sainsburys_file=''
 google_key=''
+cache_directory=''
 
 kmlpipe_usage_define <<EOF
 Fetches supermarket data for the Edechamps Home Hunt Pipeline.
@@ -14,6 +15,9 @@ Fetches supermarket data for the Edechamps Home Hunt Pipeline.
 
   --google-key KEY (required)
     Google API Key.
+
+  --cache-directory DIR
+    Reusable cache directory (e.g. for Google searches).
 
 EOF
 
@@ -26,6 +30,7 @@ do
 	case "$argument" in
 		--sainsburys-file) kmlpipe_args_pop_or_error sainsburys_file;;
 		--google-key) kmlpipe_args_pop_or_error google_key;;
+		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
 		--) break;;
 		*) kmlpipe_usage_error;;
 	esac
@@ -37,8 +42,19 @@ kmlpipe_create_tmpdir
 
 kmlpipe_jq --raw-output --from-file "$kmlpipe_dir/sainsburys/sainsburys-map.jq" -- "$sainsburys_file" > "$kmlpipe_tmpdir/sainsburys.kml"
 
+cache() {
+	local name="$1"
+	shift
+	if [[ -z "$cache_directory" ]]
+	then
+		"$@"
+	else
+		"$kmlpipe_dir/util/cache" --cache-file "$cache_directory/kmlpipe_edechamps_supermarkets:$name" -- "$@"
+	fi
+}
+
 # Search for Waitroses in a 10 km radius around London. Filter the Little Waitroses out.
-"$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
+cache waitrose "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
 	--data 'location=51.540,-0.093' --data 'radius=10000' --data 'keyword=waitrose' \
 	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Waitrose supermarkets' |
@@ -46,7 +62,7 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-keyword.xsl" -s 'keyword=Little'
 
 # Search for Tesco Superstores in a 10 km radius around London.
 # TODO: Google seems to also return some spurious Tesco Metros in that search.
-"$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
+cache tesco "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
 	--data 'location=51.540,-0.093' --data 'radius=10000' --data-urlencode 'keyword="Tesco Superstore"' \
 	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Tesco supermarkets' > "$kmlpipe_tmpdir/tesco.kml"
