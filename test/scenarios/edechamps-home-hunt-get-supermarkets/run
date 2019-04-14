@@ -2,7 +2,7 @@
 
 source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
-KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/edechamps-home-hunt/supermarkets" \
+KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/edechamps-home-hunt/get-supermarkets" \
 	--sainsburys-file "$kmlpipe_script_dir/sainsburys.json" --google-key TEST_GOOGLE_KEY \
 	> "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
