@@ -46,7 +46,8 @@
 			<!-- Barebones description for convenience. Sophisticated presentation is out of scope for this stylesheet. -->
 			<kml:description><xsl:value-of select="@lister_url" /></kml:description>
 
-			<kml:Point><kml:coordinates><xsl:value-of select="@longitude" />,<xsl:value-of select="@latitude" /></kml:coordinates></kml:Point>
+			<!-- The reason why we explicitly convert to a number is because the Nestoria API has the interesting behaviour of returning latitudes and longitudes in *scientific notation* (e.g. 1.23E-4) when the number is very close to zero (such as a London property being very close to the Greenwich Meridian). This tends to confuse the hell out of downstream processing, so we use number() to force decimal notation. -->
+			<kml:Point><kml:coordinates><xsl:value-of select="number(@longitude)" />,<xsl:value-of select="number(@latitude)" /></kml:coordinates></kml:Point>
 
 			<kmlpipe:Nestoria>
 				<xsl:copy>

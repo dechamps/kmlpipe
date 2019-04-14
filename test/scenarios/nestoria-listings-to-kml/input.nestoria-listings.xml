@@ -4,6 +4,10 @@
 		<listings lister_url="https://www.nestoria.co.uk/detail/1/title/foo" title="Place 1" longitude="1" latitude="10" />
 		<listings lister_url="https://www.nestoria.co.uk/detail/2/title/foo" title="Place 2" longitude="2" latitude="20" />
 		<listings lister_url="https://www.nestoria.co.uk/detail/3/title/foo" title="Place 3" longitude="3" latitude="30" />
+
+		<!-- Emulate the fact that the Nestoria API will sometimes return longitude and latitude in scientific notation. -->
+		<listings lister_url="https://www.nestoria.co.uk/detail/weirdlatlng/title/foo" title="Place 3" longitude="1.23E-4" latitude="4.56E-5" />
+
 		<SomeOtherElement attr="value">text</SomeOtherElement>
 	</response>
 </opt>

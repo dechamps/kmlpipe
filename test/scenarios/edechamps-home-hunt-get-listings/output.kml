@@ -23,7 +23,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/pancras2/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>-0.122405,51.531300</kml:coordinates>
+          <kml:coordinates>-0.122405,51.5313</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo" latitude="51.531300" longitude="-0.122405"/>
@@ -55,7 +55,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/stratford2/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>-0.003415,51.537300</kml:coordinates>
+          <kml:coordinates>-0.003415,51.5373</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo" latitude="51.537300" longitude="-0.003415"/>

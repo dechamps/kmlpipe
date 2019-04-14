@@ -36,9 +36,21 @@
           <listings lister_url="https://www.nestoria.co.uk/detail/3/title/foo" title="Place 3" longitude="3" latitude="30"/>
         </kmlpipe:Nestoria>
       </kml:Placemark>
+      <kml:Placemark>
+        <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/weirdlatlng"/>
+        <kml:name>Place 3</kml:name>
+        <kml:description>https://www.nestoria.co.uk/detail/weirdlatlng/title/foo</kml:description>
+        <kml:Point>
+          <kml:coordinates>0.000123,0.0000456</kml:coordinates>
+        </kml:Point>
+        <kmlpipe:Nestoria>
+          <listings lister_url="https://www.nestoria.co.uk/detail/weirdlatlng/title/foo" title="Place 3" longitude="1.23E-4" latitude="4.56E-5"/>
+        </kmlpipe:Nestoria>
+      </kml:Placemark>
       <kmlpipe:Nestoria>
         <opt>
           <response application_response_code="100" application_response_text="test response text" total_pages="2" total_results="6">
+            <!-- Emulate the fact that the Nestoria API will sometimes return longitude and latitude in scientific notation. -->
             <SomeOtherElement attr="value">text</SomeOtherElement>
           </response>
         </opt>

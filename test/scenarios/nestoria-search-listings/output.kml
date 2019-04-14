@@ -10,7 +10,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/1/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/1/title/foo"/>
@@ -21,7 +21,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/2/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/2/title/foo"/>
@@ -41,7 +41,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/3/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/3/title/foo"/>
@@ -53,7 +53,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/4/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/4/title/foo"/>

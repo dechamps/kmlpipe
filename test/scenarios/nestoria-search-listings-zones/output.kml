@@ -12,7 +12,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/pancras1/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/pancras1/title/foo"/>
@@ -23,7 +23,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/pancras2/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo"/>
@@ -43,7 +43,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/stratford1/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/stratford1/title/foo"/>
@@ -55,7 +55,7 @@
         <kml:name/>
         <kml:description>https://www.nestoria.co.uk/detail/stratford2/title/foo</kml:description>
         <kml:Point>
-          <kml:coordinates>,</kml:coordinates>
+          <kml:coordinates>NaN,NaN</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
           <listings lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo"/>
