@@ -74,4 +74,5 @@ fi
 # We deduplicate the output to avoid issues with overlapping zones and inconsistent Nestoria pagination.
 # TODO: adjust Nestoria sorting parameters.
 "$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" |
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-duplicates.xsl"
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-duplicates.xsl" |
+kmlpipe_output_xml

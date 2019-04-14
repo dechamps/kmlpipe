@@ -53,4 +53,5 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=
 
 "$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/sainsburys.kml" "$kmlpipe_tmpdir/waitrose.kml" "$kmlpipe_tmpdir/tesco.kml" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Supermarkets'
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Supermarkets' |
+kmlpipe_output_xml
