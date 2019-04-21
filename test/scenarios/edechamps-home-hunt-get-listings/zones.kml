@@ -2,6 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
 	<Document>
 		<Folder>
+			<name>Zones</name>
 			<Placemark>
 				<kmlpipe:Place place-id="zone:pancras" />
 				<Point><coordinates>-0.126,51.53326</coordinates></Point>

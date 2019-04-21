@@ -1,7 +1,24 @@
 <?xml version="1.0"?>
-<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
-  <kml:Document>
-    <kml:Folder>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Zones</name>
+      <Placemark>
+        <kmlpipe:Place place-id="zone:pancras"/>
+        <Point>
+          <coordinates>-0.126,51.53326</coordinates>
+        </Point>
+        <kmlpipe:Radius miles="0.5"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="zone:stratford"/>
+        <Point>
+          <coordinates>-0.008730,51.544833</coordinates>
+        </Point>
+        <kmlpipe:Radius miles="1"/>
+      </Placemark>
+    </Folder>
+    <kml:Folder xmlns:kml="http://www.opengis.net/kml/2.2">
       <kml:name>Nestoria Listings</kml:name>
       <kmlpipe:Renamed from="Nestoria Listings for zone zone:pancras"/>
       <kmlpipe:Renamed from="Nestoria Listings"/>
@@ -15,8 +32,11 @@
           <kml:coordinates>-0.128269,51.536374</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
-          <listings lister_url="https://www.nestoria.co.uk/detail/pancras1/title/foo" latitude="51.536374" longitude="-0.128269"/>
+          <listings xmlns="" lister_url="https://www.nestoria.co.uk/detail/pancras1/title/foo" latitude="51.536374" longitude="-0.128269"/>
         </kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:pancras"/>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="https://www.nestoria.co.uk/detail/pancras2"/>
@@ -26,11 +46,14 @@
           <kml:coordinates>-0.122405,51.5313</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
-          <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo" latitude="51.531300" longitude="-0.122405"/>
+          <listings xmlns="" lister_url="https://www.nestoria.co.uk/detail/pancras2/title/foo" latitude="51.531300" longitude="-0.122405"/>
         </kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:pancras"/>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kmlpipe:Nestoria>
-        <opt>
+        <opt xmlns="">
           <response application_response_code="100" total_pages="1" total_results="2">
     
     
@@ -46,8 +69,11 @@
           <kml:coordinates>-0.005149,51.546282</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
-          <listings lister_url="https://www.nestoria.co.uk/detail/stratford1/title/foo" latitude="51.546282" longitude="-0.005149"/>
+          <listings xmlns="" lister_url="https://www.nestoria.co.uk/detail/stratford1/title/foo" latitude="51.546282" longitude="-0.005149"/>
         </kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:stratford"/>
+        </kmlpipe:LinkSet>
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
       </kml:Placemark>
       <kml:Placemark>
@@ -58,8 +84,11 @@
           <kml:coordinates>-0.003415,51.5373</kml:coordinates>
         </kml:Point>
         <kmlpipe:Nestoria>
-          <listings lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo" latitude="51.537300" longitude="-0.003415"/>
+          <listings xmlns="" lister_url="https://www.nestoria.co.uk/detail/stratford2/title/foo" latitude="51.537300" longitude="-0.003415"/>
         </kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:stratford"/>
+        </kmlpipe:LinkSet>
         <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
       </kml:Placemark>
       <kmlpipe:RemovedDuplicate>
@@ -71,8 +100,11 @@
             <kml:coordinates>42,-42</kml:coordinates>
           </kml:Point>
           <kmlpipe:Nestoria>
-            <listings lister_url="https://www.nestoria.co.uk/detail/pancras2/title/duplicate-should-be-removed" latitude="-42" longitude="42"/>
+            <listings xmlns="" lister_url="https://www.nestoria.co.uk/detail/pancras2/title/duplicate-should-be-removed" latitude="-42" longitude="42"/>
           </kmlpipe:Nestoria>
+          <kmlpipe:LinkSet name="Nestoria Zone">
+            <kmlpipe:Link place-id="zone:stratford"/>
+          </kmlpipe:LinkSet>
           <kmlpipe:MergedFolder name="Nestoria Listings for zone zone:stratford"/>
         </kml:Placemark>
       </kmlpipe:RemovedDuplicate>
@@ -82,7 +114,7 @@
         <kmlpipe:Renamed from="Nestoria Listings Page 1"/>
         <kmlpipe:Renamed from="Nestoria Listings Page"/>
         <kmlpipe:Nestoria>
-          <opt>
+          <opt xmlns="">
             <response application_response_code="100" application_response_text="" total_pages="1" total_results="2">
     
     
@@ -93,23 +125,34 @@
         </kmlpipe:Nestoria>
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
+      <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
     </kml:Folder>
     <kmlpipe:RemovedDuplicates/>
-  </kml:Document>
-  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
-  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  </Document>
   <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
-    <kml:kml>
+    <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2">
       <kml:Document>
         <kml:Folder>
-          <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
+          <kml:name>Nestoria Listings</kml:name>
         </kml:Folder>
       </kml:Document>
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+      <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+      <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+        <kml:kml>
+          <kml:Document>
+            <kml:Folder>
+              <kml:name>Nestoria Listings for zone zone:stratford</kml:name>
+            </kml:Folder>
+          </kml:Document>
+          <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+          <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+        </kml:kml>
+      </kmlpipe:MergedDocument>
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
     </kml:kml>
   </kmlpipe:MergedDocument>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
-</kml:kml>
+</kml>

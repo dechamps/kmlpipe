@@ -2,7 +2,7 @@
 
 source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
-KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/nestoria/search-listings-zones" -- -- --max-pages 1 -- --data 'some_nestoria_parameter=value' < "$kmlpipe_script_dir/input.kml" > "$kmlpipe_tmpdir/output.kml"
+KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/nestoria/search-listings-zones" --input-zones-file "$kmlpipe_script_dir/input.kml" -- -- --max-pages 1 -- --data 'some_nestoria_parameter=value' > "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
 kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.kml" < "$kmlpipe_tmpdir/output.kml"
 
