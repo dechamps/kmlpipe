@@ -2,6 +2,19 @@
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
   <Document>
     <Folder>
+      <name>Zones</name>
+      <Placemark>
+      	<name>St. Pancras</name>
+        <kmlpipe:Place place-id="zone:pancras"/>
+	<kmlpipe:ScoreBias value="5" />
+      </Placemark>
+      <Placemark>
+      	<name>Stratford</name>
+        <kmlpipe:Place place-id="zone:stratford"/>
+	<kmlpipe:ScoreBias value="-3" />
+      </Placemark>
+    </Folder>
+    <Folder>
       <name>Nestoria Listings</name>
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras1"/>
@@ -9,6 +22,9 @@
 	<kmlpipe:Nestoria>
 		<listings keywords="Noop1, Noop2" xmlns="" />
 	</kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:pancras" />
+	</kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -48,6 +64,9 @@
 	<kmlpipe:Nestoria>
 		<listings keywords="Add2" xmlns="" />
 	</kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:pancras" />
+	</kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -87,6 +106,9 @@
 	<kmlpipe:Nestoria>
 		<listings keywords="Add2, Remove7" xmlns="" />
 	</kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:stratford" />
+	</kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>
@@ -126,6 +148,9 @@
 	<kmlpipe:Nestoria>
 		<listings keywords="Noop1, Add3, Noop2, Remove11, Noop3" xmlns="" />
 	</kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Nestoria Zone">
+          <kmlpipe:Link place-id="zone:stratford" />
+	</kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Workplace">
           <kmlpipe:Link place-id="workplace">
             <kmlpipe:GoogleDistance>

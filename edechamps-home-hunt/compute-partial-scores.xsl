@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
 	Assigns partial scores to each property based on various criteria, leveraging the annotations from the widening step.
-
-	TODO: introduce zone weight and take them into account.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
 	<!-- For each additional minute of commute, remove penalty-per-commute-minute points. -->
@@ -13,6 +11,8 @@
 
 	<!-- Load a keyword list from this file, adjust scores based on their presence. -->
 	<xsl:param name="keywords-file" />
+
+	<xsl:key name="place-by-id" match="/kml:kml/kml:Document/kml:Folder/kml:Placemark" use="kmlpipe:Place/@place-id" />
 
 	<xsl:variable name="keywords" select="document($keywords-file)/Keywords" />
 
@@ -48,6 +48,19 @@
 			<xsl:apply-templates select="@*|node()" />
 
 			<xsl:variable name="place-id" select="kmlpipe:Place/@place-id" />
+
+			<xsl:variable name="zone" select="key('place-by-id', kmlpipe:LinkSet[@name='Nestoria Zone']/kmlpipe:Link/@place-id)" />
+			<xsl:if test="not($zone)">
+				<xsl:message terminate="yes">ERROR: could not find zone for place ID <xsl:value-of select="$place-id" /></xsl:message>
+			</xsl:if>
+			<xsl:variable name="zone-bias" select="$zone/kmlpipe:ScoreBias/@value" />
+			<xsl:if test="not($zone-bias)">
+				<xsl:message terminate="yes">ERROR: could not find zone bias for place ID <xsl:value-of select="$place-id" /></xsl:message>
+			</xsl:if>
+			<kmlpipe:PartialScore>
+				<xsl:attribute name="value"><xsl:value-of select="$zone-bias" /></xsl:attribute>
+				<xsl:attribute name="description">Zone: <xsl:value-of select="$zone/kml:name" /></xsl:attribute>
+			</kmlpipe:PartialScore>
 
 			<xsl:variable name="commute-duration" select="kmlpipe:LinkSet[@name='Workplace']/kmlpipe:Link/kmlpipe:GoogleDistance/DistanceMatrixResponse/row/element/duration" />
 			<xsl:if test="count($commute-duration/value) != 1">
