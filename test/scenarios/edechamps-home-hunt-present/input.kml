@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Nestoria Listings</name>
+      <Placemark>
+        <name>Listing 1</name>
+	<description>Listing 1 description</description>
+        <Point><coordinates>-0.090772,51.5327</coordinates></Point>
+        <kmlpipe:Nestoria><listings xmlns="" img_height="142" img_url="https://testimg/img1.jpg" img_width="1424" lister_url="https://testlister/lister1" price_formatted="£111,111" /></kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Workplace"><kmlpipe:Link place-id="workplace" /></kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets"><kmlpipe:Link place-id="supermarket1" /></kmlpipe:LinkSet>
+        <kmlpipe:PartialScore value="-1" description="Score minus one" />
+        <kmlpipe:PartialScore value="-2" description="Score minus two" />
+        <kmlpipe:TotalScore value="-3" />
+      </Placemark>
+      <Placemark>
+        <name>Listing 2</name>
+	<description>Listing 2 description</description>
+        <Point><coordinates>-0.092838,51.5288</coordinates></Point>
+        <kmlpipe:Nestoria><listings xmlns="" img_height="242" img_url="https://testimg/img2.jpg" img_width="2424" lister_url="https://testlister/lister2" price_formatted="£222,222" /></kmlpipe:Nestoria>
+        <kmlpipe:LinkSet name="Workplace"><kmlpipe:Link place-id="workplace" /></kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Supermarkets"><kmlpipe:Link place-id="supermarket2" /></kmlpipe:LinkSet>
+        <kmlpipe:PartialScore value="1" description="Score plus one" />
+        <kmlpipe:PartialScore value="2" description="Score plus two" />
+        <kmlpipe:TotalScore value="3" />
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Workplace</name>
+      <Placemark>
+        <kmlpipe:Place place-id="workplace"/>
+        <Point><coordinates>-0.126003,51.533261</coordinates></Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Supermarkets</name>
+      <Placemark>
+        <kmlpipe:Place place-id="supermarket1"/>
+        <Point><coordinates>-0.12065,51.51742</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="supermarket2"/>
+        <Point><coordinates>-0.0125635,51.4664354</coordinates></Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

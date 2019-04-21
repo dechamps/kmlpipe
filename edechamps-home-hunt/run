@@ -67,5 +67,6 @@ kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-partial-scores.xsl" \
 	-s 'penalty-per-commute-minute=1' -s 'penalty-per-supermarket-minute=2' \
 	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-total-scores.xsl" |
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/present.xsl" |
 kmlpipe_output_xml
 
