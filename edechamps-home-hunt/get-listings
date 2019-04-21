@@ -4,8 +4,11 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 input_zones_file=''
 price_max=''
+bedroom_min=''
+bedroom_max=''
 max_listings_pages_per_zone=''
 max_listings_per_page=''
+sort=''
 
 kmlpipe_usage_define <<EOF
 Fetches property listings for the Edechamps Home Hunt Pipeline.
@@ -19,11 +22,20 @@ Fetches property listings for the Edechamps Home Hunt Pipeline.
   --price-max PRICE
     Maximum property price.
 
+  --bedroom-min NUM
+    Minimum number of bedrooms.
+
+  --bedroom-max NUM
+    Maximum number of bedrooms.
+
   --max-listings-pages-per-zone PAGES
     Maximum number of Nestoria listings pages to fetch per zone.
 
   --max-listings-per-page LISTINGS
     Maximum number of Nestoria listings per page.
+
+  --sort TYPE
+    Sorting criteria.
 
 Example:
 
@@ -42,8 +54,11 @@ do
 		--input-zones-file) kmlpipe_args_pop_or_error input_zones_file;;
 		--listing-type) kmlpipe_args_pop_or_error listing_type;;
 		--price-max) kmlpipe_args_pop_or_error price_max;;
+		--bedroom-min) kmlpipe_args_pop_or_error bedroom_min;;
+		--bedroom-max) kmlpipe_args_pop_or_error bedroom_max;;
 		--max-listings-pages-per-zone) kmlpipe_args_pop_or_error max_listings_pages_per_zone;;
 		--max-listings-per-page) kmlpipe_args_pop_or_error max_listings_per_page;;
+		--sort) kmlpipe_args_pop_or_error sort;;
 		--) break;;
 		*) kmlpipe_usage_error;;
 	esac
@@ -62,6 +77,14 @@ if [[ -n "$price_max" ]]
 then
 	search_listings_curl_args+=(--data "price_max=$price_max")
 fi
+if [[ -n "$bedroom_min" ]]
+then
+	search_listings_curl_args+=(--data "bedroom_min=$bedroom_min")
+fi
+if [[ -n "$bedroom_max" ]]
+then
+	search_listings_curl_args+=(--data "bedroom_max=$bedroom_max")
+fi
 if [[ -n "$max_listings_pages_per_zone" ]]
 then
 	search_listings_raw_args+=(--max-pages "$max_listings_pages_per_zone")
@@ -70,9 +93,12 @@ if [[ -n "$max_listings_per_page" ]]
 then
 	search_listings_curl_args+=(--data "number_of_results=$max_listings_per_page")
 fi
+if [[ -n "$sort" ]]
+then
+	search_listings_curl_args+=(--data "sort=$sort")
+fi
 
 # We deduplicate the output to avoid issues with overlapping zones and inconsistent Nestoria pagination.
-# TODO: adjust Nestoria sorting parameters.
 "$kmlpipe_dir/nestoria/search-listings-zones" -- -- "${search_listings_raw_args[@]}" -- "${search_listings_curl_args[@]}" < "$input_zones_file" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-duplicates.xsl" |
 kmlpipe_output_xml

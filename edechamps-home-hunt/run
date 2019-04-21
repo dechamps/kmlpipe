@@ -57,8 +57,8 @@ run_cached get-supermarkets "$kmlpipe_script_dir/get-supermarkets" \
 # TODO: add a "production mode" that uses the full, final zones file and lifts listings count limits.
 "$kmlpipe_script_dir/get-listings" \
 	--input-zones-file "$kmlpipe_script_dir/zones.kml" \
-	--listing-type buy --price-max 1000000 \
-	--max-listings-pages-per-zone 1 --max-listings-per-page 5 > "$kmlpipe_tmpdir/listings.kml"
+	--listing-type buy --price-max 1000000 --bedroom-min 1 \
+	--max-listings-pages-per-zone 1 --max-listings-per-page 5 --sort newest > "$kmlpipe_tmpdir/listings.kml"
 
 run_cached widen "$kmlpipe_script_dir/widen" \
 	--input-listings-file "$kmlpipe_tmpdir/listings.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" --input-supermarkets-file "$kmlpipe_tmpdir/supermarkets.kml" \
