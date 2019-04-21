@@ -47,6 +47,11 @@ kmlpipe_error() {
 
 kmlpipe_run_id=''
 kmlpipe_init() {
+	if [[ -z "${KMLPIPE_TIMESTAMP-}" ]]
+	then
+		printf -v KMLPIPE_TIMESTAMP '%(%s)T' -1
+		kmlpipe_debug "using timestamp: $KMLPIPE_TIMESTAMP"
+	fi
 	printf -v kmlpipe_run_id '%(%s)T-%s-%s' -1 "$$" "$RANDOM"
 	kmlpipe_debug "${0@Q} ${kmlpipe_args[*]@Q}"
 }

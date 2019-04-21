@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Use a consistent, deterministic timestamp for all tests.
+export KMLPIPE_TIMESTAMP="$(date --date='2019-01-01 12:00' '+%s')"
+
 source "${BASH_SOURCE%/*}/../../lib/common.bash" || exit 1
 
 kmlpipe_regolden_enabled() {

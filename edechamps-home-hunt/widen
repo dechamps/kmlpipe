@@ -56,6 +56,25 @@ done
 [[ -n "$google_key" ]] || kmlpipe_usage_error
 kmlpipe_args_end
 
+# Use next Wednesday at 9:30 for transit time. This makes sure we compute for weekday peak, avoiding complications like holidays.
+# Sadly, GNU date does not seem to provide any way of specifying "next Wednesday from *this reference time* (not now)". So we have to do that manually.
+TZ=Europe/London printf -v kmlpipe_day '%(%Y-%m-%d)T' "$KMLPIPE_TIMESTAMP"
+for offset_day in {1..7}
+do
+	read -r transit_day_of_week transit_timestamp transit_time < \
+	<(TZ=Europe/London date --date="$kmlpipe_day + $offset_day day 9:30" '+%u %s %Y-%m-%dT%H:%M:%S%z')
+	if [[ "$transit_day_of_week" -eq 3 ]]  # Wednesday
+	then
+		break
+	fi
+done
+
+kmlpipe_info "using transit time $transit_time derived from KMLPIPE_TIMESTAMP=$KMLPIPE_TIMESTAMP"
+if [[ "$transit_day_of_week" -ne 3 ]]
+then
+	kmlpipe_error 'unable to compute correct transit time'
+fi
+
 kmlpipe_create_tmpdir
 
 advance_stage() {
@@ -91,10 +110,10 @@ advance_stage supermarkets-distance
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance-sort.xsl" -s 'link-set-name=Supermarkets' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Supermarkets' -s 'keep-first=1' > "$output_file"
 
-# TODO: use a consistent transit time of day
 advance_stage workplace-transit
+# Note: the cache system only uses source and destination as keys, so this won't throw away the cache every week as the transit day changes.
 google_distance_cached workplace --link-set-name 'Workplace' --input-file "$input_file" -- \
-	--data "key=$google_key" --data 'mode=transit' > "$output_file"
+	--data "key=$google_key" --data 'mode=transit' --data "departure_time=$transit_timestamp" > "$output_file"
 
 advance_stage supermarkets-walking
 google_distance_cached supermarket --link-set-name 'Supermarkets' --input-file "$input_file" -- \
