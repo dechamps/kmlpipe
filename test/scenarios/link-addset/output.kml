@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <Placemark>
+        <name>Place 1</name>
+        <kmlpipe:LinkSet name="Link Set"/>
+      </Placemark>
+      <Placemark>
+        <name>Place 2</name>
+        <kmlpipe:LinkSet name="Link Set"/>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
