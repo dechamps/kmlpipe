@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+	<Document>
+		<Folder>
+			<Placemark>
+				<kmlpipe:Nestoria><listings xmlns="" keywords="Keyword1, Keyword2, Keyword4" /></kmlpipe:Nestoria>
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Nestoria><listings xmlns="" keywords="Keyword1, Keyword5, Keyword3" /></kmlpipe:Nestoria>
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Nestoria><listings xmlns="" keywords="Keyword6, Keyword2, Keyword3" /></kmlpipe:Nestoria>
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Nestoria><listings xmlns="" keywords="Keyword2" /></kmlpipe:Nestoria>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>
