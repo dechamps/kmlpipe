@@ -32,8 +32,8 @@
                 <row>
                   <element>
                     <duration>
-                      <value>403</value>
-                      <text>7 mins</text>
+                      <value>59</value>
+                      <text>workplace 59s pancras1</text>
                     </duration>
                   </element>
                 </row>
@@ -48,8 +48,8 @@
                 <row>
                   <element>
                     <duration>
-                      <value>42</value>
-                      <text>supermarket 42 pancras1</text>
+                      <value>600</value>
+                      <text>supermarket 10m pancras1</text>
                     </duration>
                   </element>
                 </row>
@@ -58,8 +58,8 @@
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="5" description="Zone: St. Pancras"/>
-        <kmlpipe:PartialScore value="-13.4333333333333" description="Commute: 7 mins"/>
-        <kmlpipe:PartialScore value="-2.1" description="Supermarket: supermarket 42 pancras1"/>
+        <kmlpipe:PartialScore value="0" description="Commute: workplace 59s pancras1"/>
+        <kmlpipe:PartialScore value="-21" description="Supermarket: supermarket 10m pancras1"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
@@ -77,8 +77,8 @@
                 <row>
                   <element>
                     <duration>
-                      <value>453</value>
-                      <text>8 mins</text>
+                      <value>300</value>
+                      <text>workplace 5m pancras2</text>
                     </duration>
                   </element>
                 </row>
@@ -93,8 +93,8 @@
                 <row>
                   <element>
                     <duration>
-                      <value>1337</value>
-                      <text>supermarket 1337 pancras2</text>
+                      <value>840</value>
+                      <text>supermarket 14m pancras2</text>
                     </duration>
                   </element>
                 </row>
@@ -103,8 +103,8 @@
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="5" description="Zone: St. Pancras"/>
-        <kmlpipe:PartialScore value="-15.1" description="Commute: 8 mins"/>
-        <kmlpipe:PartialScore value="-66.85" description="Supermarket: supermarket 1337 pancras2"/>
+        <kmlpipe:PartialScore value="-8" description="Commute: workplace 5m pancras2"/>
+        <kmlpipe:PartialScore value="-1033" description="Supermarket: supermarket 14m pancras2"/>
         <kmlpipe:PartialScore value="2" description="'Add2' keyword"/>
       </Placemark>
       <Placemark>
@@ -123,8 +123,8 @@
                 <row>
                   <element>
                     <duration>
-                      <value>795</value>
-                      <text>13 mins</text>
+                      <value>720</value>
+                      <text>workplace 12m stratford1</text>
                     </duration>
                   </element>
                 </row>
@@ -139,8 +139,8 @@
                 <row>
                   <element>
                     <duration>
-                      <value>4242</value>
-                      <text>supermarket 4242 stratford1</text>
+                      <value>120</value>
+                      <text>supermarket 2m stratford1</text>
                     </duration>
                   </element>
                 </row>
@@ -149,8 +149,8 @@
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-3" description="Zone: Stratford"/>
-        <kmlpipe:PartialScore value="-26.5" description="Commute: 13 mins"/>
-        <kmlpipe:PartialScore value="-212.1" description="Supermarket: supermarket 4242 stratford1"/>
+        <kmlpipe:PartialScore value="-1022" description="Commute: workplace 12m stratford1"/>
+        <kmlpipe:PartialScore value="0" description="Supermarket: supermarket 2m stratford1"/>
         <kmlpipe:PartialScore value="2" description="'Add2' keyword"/>
         <kmlpipe:PartialScore value="-7" description="'Remove7' keyword"/>
       </Placemark>
@@ -196,8 +196,8 @@
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-3" description="Zone: Stratford"/>
-        <kmlpipe:PartialScore value="-49" description="Commute: 25 mins"/>
-        <kmlpipe:PartialScore value="-61.7" description="Supermarket: supermarket 1234 stratford2"/>
+        <kmlpipe:PartialScore value="-1047" description="Commute: 25 mins"/>
+        <kmlpipe:PartialScore value="-1052.7" description="Supermarket: supermarket 1234 stratford2"/>
         <kmlpipe:PartialScore value="3" description="'Add3' keyword"/>
         <kmlpipe:PartialScore value="-11" description="'Remove11' keyword"/>
       </Placemark>

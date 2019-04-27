@@ -81,7 +81,8 @@ run_cached widen "$kmlpipe_script_dir/widen" \
 	--input-listings-file "$kmlpipe_tmpdir/listings.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" --input-supermarkets-file "$kmlpipe_tmpdir/supermarkets.kml" \
 	--google-key "$google_key" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-partial-scores.xsl" \
-	-s 'penalty-per-commute-minute=1' -s 'penalty-per-supermarket-minute=2' \
+	-s 'commute-allowance-minutes=10' -s 'penalty-per-commute-minute=1' -s 'max-commute-minutes=35' \
+	-s 'supermarket-allowance-minutes=5' -s 'penalty-per-supermarket-minute=2' -s 'max-supermarket-minutes=15' \
 	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-total-scores.xsl" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/present.xsl" |

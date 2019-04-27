@@ -3,7 +3,8 @@
 source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/edechamps-home-hunt/compute-partial-scores.xsl" \
-	-s 'penalty-per-commute-minute=2' -s 'penalty-per-supermarket-minute=3' \
+	-s 'commute-allowance-minutes=1' -s 'penalty-per-commute-minute=2' -s 'max-commute-minutes=11' \
+	-s 'supermarket-allowance-minutes=3' -s 'penalty-per-supermarket-minute=3' -s 'max-supermarket-minutes=13' \
 	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" \
 	"$kmlpipe_script_dir/input.kml" > "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"

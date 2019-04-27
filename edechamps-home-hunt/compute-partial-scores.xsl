@@ -3,11 +3,19 @@
 	Assigns partial scores to each property based on various criteria, leveraging the annotations from the widening step.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+	<!-- The commute time from which to start adding a penalty. -->
+	<xsl:param name="commute-allowance-minutes" />
 	<!-- For each additional minute of commute, remove penalty-per-commute-minute points. -->
 	<xsl:param name="penalty-per-commute-minute" />
+	<!-- Commute times above this threshold are unacceptable. -->
+	<xsl:param name="max-commute-minutes" />
 
+	<!-- The supermarket walking time from which to start adding a penalty. -->
+	<xsl:param name="supermarket-allowance-minutes" />
 	<!-- For each additional minute of supermarket walking time, remove penalty-per-supermarket-minute points. -->
 	<xsl:param name="penalty-per-supermarket-minute" />
+	<!-- Supermarket times above this threshold are unacceptable. -->
+	<xsl:param name="max-supermarket-minutes" />
 
 	<!-- Load a keyword list from this file, adjust scores based on their presence. -->
 	<xsl:param name="keywords-file" />
@@ -17,8 +25,24 @@
 	<xsl:variable name="keywords" select="document($keywords-file)/Keywords" />
 
 	<xsl:template match="/">
+		<xsl:if test="not($commute-allowance-minutes)">
+			<xsl:message terminate="yes">ERROR: commute-allowance-minutes must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($max-commute-minutes)">
+			<xsl:message terminate="yes">ERROR: max-commute-minutes must be specified</xsl:message>
+		</xsl:if>
+
 		<xsl:if test="not($penalty-per-commute-minute)">
 			<xsl:message terminate="yes">ERROR: penalty-per-commute-minute must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($supermarket-allowance-minutes)">
+			<xsl:message terminate="yes">ERROR: supermarket-allowance-minutes must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($max-supermarket-minutes)">
+			<xsl:message terminate="yes">ERROR: max-supermarket-minutes must be specified</xsl:message>
 		</xsl:if>
 
 		<xsl:if test="not($penalty-per-supermarket-minute)">
@@ -66,8 +90,17 @@
 			<xsl:if test="count($commute-duration/value) != 1">
 				<xsl:message terminate="yes">ERROR: invalid commute distance information on place ID <xsl:value-of select="$place-id" /></xsl:message>
 			</xsl:if>
+			<xsl:variable name="commute-minutes" select="$commute-duration/value div 60" />
+			<xsl:variable name="commute-penalty" select="($commute-minutes - $commute-allowance-minutes) * $penalty-per-commute-minute" />
+			<xsl:variable name="commute-penalty-adjusted">
+				<xsl:choose>
+					<xsl:when test="$commute-penalty &lt; 0">0</xsl:when>
+					<xsl:when test="$commute-minutes &gt; $max-commute-minutes"><xsl:value-of select="$commute-penalty + 1000" /></xsl:when>
+					<xsl:otherwise><xsl:value-of select="$commute-penalty" /></xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
 			<kmlpipe:PartialScore>
-				<xsl:attribute name="value"><xsl:value-of select="-($commute-duration/value div 60) * $penalty-per-commute-minute" /></xsl:attribute>
+				<xsl:attribute name="value"><xsl:value-of select="-$commute-penalty-adjusted" /></xsl:attribute>
 				<xsl:attribute name="description">Commute: <xsl:value-of select="$commute-duration/text" /></xsl:attribute>
 			</kmlpipe:PartialScore>
 
@@ -75,8 +108,17 @@
 			<xsl:if test="count($commute-duration/value) != 1">
 				<xsl:message terminate="yes">ERROR: invalid supermarket distance information on place ID <xsl:value-of select="$place-id" /></xsl:message>
 			</xsl:if>
+			<xsl:variable name="supermarket-minutes" select="$supermarket-duration/value div 60" />
+			<xsl:variable name="supermarket-penalty" select="($supermarket-minutes - $supermarket-allowance-minutes) * $penalty-per-supermarket-minute" />
+			<xsl:variable name="supermarket-penalty-adjusted">
+				<xsl:choose>
+					<xsl:when test="$supermarket-penalty &lt; 0">0</xsl:when>
+					<xsl:when test="$supermarket-minutes &gt; $max-supermarket-minutes"><xsl:value-of select="$supermarket-penalty + 1000" /></xsl:when>
+					<xsl:otherwise><xsl:value-of select="$supermarket-penalty" /></xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
 			<kmlpipe:PartialScore>
-				<xsl:attribute name="value"><xsl:value-of select="-($supermarket-duration/value div 60) * $penalty-per-supermarket-minute" /></xsl:attribute>
+				<xsl:attribute name="value"><xsl:value-of select="-$supermarket-penalty-adjusted" /></xsl:attribute>
 				<xsl:attribute name="description">Supermarket: <xsl:value-of select="$supermarket-duration/text" /></xsl:attribute>
 			</kmlpipe:PartialScore>
 
