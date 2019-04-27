@@ -1,4 +1,13 @@
 <Keywords>
-	<!-- TODO: extend this list. -->
 	<Keyword word="Modern" value="5" />
+	<Keyword word="New Build" value="5" />
+	<Keyword word="Porter" value="5" />
+	<Keyword word="Swimming Pool" value="5" />
+	<Keyword word="Share of Freehold" value="5" />
+	<Keyword word="Freehold" value="5" />
+	<Keyword word="Shared Equity" value="5" />
+
+	<Keyword word="Refurbished" value="-5" />
+	<Keyword word="Conversion" value="-5" />
+	<Keyword word="Victorian" value="-5" />
 </Keywords>
