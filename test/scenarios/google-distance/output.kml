@@ -3,8 +3,39 @@
   <Document>
     <Folder>
       <Placemark>
-        <name>Buckingham Palace</name>
-        <kmlpipe:Place place-id="buckingham"/>
+        <name>Buckingham Palace 1</name>
+        <kmlpipe:Place place-id="buckingham1"/>
+        <Point>
+          <coordinates>-0.14189,51.501364</coordinates>
+        </Point>
+        <kmlpipe:LinkSet name="Link Set">
+          <kmlpipe:Link place-id="shard">
+            <kmlpipe:GoogleDistance>
+              <DistanceMatrixResponse xmlns="">
+                <status>OK</status>
+                <origin_address/>
+                <destination_address>32 London Bridge St, London SE1 9SG, UK</destination_address>
+                <row>
+                  <element>
+                    <status>OK</status>
+                    <duration>
+                      <value>1186</value>
+                      <text>20 mins</text>
+                    </duration>
+                    <distance>
+                      <value>5245</value>
+                      <text>5.2 km</text>
+                    </distance>
+                  </element>
+                </row>
+              </DistanceMatrixResponse>
+            </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <name>Buckingham Palace 2</name>
+        <kmlpipe:Place place-id="buckingham2"/>
         <Point>
           <coordinates>-0.14189,51.501364</coordinates>
         </Point>
@@ -74,7 +105,7 @@
           <coordinates>-0.0983506,51.5138453</coordinates>
         </Point>
         <kmlpipe:LinkSet name="Link Set">
-          <kmlpipe:Link place-id="buckingham">
+          <kmlpipe:Link place-id="buckingham1">
             <kmlpipe:GoogleDistance>
               <DistanceMatrixResponse xmlns="">
                 <status>OK</status>

@@ -47,6 +47,7 @@ kmlpipe_create_tmpdir
 distances_file="$kmlpipe_tmpdir/distances.xml"
 
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-lnglat.xsl" -s link-set-name="$link_set_name" "$input_file" |
+sort | uniq |
 {
 	echo '<?xml version="1.0" encoding="UTF-8"?>'
 	echo '<Distances>'

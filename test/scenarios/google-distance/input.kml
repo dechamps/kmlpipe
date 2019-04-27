@@ -3,8 +3,16 @@
 <Document>
 	<Folder>
 		<Placemark>
-			<name>Buckingham Palace</name>
-			<kmlpipe:Place place-id="buckingham" />
+			<name>Buckingham Palace 1</name>
+			<kmlpipe:Place place-id="buckingham1" />
+			<Point><coordinates>-0.14189,51.501364</coordinates></Point>
+			<kmlpipe:LinkSet name="Link Set">
+				<kmlpipe:Link place-id="shard" />
+			</kmlpipe:LinkSet>
+		</Placemark>
+		<Placemark>
+			<name>Buckingham Palace 2</name>
+			<kmlpipe:Place place-id="buckingham2" />
 			<Point><coordinates>-0.14189,51.501364</coordinates></Point>
 			<kmlpipe:LinkSet name="Link Set">
 				<kmlpipe:Link place-id="shard" />
@@ -26,7 +34,7 @@
 			<kmlpipe:Place place-id="stpauls" />
 			<Point><coordinates>-0.0983506,51.5138453</coordinates></Point>
 			<kmlpipe:LinkSet name="Link Set">
-				<kmlpipe:Link place-id="buckingham" />
+				<kmlpipe:Link place-id="buckingham1" />
 				<kmlpipe:Link place-id="shard" />
 				<kmlpipe:Link place-id="stpauls" />
 			</kmlpipe:LinkSet>
