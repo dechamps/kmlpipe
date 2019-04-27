@@ -1,1 +1,0 @@
-'--get' 'https://maps.googleapis.com/maps/api/distancematrix/xml' '--data' 'origins=51.537300,-0.003415' '--data' 'destinations=51.533261,-0.126003' '--data' 'key=TEST_GOOGLE_KEY' '--data' 'mode=transit' '--data' 'departure_time=1546421400'

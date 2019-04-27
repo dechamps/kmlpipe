@@ -1,1 +1,0 @@
-'--get' '--data' 'key=TEST_GOOGLE_KEY' '--data' 'location=51.540,-0.093' '--data' 'radius=10000' '--data-urlencode' 'keyword="Tesco Superstore"' 'https://maps.googleapis.com/maps/api/place/nearbysearch/xml'

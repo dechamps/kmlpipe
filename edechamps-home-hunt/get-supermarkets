@@ -13,7 +13,8 @@ Fetches supermarket data for the Edechamps Home Hunt Pipeline.
     Extract Sainsbury's supermarket locations from JSON file.
     (See sainsburys/README.md for details)
 
-  --google-key KEY (required)
+  --google-key =KEY (required)
+  --google-key @KEYFILE (required)
     Google API Key.
 
   --cache-directory DIR
@@ -54,7 +55,7 @@ cache() {
 }
 
 # Search for Waitroses in a 10 km radius around London. Filter the Little Waitroses out.
-cache waitrose "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
+cache waitrose "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data-urlencode "key$google_key" \
 	--data 'location=51.540,-0.093' --data 'radius=10000' --data 'keyword=waitrose' \
 	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Waitrose supermarkets' |
@@ -62,7 +63,7 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-keyword.xsl" -s 'keyword=Little'
 
 # Search for Tesco Superstores in a 10 km radius around London.
 # TODO: Google seems to also return some spurious Tesco Metros in that search.
-cache tesco "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data "key=$google_key" \
+cache tesco "$kmlpipe_dir/google/place-search" -- --max-pages 5 -- --get --data-urlencode "key$google_key" \
 	--data 'location=51.540,-0.093' --data 'radius=10000' --data-urlencode 'keyword="Tesco Superstore"' \
 	'https://maps.googleapis.com/maps/api/place/nearbysearch/xml' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Tesco supermarkets' > "$kmlpipe_tmpdir/tesco.kml"

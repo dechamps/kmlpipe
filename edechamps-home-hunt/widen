@@ -21,7 +21,8 @@ relevant to the Edechamps Home Hunt pipeline.
   --input-supermarkets-file FILE (required)
     KML file containing a list of supermarkets.
 
-  --google-key KEY (required)
+  --google-key =KEY (required)
+  --google-key @KEYFILE (required)
     Google API Key.
 
   --cache-directory DIR
@@ -113,10 +114,10 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Su
 advance_stage workplace-transit
 # Note: the cache system only uses source and destination as keys, so this won't throw away the cache every week as the transit day changes.
 google_distance_cached workplace --link-set-name 'Workplace' --input-file "$input_file" -- \
-	--data "key=$google_key" --data 'mode=transit' --data "departure_time=$transit_timestamp" > "$output_file"
+	--data-urlencode "key$google_key" --data 'mode=transit' --data "departure_time=$transit_timestamp" > "$output_file"
 
 advance_stage supermarkets-walking
 google_distance_cached supermarket --link-set-name 'Supermarkets' --input-file "$input_file" -- \
-	--data "key=$google_key" --data 'mode=walking' |
+	--data-urlencode "key$google_key" --data 'mode=walking' |
 kmlpipe_output_xml
 

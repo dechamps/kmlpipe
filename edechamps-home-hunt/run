@@ -8,7 +8,8 @@ cache_directory=''
 kmlpipe_usage_define <<EOF
 Runs the full, end-to-end Edechamps Home Hunt pipeline.
 
-  --google-key KEY (required)
+  --google-key =KEY (required)
+  --google-key @KEY (required)
     Google API Key.
 
   --cache-directory DIR (required)
