@@ -13,7 +13,14 @@ kmlpipe_xmlstarlet sel \
 	-N 'kml=http://www.opengis.net/kml/2.2' -N 'kmlpipe=http://edechamps.fr/kmlpipe' --template \
 		--match '/kml:kml/kml:Document/kml:Folder/kml:Placemark/kmlpipe:Nestoria/listings/@keywords' \
 			--value-of '.' --nl |
-tr --squeeze-repeats ', ' '\n' |
+tr ',' '\n' |
+while read -r line
+do
+	if [[ -n "$line" ]]
+	then
+		echo "$line"
+	fi
+done |
 sort |
 uniq --count |
 sort --numeric-sort --key=1 --reverse
