@@ -2,7 +2,8 @@
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
 	<Document>
 		<Folder>
-			<name>edechamps Home Hunt Test Zones</name>
+			<name>edechamps Home Hunt Production Zones</name>
+			<!-- TODO: this is a small testing set. Extend this. -->
 			<Placemark>
 				<name>Old Street</name>
 				<kmlpipe:Place place-id="zone:oldstreet" />
