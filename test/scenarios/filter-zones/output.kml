@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Places</name>
+      <Placemark>
+        <kmlpipe:Place place-id="in-both"/>
+        <kmlpipe:LinkSet name="Zones">
+          <kmlpipe:Link place-id="zone1">
+            <kmlpipe:Distance meters="1500"/>
+          </kmlpipe:Link>
+          <kmlpipe:Link place-id="zone2">
+            <kmlpipe:Distance meters="2400"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="out-both"/>
+        <kmlpipe:LinkSet name="Zones">
+          <kmlpipe:OutOfRadius>
+            <kmlpipe:Link place-id="zone1">
+              <kmlpipe:Distance meters="1700"/>
+            </kmlpipe:Link>
+          </kmlpipe:OutOfRadius>
+          <kmlpipe:OutOfRadius>
+            <kmlpipe:Link place-id="zone2">
+              <kmlpipe:Distance meters="2600"/>
+            </kmlpipe:Link>
+          </kmlpipe:OutOfRadius>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="in-zone1"/>
+        <kmlpipe:LinkSet name="Zones">
+          <kmlpipe:Link place-id="zone1">
+            <kmlpipe:Distance meters="1400"/>
+          </kmlpipe:Link>
+          <kmlpipe:OutOfRadius>
+            <kmlpipe:Link place-id="zone2">
+              <kmlpipe:Distance meters="2700"/>
+            </kmlpipe:Link>
+          </kmlpipe:OutOfRadius>
+        </kmlpipe:LinkSet>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="in-zone2"/>
+        <kmlpipe:LinkSet name="Zones">
+          <kmlpipe:OutOfRadius>
+            <kmlpipe:Link place-id="zone1">
+              <kmlpipe:Distance meters="1800"/>
+            </kmlpipe:Link>
+          </kmlpipe:OutOfRadius>
+          <kmlpipe:Link place-id="zone2">
+            <kmlpipe:Distance meters="2300"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Zones</name>
+      <Placemark>
+        <kmlpipe:Place place-id="zone1"/>
+        <kmlpipe:Radius miles="1"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="zone2"/>
+        <kmlpipe:Radius miles="1.5"/>
+      </Placemark>
+    </Folder>
+    <kmlpipe:FilteredZones/>
+  </Document>
+</kml>
