@@ -67,11 +67,6 @@
           <kmlpipe:Link place-id="hyperoptic1">
             <kmlpipe:Distance meters="1088.67909660869"/>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="hyperoptic2">
-              <kmlpipe:Distance meters="1527.7631826469"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
@@ -138,11 +133,6 @@
           <kmlpipe:Link place-id="hyperoptic2">
             <kmlpipe:Distance meters="883.800785993658"/>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="hyperoptic1">
-              <kmlpipe:Distance meters="1590.61985893925"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
@@ -209,11 +199,6 @@
           <kmlpipe:Link place-id="hyperoptic1">
             <kmlpipe:Distance meters="8149.82767400743"/>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="hyperoptic2">
-              <kmlpipe:Distance meters="8407.37718618028"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
@@ -280,11 +265,6 @@
           <kmlpipe:Link place-id="hyperoptic2">
             <kmlpipe:Distance meters="8279.41383505002"/>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="hyperoptic1">
-              <kmlpipe:Distance meters="8321.53566779026"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
       </kml:Placemark>
     </kml:Folder>

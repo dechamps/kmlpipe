@@ -5,6 +5,9 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
 	<xsl:param name="link-set-name" />
 
+	<!-- Completely remove placemarks instead of shelving them into a separate Element. -->
+	<xsl:param name="obliterate" />
+
 	<xsl:template match="/">
 		<xsl:if test="not($link-set-name)">
 			<xsl:message terminate="yes">ERROR: link-set-name parameter must be specified</xsl:message>
@@ -30,9 +33,11 @@
 		<xsl:variable name="link-set" select="kmlpipe:LinkSet[@name=$link-set-name]" />
 		<xsl:choose>
 			<xsl:when test="$link-set and count($link-set/kmlpipe:Link) = 0">
-				<kmlpipe:RemovedEmptyLinkSet>
-					<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>
-				</kmlpipe:RemovedEmptyLinkSet>
+				<xsl:if test="not($obliterate)">
+					<kmlpipe:RemovedEmptyLinkSet>
+						<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>
+					</kmlpipe:RemovedEmptyLinkSet>
+				</xsl:if>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>

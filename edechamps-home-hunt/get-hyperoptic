@@ -47,5 +47,5 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/zones-add-radius.xsl" -s "additional-ra
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Hyperoptic map' -s 'destination-folder-name=Hyperoptic Zones' -s 'link-set-name=Hyperoptic Zones' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance.xsl" -s 'link-set-name=Hyperoptic Zones' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/filter-zones.xsl" -s 'link-set-name=Hyperoptic Zones' |
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-empty-link-sets.xsl" -s 'link-set-name=Hyperoptic Zones' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-empty-link-sets.xsl" -s 'link-set-name=Hyperoptic Zones' -s 'obliterate=true' |
 kmlpipe_output_xml

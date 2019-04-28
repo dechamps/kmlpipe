@@ -71,29 +71,6 @@
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </Placemark>
-      <kmlpipe:RemovedEmptyLinkSet>
-        <Placemark>
-          <kmlpipe:Place place-id="hyperoptic:5"/>
-          <name>Site 5 out of zones</name>
-          <description>Status: Taking orders</description>
-          <Point>
-            <coordinates>-0.039907,51.535091</coordinates>
-          </Point>
-          <kmlpipe:Hyperoptic site-id="5" status-id="0">{"siteId":5,"siteName":"Site 5 out of zones","latitude":"51.535091","longitude":"-0.039907","status":"Taking orders","statusId":0}</kmlpipe:Hyperoptic>
-          <kmlpipe:LinkSet name="Hyperoptic Zones">
-            <kmlpipe:OutOfRadius>
-              <kmlpipe:Link place-id="zone:pancras">
-                <kmlpipe:Distance meters="5958.40715124619"/>
-              </kmlpipe:Link>
-            </kmlpipe:OutOfRadius>
-            <kmlpipe:OutOfRadius>
-              <kmlpipe:Link place-id="zone:stratford">
-                <kmlpipe:Distance meters="2413.01175252793"/>
-              </kmlpipe:Link>
-            </kmlpipe:OutOfRadius>
-          </kmlpipe:LinkSet>
-        </Placemark>
-      </kmlpipe:RemovedEmptyLinkSet>
       <kmlpipe:Hyperoptic/>
     </Folder>
     <Folder>

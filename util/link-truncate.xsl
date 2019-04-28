@@ -7,6 +7,9 @@
 	<xsl:param name="link-set-name" />
 	<xsl:param name="keep-first" />
 
+	<!-- Completely remove links instead of shelving them into a separate Element. -->
+	<xsl:param name="obliterate" />
+
 	<xsl:variable name="folders" select="/kml:kml/kml:Document/kml:Folder" />
 	<xsl:variable name="link-sets" select="$folders/kml:Placemark/kmlpipe:LinkSet[@name = $link-set-name]" />
 
@@ -32,9 +35,11 @@
 	<xsl:template match="/kml:kml/kml:Document/kml:Folder/kml:Placemark/kmlpipe:LinkSet/kmlpipe:Link">
 		<xsl:choose>
 			<xsl:when test="../@name = $link-set-name and count(preceding-sibling::kmlpipe:Link) &gt;= $keep-first">
-				<kmlpipe:Truncated>
-					<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>
-				</kmlpipe:Truncated>
+				<xsl:if test="not($obliterate)">
+					<kmlpipe:Truncated>
+						<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>
+					</kmlpipe:Truncated>
+				</xsl:if>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>

@@ -117,7 +117,7 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Su
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Hyperoptic map'  -s 'link-set-name=Hyperoptic' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance.xsl" -s 'link-set-name=Hyperoptic' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance-sort.xsl" -s 'link-set-name=Hyperoptic' |
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Hyperoptic' -s 'keep-first=1' > "$output_file"
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Hyperoptic' -s 'keep-first=1' -s 'obliterate=true' > "$output_file"
 
 advance_stage workplace-transit
 # Note: the cache system only uses source and destination as keys, so this won't throw away the cache every week as the transit day changes.
