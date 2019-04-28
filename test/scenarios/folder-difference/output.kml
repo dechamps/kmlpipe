@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Remove Folder</name>
+      <kmlpipe:DifferenceRemoved>
+        <Placemark>
+          <kmlpipe:Place place-id="place1"/>
+        </Placemark>
+      </kmlpipe:DifferenceRemoved>
+      <Placemark>
+        <kmlpipe:Place place-id="place2"/>
+      </Placemark>
+      <kmlpipe:DifferenceRemoved>
+        <Placemark>
+          <kmlpipe:Place place-id="place3"/>
+        </Placemark>
+      </kmlpipe:DifferenceRemoved>
+      <Placemark>
+        <kmlpipe:Place place-id="place4"/>
+      </Placemark>
+    </Folder>
+    <kmlpipe:FolderDifference compared-against-folder-name="Compare Folder"/>
+    <Folder>
+      <name>Compare Folder</name>
+      <Placemark>
+        <kmlpipe:Place place-id="place1"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="place3"/>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Another Folder</name>
+      <Placemark>
+        <kmlpipe:Place place-id="place1"/>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
