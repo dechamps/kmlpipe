@@ -10,6 +10,10 @@
 	<xsl:key name="place-id" match="/kml:kml/kml:Document/kml:Folder/kml:Placemark" use="kmlpipe:Place/@place-id" />
 
 	<xsl:template match="/">
+		<xsl:if test="not($link-set-name)">
+			<xsl:message terminate="yes">ERROR: link-set-name parameter must be specified</xsl:message>
+		</xsl:if>
+
 		<xsl:if test="not(/kml:kml/kml:Document/kml:Folder)">
 			<xsl:message terminate="yes">ERROR: input does not look like valid KML, or contains no folders</xsl:message>
 		</xsl:if>
