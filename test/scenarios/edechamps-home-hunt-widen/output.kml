@@ -35,7 +35,7 @@
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Supermarkets">
           <kmlpipe:Link place-id="supermarket2">
-            <kmlpipe:Distance meters="2117.79686319253788692000"/>
+            <kmlpipe:Distance meters="2117.7968608038"/>
             <kmlpipe:GoogleDistance>
               <DistanceMatrixResponse>
                 <status>OK</status>
@@ -91,7 +91,7 @@
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Supermarkets">
           <kmlpipe:Link place-id="supermarket1">
-            <kmlpipe:Distance meters="1548.15410631518370944000"/>
+            <kmlpipe:Distance meters="1548.15410455904"/>
             <kmlpipe:GoogleDistance>
               <DistanceMatrixResponse>
                 <status>OK</status>
@@ -147,7 +147,7 @@
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Supermarkets">
           <kmlpipe:Link place-id="supermarket1">
-            <kmlpipe:Distance meters="8609.92820022849644776000"/>
+            <kmlpipe:Distance meters="8609.9281999801"/>
             <kmlpipe:GoogleDistance>
               <DistanceMatrixResponse>
                 <status>OK</status>
@@ -203,7 +203,7 @@
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Supermarkets">
           <kmlpipe:Link place-id="supermarket1">
-            <kmlpipe:Distance meters="8406.05159936325877294000"/>
+            <kmlpipe:Distance meters="8406.05159987686"/>
             <kmlpipe:GoogleDistance>
               <DistanceMatrixResponse>
                 <status>OK</status>
@@ -276,7 +276,6 @@
       </Document>
     </kml>
   </kmlpipe:MergedDocument>
-  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>

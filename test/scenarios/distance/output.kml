@@ -10,7 +10,7 @@
         </Point>
         <kmlpipe:LinkSet name="Link Set">
           <kmlpipe:Link place-id="shard">
-            <kmlpipe:Distance meters="3849.70058184301570344000"/>
+            <kmlpipe:Distance meters="3849.70058237508"/>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </Placemark>
@@ -22,7 +22,7 @@
         </Point>
         <kmlpipe:LinkSet name="Link Set">
           <kmlpipe:Link place-id="stpauls">
-            <kmlpipe:Distance meters="1323.80533314453843876000"/>
+            <kmlpipe:Distance meters="1323.80533228934"/>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Another Link Set">
@@ -37,10 +37,10 @@
         </Point>
         <kmlpipe:LinkSet name="Link Set">
           <kmlpipe:Link place-id="buckingham">
-            <kmlpipe:Distance meters="3317.56134477604937182000"/>
+            <kmlpipe:Distance meters="3317.56134452061"/>
           </kmlpipe:Link>
           <kmlpipe:Link place-id="shard">
-            <kmlpipe:Distance meters="1323.80533314453843876000"/>
+            <kmlpipe:Distance meters="1323.80533228934"/>
           </kmlpipe:Link>
           <kmlpipe:Link place-id="stpauls">
             <kmlpipe:Distance meters="0"/>
@@ -49,5 +49,4 @@
       </Placemark>
     </Folder>
   </Document>
-  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
 </kml>
