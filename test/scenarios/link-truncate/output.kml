@@ -7,6 +7,12 @@
         <kmlpipe:LinkSet name="Link Set">
           <kmlpipe:Link place-id="place1link1"/>
           <kmlpipe:Link place-id="place1link2"/>
+          <kmlpipe:Truncated>
+            <kmlpipe:Link place-id="place1link3"/>
+          </kmlpipe:Truncated>
+          <kmlpipe:Truncated>
+            <kmlpipe:Link place-id="place1link4"/>
+          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
       </Placemark>
       <Placemark>
@@ -26,6 +32,9 @@
         <kmlpipe:LinkSet name="Link Set">
           <kmlpipe:Link place-id="place3link1"/>
           <kmlpipe:Link place-id="place3link2"/>
+          <kmlpipe:Truncated>
+            <kmlpipe:Link place-id="place3link3"/>
+          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
       </Placemark>
     </Folder>

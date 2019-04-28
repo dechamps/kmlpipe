@@ -29,20 +29,17 @@
 		<xsl:apply-templates select="@*|node()" />
 	</xsl:template>
 
-	<xsl:template match="/kml:kml/kml:Document/kml:Folder/kml:Placemark/kmlpipe:LinkSet">
-		<xsl:copy>
-			<xsl:choose>
-				<xsl:when test="@name = $link-set-name">
-					<xsl:apply-templates select="@*|node()[not(self::kmlpipe:Link)]" />
-					<xsl:apply-templates select="kmlpipe:Link[position() &lt;= $keep-first]">
-						<xsl:sort select="kmlpipe:Distance/@meters" data-type="number" />
-					</xsl:apply-templates>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:apply-templates select="@*|node()" />
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:copy>
+	<xsl:template match="/kml:kml/kml:Document/kml:Folder/kml:Placemark/kmlpipe:LinkSet/kmlpipe:Link">
+		<xsl:choose>
+			<xsl:when test="../@name = $link-set-name and count(preceding-sibling::kmlpipe:Link) &gt;= $keep-first">
+				<kmlpipe:Truncated>
+					<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>
+				</kmlpipe:Truncated>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy><xsl:apply-templates select="@*|node()" /></xsl:copy>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match="@*|node()">
