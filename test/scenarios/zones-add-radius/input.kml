@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+	<Document>
+		<Folder>
+			<Placemark>
+				<kmlpipe:Place place-id="zone1" />
+				<kmlpipe:Radius miles="0.5" />
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Place place-id="zone2" />
+				<kmlpipe:Radius miles="1" />
+			</Placemark>
+			<Placemark>
+				<kmlpipe:Place place-id="notazone" />
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>
