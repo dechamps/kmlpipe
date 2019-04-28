@@ -23,6 +23,6 @@ kmlpipe_xmlstarlet sel \
 	-N 'kml=http://www.opengis.net/kml/2.2' -N 'kmlpipe=http://edechamps.fr/kmlpipe' --template \
 		--match '/kml:kml/kml:Document/kml:Folder' \
 			--value-of 'kml:name' --nl \
-		--match '/kml:kml/kml:Document/kml:Folder/kml:Placemark' \
+		--match 'kml:Placemark' \
 			--value-of 'kmlpipe:Place/@place-id' --output ' ' --value-of 'kml:name' --nl \
 	"${kml_files[@]}"

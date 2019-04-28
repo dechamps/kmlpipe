@@ -1,10 +1,6 @@
 Folder 1
 place-id-1a Place 1A
 place-id-1b Place 1B
-place-id-2a Place 2A
-place-id-2b Place 2B
 Folder 2
-place-id-1a Place 1A
-place-id-1b Place 1B
 place-id-2a Place 2A
 place-id-2b Place 2B
