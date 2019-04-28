@@ -113,7 +113,7 @@ kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-nam
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Supermarkets'  -s 'link-set-name=Supermarkets' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance.xsl" -s 'link-set-name=Supermarkets' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance-sort.xsl" -s 'link-set-name=Supermarkets' |
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Supermarkets' -s 'keep-first=1' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-truncate.xsl" -s 'link-set-name=Supermarkets' -s 'keep-first=1' -s 'obliterate=true' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Hyperoptic map'  -s 'link-set-name=Hyperoptic' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance.xsl" -s 'link-set-name=Hyperoptic' |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance-sort.xsl" -s 'link-set-name=Hyperoptic' |

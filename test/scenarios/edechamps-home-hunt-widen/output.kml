@@ -57,11 +57,6 @@
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="supermarket1">
-              <kmlpipe:Distance meters="2172.49685708137"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Hyperoptic">
           <kmlpipe:Link place-id="hyperoptic1">
@@ -123,11 +118,6 @@
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="supermarket2">
-              <kmlpipe:Distance meters="1663.86874449683"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Hyperoptic">
           <kmlpipe:Link place-id="hyperoptic2">
@@ -189,11 +179,6 @@
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="supermarket2">
-              <kmlpipe:Distance meters="9305.63239153529"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Hyperoptic">
           <kmlpipe:Link place-id="hyperoptic1">
@@ -255,11 +240,6 @@
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
-          <kmlpipe:Truncated>
-            <kmlpipe:Link place-id="supermarket2">
-              <kmlpipe:Distance meters="9127.3890209072"/>
-            </kmlpipe:Link>
-          </kmlpipe:Truncated>
         </kmlpipe:LinkSet>
         <kmlpipe:LinkSet name="Hyperoptic">
           <kmlpipe:Link place-id="hyperoptic2">
