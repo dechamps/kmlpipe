@@ -5,6 +5,7 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 google_key=''
 cache_directory=''
 updated_min=''
+diff_against=''
 production_mode=''
 
 kmlpipe_usage_define <<EOF
@@ -19,6 +20,9 @@ Runs the full, end-to-end Edechamps Home Hunt pipeline.
 
   --updated-min UNIX_TIMESTAMP
     Only query for listings that were updated after this time.
+
+  --diff-against FILE
+    Only output listings that don't appear in the specified result file.
 
   --production
     Production mode: request the full set of listings from all
@@ -36,6 +40,7 @@ do
 		--google-key) kmlpipe_args_pop_or_error google_key;;
 		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
 		--updated-min) kmlpipe_args_pop_or_error updated_min;;
+		--diff-against) kmlpipe_args_pop_or_error diff_against;;
 		--production) production_mode='true';;
 		--) break;;
 		*) kmlpipe_usage_error;;
@@ -89,6 +94,17 @@ then
 	get_listings_args+=(--updated-min "$updated_min")
 fi
 "$kmlpipe_script_dir/get-listings" "${get_listings_args[@]}" > "$kmlpipe_tmpdir/listings.kml"
+
+if [[ -n "$diff_against" ]]
+then
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Nestoria Listings' -s 'obliterate=true' < "$diff_against" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Nestoria Listings Reference' > "$kmlpipe_tmpdir/reference.kml"
+
+	"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$kmlpipe_tmpdir/reference.kml" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Nestoria Listings' -s 'compare-against-folder-name=Nestoria Listings Reference' -s 'obliterate=true' |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/listings-diff.kml"
+	mv "$kmlpipe_tmpdir/listings-diff.kml" "$kmlpipe_tmpdir/listings.kml"
+fi
 
 run_cached widen "$kmlpipe_script_dir/widen" \
 	--input-listings-file "$kmlpipe_tmpdir/listings.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" --input-supermarkets-file "$kmlpipe_tmpdir/supermarkets.kml" --input-hyperoptic-file "$kmlpipe_tmpdir/hyperoptic.kml" \
