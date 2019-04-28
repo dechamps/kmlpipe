@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Folder 0</name>
+      <Placemark>
+        <kmlpipe:Place place-id="random:0:0"/>
+        <name>Place 0 folder 0</name>
+        <Point>
+          <coordinates>126.11151,81.32503</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="random:0:1"/>
+        <name>Place 1 folder 0</name>
+        <Point>
+          <coordinates>178.25817,89.9160</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="random:0:2"/>
+        <name>Place 2 folder 0</name>
+        <Point>
+          <coordinates>106.13513,144.26119</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Folder 1</name>
+      <Placemark>
+        <kmlpipe:Place place-id="random:1:0"/>
+        <name>Place 0 folder 1</name>
+        <Point>
+          <coordinates>142.4885,32.4540</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="random:1:1"/>
+        <name>Place 1 folder 1</name>
+        <Point>
+          <coordinates>94.11466,128.1994</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="random:1:2"/>
+        <name>Place 2 folder 1</name>
+        <Point>
+          <coordinates>23.4326,82.20217</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Folder 2</name>
+      <Placemark>
+        <kmlpipe:Place place-id="random:2:0"/>
+        <name>Place 0 folder 2</name>
+        <Point>
+          <coordinates>123.25672,129.25911</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="random:2:1"/>
+        <name>Place 1 folder 2</name>
+        <Point>
+          <coordinates>65.17219,140.8212</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="random:2:2"/>
+        <name>Place 2 folder 2</name>
+        <Point>
+          <coordinates>115.21087,18.21175</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

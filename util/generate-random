@@ -1,0 +1,60 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+folder_count=''
+places_per_folder=''
+random_seed=''
+kmlpipe_usage_define <<EOF
+Generates a KML file filled with places with random coordinates. Mostly
+useful to generate lots of data for benchmarking.
+
+  --folder-count COUNT (required)
+    The number of folders to create.
+
+  --places-per-folder COUNT (required)
+    The number of places to generate in each folder.
+
+  --random-seed SEED
+    Seed the random number generator with the specified value.
+EOF
+
+while :
+do
+        kmlpipe_args_pop argument || break
+        case "$argument" in
+		--folder-count) kmlpipe_args_pop_or_error folder_count;;
+		--places-per-folder) kmlpipe_args_pop_or_error places_per_folder;;
+		--random-seed) kmlpipe_args_pop_or_error random_seed;;
+                *) kmlpipe_usage_error;;
+        esac
+done
+[[ -n "$folder_count" ]] || kmlpipe_usage_error
+[[ -n "$places_per_folder" ]] || kmlpipe_usage_error
+kmlpipe_args_end
+
+if [[ -n "$random_seed" ]]
+then
+	RANDOM="$random_seed"
+fi
+
+echo '<?xml version="1.0" encoding="utf-8"?>'
+echo '<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe"><Document>'
+
+for (( folder_index=0 ; folder_count-folder_index ; folder_index+=1 ))
+do
+	echo "<Folder><name>Folder $folder_index</name>"
+
+	for (( place_index=0 ; places_per_folder-place_index ; place_index+=1 ))
+	do
+		echo '<Placemark>'
+		echo "<kmlpipe:Place place-id='random:$folder_index:$place_index' />"
+		echo "<name>Place $place_index folder $folder_index</name>"
+		echo "<Point><coordinates>$(( RANDOM % 180 )).$RANDOM,$(( RANDOM % 180 )).$RANDOM</coordinates></Point>"
+		echo '</Placemark>'
+	done
+
+	echo '</Folder>'
+done
+
+echo '</Document></kml>'
