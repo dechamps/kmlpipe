@@ -21,6 +21,15 @@
 			<kml:Style id="hyperoptic">
 				<kml:IconStyle><kml:Icon><kml:href>https://www.hyperoptic.com/wp-content/themes/hyperoptic3/favicon.ico</kml:href></kml:Icon></kml:IconStyle>
 			</kml:Style>
+			<kml:Style id="sainsburys">
+				<kml:IconStyle><kml:Icon><kml:href>https://careers.sh/public/company/sainsburys.co.uk.png</kml:href></kml:Icon></kml:IconStyle>
+			</kml:Style>
+			<kml:Style id="tesco">
+				<kml:IconStyle><kml:Icon><kml:href>https://static-s.aa-cdn.net/img/ios/890449798/86daa8eaccb2d4357ca525ed5f2b4641?v=1</kml:href></kml:Icon></kml:IconStyle>
+			</kml:Style>
+			<kml:Style id="waitrose">
+				<kml:IconStyle><kml:Icon><kml:href>https://res-3.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/a998e08qeez8ulcutxec</kml:href></kml:Icon></kml:IconStyle>
+			</kml:Style>
 			<kmlpipe:Presented />
 		</xsl:copy>
 	</xsl:template>
@@ -45,6 +54,15 @@
 			<xsl:apply-templates select="@*|node()" />
 			<xsl:if test="kmlpipe:Hyperoptic">
 				<kml:styleUrl>#hyperoptic</kml:styleUrl>
+			</xsl:if>
+			<xsl:if test="kmlpipe:Sainsburys">
+				<kml:styleUrl>#sainsburys</kml:styleUrl>
+			</xsl:if>
+			<xsl:if test="contains(concat(' ', kmlpipe:Google/result/name, ' '), ' Tesco ')">
+				<kml:styleUrl>#tesco</kml:styleUrl>
+			</xsl:if>
+			<xsl:if test="contains(concat(' ', kmlpipe:Google/result/name, ' '), ' Waitrose ')">
+				<kml:styleUrl>#waitrose</kml:styleUrl>
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>

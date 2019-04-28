@@ -88,6 +88,38 @@
           <coordinates>-0.0125635,51.4664354</coordinates>
         </Point>
       </Placemark>
+      <Placemark>
+        <name>Sainsbury's</name>
+        <kmlpipe:Sainsburys/>
+        <Point>
+          <coordinates>-0.02,51.3</coordinates>
+        </Point>
+        <kml:styleUrl xmlns:kml="http://www.opengis.net/kml/2.2">#sainsburys</kml:styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Tesco</name>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Tesco Superstore</name>
+          </result>
+        </kmlpipe:Google>
+        <Point>
+          <coordinates>-0.01,51.2</coordinates>
+        </Point>
+        <kml:styleUrl xmlns:kml="http://www.opengis.net/kml/2.2">#tesco</kml:styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Waitrose</name>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Waitrose</name>
+          </result>
+        </kmlpipe:Google>
+        <Point>
+          <coordinates>-0.03,51.1</coordinates>
+        </Point>
+        <kml:styleUrl xmlns:kml="http://www.opengis.net/kml/2.2">#waitrose</kml:styleUrl>
+      </Placemark>
     </Folder>
     <Folder>
       <name>Hyperoptic</name>
@@ -106,6 +138,27 @@
       <kml:IconStyle>
         <kml:Icon>
           <kml:href>https://www.hyperoptic.com/wp-content/themes/hyperoptic3/favicon.ico</kml:href>
+        </kml:Icon>
+      </kml:IconStyle>
+    </kml:Style>
+    <kml:Style xmlns:kml="http://www.opengis.net/kml/2.2" id="sainsburys">
+      <kml:IconStyle>
+        <kml:Icon>
+          <kml:href>https://careers.sh/public/company/sainsburys.co.uk.png</kml:href>
+        </kml:Icon>
+      </kml:IconStyle>
+    </kml:Style>
+    <kml:Style xmlns:kml="http://www.opengis.net/kml/2.2" id="tesco">
+      <kml:IconStyle>
+        <kml:Icon>
+          <kml:href>https://static-s.aa-cdn.net/img/ios/890449798/86daa8eaccb2d4357ca525ed5f2b4641?v=1</kml:href>
+        </kml:Icon>
+      </kml:IconStyle>
+    </kml:Style>
+    <kml:Style xmlns:kml="http://www.opengis.net/kml/2.2" id="waitrose">
+      <kml:IconStyle>
+        <kml:Icon>
+          <kml:href>https://res-3.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/a998e08qeez8ulcutxec</kml:href>
         </kml:Icon>
       </kml:IconStyle>
     </kml:Style>
