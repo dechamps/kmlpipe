@@ -18,6 +18,9 @@
 	<xsl:template match="/kml:kml/kml:Document">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
+			<kml:Style id="hyperoptic">
+				<kml:IconStyle><kml:Icon><kml:href>https://www.hyperoptic.com/wp-content/themes/hyperoptic3/favicon.ico</kml:href></kml:Icon></kml:IconStyle>
+			</kml:Style>
 			<kmlpipe:Presented />
 		</xsl:copy>
 	</xsl:template>
@@ -34,6 +37,15 @@
 					</xsl:apply-templates>
 				</xsl:otherwise>
 			</xsl:choose>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="/kml:kml/kml:Document/kml:Folder/kml:Placemark">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()" />
+			<xsl:if test="kmlpipe:Hyperoptic">
+				<kml:styleUrl>#hyperoptic</kml:styleUrl>
+			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
 

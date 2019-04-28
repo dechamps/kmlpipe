@@ -94,12 +94,21 @@
       <Placemark>
         <kmlpipe:Place place-id="hyperoptic1"/>
         <kmlpipe:Hyperoptic status-id="0" site-id="hyperoptic1id"/>
+        <kml:styleUrl xmlns:kml="http://www.opengis.net/kml/2.2">#hyperoptic</kml:styleUrl>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="hyperoptic2"/>
         <kmlpipe:Hyperoptic status-id="2" site-id="hyperoptic2id"/>
+        <kml:styleUrl xmlns:kml="http://www.opengis.net/kml/2.2">#hyperoptic</kml:styleUrl>
       </Placemark>
     </Folder>
+    <kml:Style xmlns:kml="http://www.opengis.net/kml/2.2" id="hyperoptic">
+      <kml:IconStyle>
+        <kml:Icon>
+          <kml:href>https://www.hyperoptic.com/wp-content/themes/hyperoptic3/favicon.ico</kml:href>
+        </kml:Icon>
+      </kml:IconStyle>
+    </kml:Style>
     <kmlpipe:Presented/>
   </Document>
 </kml>
