@@ -10,7 +10,7 @@
         <Point>
           <coordinates>-0.112054,51.532455</coordinates>
         </Point>
-        <kmlpipe:Hyperoptic status-id="0">{"siteId":1,"siteName":"Site 1 taking orders","latitude":"51.532455","longitude":"-0.112054","status":"Taking orders","statusId":0}</kmlpipe:Hyperoptic>
+        <kmlpipe:Hyperoptic site-id="1" status-id="0">{"siteId":1,"siteName":"Site 1 taking orders","latitude":"51.532455","longitude":"-0.112054","status":"Taking orders","statusId":0}</kmlpipe:Hyperoptic>
         <kmlpipe:LinkSet name="Hyperoptic Zones">
           <kmlpipe:Link place-id="zone:pancras">
             <kmlpipe:Distance meters="968.796622797375"/>
@@ -30,7 +30,7 @@
           <Point>
             <coordinates>-0.118398,51.532772</coordinates>
           </Point>
-          <kmlpipe:Hyperoptic status-id="1">{"siteId":2,"siteName":"Site 2 registering interest","latitude":"51.532772","longitude":"-0.118398","status":"Registering interest","statusId":1}</kmlpipe:Hyperoptic>
+          <kmlpipe:Hyperoptic site-id="2" status-id="1">{"siteId":2,"siteName":"Site 2 registering interest","latitude":"51.532772","longitude":"-0.118398","status":"Registering interest","statusId":1}</kmlpipe:Hyperoptic>
         </Placemark>
       </kmlpipe:HyperopticFilteredStatus>
       <Placemark>
@@ -40,7 +40,7 @@
         <Point>
           <coordinates>-0.001002,51.548119</coordinates>
         </Point>
-        <kmlpipe:Hyperoptic status-id="2">{"siteId":3,"siteName":"Site 3 installation agreed","latitude":"51.548119","longitude":"-0.001002","status":"Installation agreed","statusId":2}</kmlpipe:Hyperoptic>
+        <kmlpipe:Hyperoptic site-id="3" status-id="2">{"siteId":3,"siteName":"Site 3 installation agreed","latitude":"51.548119","longitude":"-0.001002","status":"Installation agreed","statusId":2}</kmlpipe:Hyperoptic>
         <kmlpipe:LinkSet name="Hyperoptic Zones">
           <kmlpipe:OutOfRadius>
             <kmlpipe:Link place-id="zone:pancras">
@@ -59,7 +59,7 @@
         <Point>
           <coordinates>-0.011123,51.543474</coordinates>
         </Point>
-        <kmlpipe:Hyperoptic status-id="4">{"siteId":4,"siteName":"Site 4 going live","latitude":"51.543474","longitude":"-0.011123","status":"Going live","statusId":4}</kmlpipe:Hyperoptic>
+        <kmlpipe:Hyperoptic site-id="4" status-id="4">{"siteId":4,"siteName":"Site 4 going live","latitude":"51.543474","longitude":"-0.011123","status":"Going live","statusId":4}</kmlpipe:Hyperoptic>
         <kmlpipe:LinkSet name="Hyperoptic Zones">
           <kmlpipe:OutOfRadius>
             <kmlpipe:Link place-id="zone:pancras">
@@ -79,7 +79,7 @@
           <Point>
             <coordinates>-0.039907,51.535091</coordinates>
           </Point>
-          <kmlpipe:Hyperoptic status-id="0">{"siteId":5,"siteName":"Site 5 out of zones","latitude":"51.535091","longitude":"-0.039907","status":"Taking orders","statusId":0}</kmlpipe:Hyperoptic>
+          <kmlpipe:Hyperoptic site-id="5" status-id="0">{"siteId":5,"siteName":"Site 5 out of zones","latitude":"51.535091","longitude":"-0.039907","status":"Taking orders","statusId":0}</kmlpipe:Hyperoptic>
           <kmlpipe:LinkSet name="Hyperoptic Zones">
             <kmlpipe:OutOfRadius>
               <kmlpipe:Link place-id="zone:pancras">
