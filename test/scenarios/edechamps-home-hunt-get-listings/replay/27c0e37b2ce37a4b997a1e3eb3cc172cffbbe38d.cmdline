@@ -1,1 +1,0 @@
-'https://api.nestoria.co.uk/api' '--get' '--data' 'action=search_listings' '--data' 'encoding=xml' '--data' 'page=1' '--data' 'listing_type=buy' '--data' 'price_max=1000000' '--data' 'bedroom_min=1' '--data' 'bedroom_max=3' '--data' 'number_of_results=5' '--data' 'sort=newest' '--data' 'radius=51.544833,-0.008730,1mi'

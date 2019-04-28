@@ -4,7 +4,7 @@ source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
 KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/edechamps-home-hunt/get-listings" \
 	--input-zones-file "$kmlpipe_script_dir/zones.kml" \
-	--listing-type buy --price-max 1000000 --bedroom-min 1 --bedroom-max 3 \
+	--listing-type buy --price-max 1000000 --bedroom-min 1 --bedroom-max 3 --updated-min 123 \
 	--max-listings-pages-per-zone 1 --max-listings-per-page 5 --sort newest \
 	> "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"

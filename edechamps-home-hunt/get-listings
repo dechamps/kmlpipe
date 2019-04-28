@@ -6,6 +6,7 @@ input_zones_file=''
 price_max=''
 bedroom_min=''
 bedroom_max=''
+updated_min=''
 max_listings_pages_per_zone=''
 max_listings_per_page=''
 sort=''
@@ -27,6 +28,9 @@ Fetches property listings for the Edechamps Home Hunt Pipeline.
 
   --bedroom-max NUM
     Maximum number of bedrooms.
+
+  --updated-min UNIX_TIMESTAMP
+    Only query for listings that were updated after this time.
 
   --max-listings-pages-per-zone PAGES
     Maximum number of Nestoria listings pages to fetch per zone.
@@ -56,6 +60,7 @@ do
 		--price-max) kmlpipe_args_pop_or_error price_max;;
 		--bedroom-min) kmlpipe_args_pop_or_error bedroom_min;;
 		--bedroom-max) kmlpipe_args_pop_or_error bedroom_max;;
+		--updated-min) kmlpipe_args_pop_or_error updated_min;;
 		--max-listings-pages-per-zone) kmlpipe_args_pop_or_error max_listings_pages_per_zone;;
 		--max-listings-per-page) kmlpipe_args_pop_or_error max_listings_per_page;;
 		--sort) kmlpipe_args_pop_or_error sort;;
@@ -84,6 +89,10 @@ fi
 if [[ -n "$bedroom_max" ]]
 then
 	search_listings_curl_args+=(--data "bedroom_max=$bedroom_max")
+fi
+if [[ -n "$updated_min" ]]
+then
+	search_listings_curl_args+=(--data "updated_min=$updated_min")
 fi
 if [[ -n "$max_listings_pages_per_zone" ]]
 then
