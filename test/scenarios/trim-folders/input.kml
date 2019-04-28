@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<Folder>
+			<name>Other Folder 1</name>
+			<SomeFolderElement>other folder 1</SomeFolderElement>
+		</Folder>
+		<Folder>
+			<name>Folder</name>
+			<SomeFolderElement>folder</SomeFolderElement>
+		</Folder>
+		<Folder>
+			<name>Other Folder 2</name>
+			<SomeFolderElement>other folder 2</SomeFolderElement>
+		</Folder>
+	</Document>
+</kml>
