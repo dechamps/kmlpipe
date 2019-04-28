@@ -64,13 +64,22 @@
 					<xsl:variable name="supermarket-latitude" select="substring-after($supermarket/kml:Point/kml:coordinates, ',')" />
 					<xsl:variable name="supermarket-url">https://www.google.com/maps/dir/?api=1&amp;origin=<xsl:value-of select="$latitude" />,<xsl:value-of select="$longitude" />&amp;destination=<xsl:value-of select="$supermarket-latitude" />,<xsl:value-of select="$supermarket-longitude" />&amp;travelmode=walking</xsl:variable>
 
+					<xsl:variable name="hyperoptic" select="key('place-by-id', $placemark/kmlpipe:LinkSet[@name='Hyperoptic']/kmlpipe:Link/@place-id)" />
+					<xsl:variable name="hyperoptic-status-string">
+						<xsl:choose>
+							<xsl:when test="$hyperoptic/kmlpipe:Hyperoptic/@status-id = 0">building-live</xsl:when>
+							<xsl:otherwise>register-interest</xsl:otherwise>
+						</xsl:choose>
+					</xsl:variable>
+					<xsl:variable name="hyperoptic-url">https://www.hyperoptic.com/<xsl:value-of select="$hyperoptic-status-string" />/?siteid=<xsl:value-of select="$hyperoptic/kmlpipe:Hyperoptic/@site-id" /></xsl:variable>
+
 					<xsl:variable name="score" select="$placemark/kmlpipe:TotalScore/@value" />
 					<xsl:if test="not($score)">
 						<xsl:message terminate="yes">ERROR: place <xsl:value-of select="$placemark/kmlpipe:Place/@place-id" /> does not have a total score</xsl:message>
 					</xsl:if>
 
 					&lt;a href="<xsl:value-of select="$nestoria/@lister_url" />"&gt;&lt;img src="<xsl:value-of select="$nestoria/@img_url" />" width="<xsl:value-of select="$nestoria/@img_width" />" height="<xsl:value-of select="$nestoria/@img_height" />"&gt;&lt;/a&gt;&lt;br&gt;
-					<xsl:value-of select="$nestoria/@price_formatted" /> - &lt;a href="<xsl:value-of select="$commute-url" />"&gt;Commute&lt;/a&gt; - &lt;a href="<xsl:value-of select="$supermarket-url" />"&gt;Supermarket&lt;/a&gt;&lt;br&gt;
+					<xsl:value-of select="$nestoria/@price_formatted" /> - &lt;a href="<xsl:value-of select="$commute-url" />"&gt;Commute&lt;/a&gt; - &lt;a href="<xsl:value-of select="$supermarket-url" />"&gt;Supermarket&lt;/a&gt; - &lt;a href="<xsl:value-of select="$hyperoptic-url" />"&gt;Hyperoptic&lt;/a&gt;&lt;br&gt;
 					<xsl:for-each select="$placemark/kmlpipe:PartialScore">
 						&lt;b&gt;<xsl:value-of select="@description" />&lt;/b&gt; [<xsl:value-of select="@value" />]&lt;br&gt;
 					</xsl:for-each>
