@@ -4,13 +4,15 @@
     "siteName": "Site 42",
     "latitude": "1.4242",
     "longitude": "2.4242",
-    "status": "Status 42"
+    "status": "Status 42",
+    "statusId": 42
   },
   {
     "siteId": 1337,
     "siteName": "Site 1337",
     "latitude": "1.1337",
     "longitude": "2.1337",
-    "status": "Status 1337"
+    "status": "Status 1337",
+    "statusId": 1337
   }
 ]

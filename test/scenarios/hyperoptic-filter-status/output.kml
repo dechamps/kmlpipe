@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <Placemark>
+        <name>Taking orders</name>
+        <kmlpipe:Hyperoptic status-id="0"/>
+      </Placemark>
+      <kmlpipe:HyperopticFilteredStatus>
+        <Placemark>
+          <name>Registering interest</name>
+          <kmlpipe:Hyperoptic status-id="1"/>
+        </Placemark>
+      </kmlpipe:HyperopticFilteredStatus>
+      <Placemark>
+        <name>Installation agreed</name>
+        <kmlpipe:Hyperoptic status-id="2"/>
+      </Placemark>
+      <Placemark>
+        <name>Going live</name>
+        <kmlpipe:Hyperoptic status-id="3"/>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

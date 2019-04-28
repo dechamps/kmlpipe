@@ -15,7 +15,7 @@
 	@html "<name>\(.siteName)</name>" +
 	@html "<description>Status: \(.status)</description>" +
 	@html "<Point><coordinates>\(.longitude),\(.latitude)</coordinates></Point>" +
-	@html "<kmlpipe:Hyperoptic>\(. | tojson)</kmlpipe:Hyperoptic>" +
+	@html "<kmlpipe:Hyperoptic status-id='\(.statusId)'>\(. | tojson)</kmlpipe:Hyperoptic>" +
 	"</Placemark>\n"
 ) | join("")) +
 "<kmlpipe:Hyperoptic /></Folder></Document>" +

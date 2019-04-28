@@ -10,7 +10,7 @@
         <Point>
           <coordinates>2.4242,1.4242</coordinates>
         </Point>
-        <kmlpipe:Hyperoptic>{"siteId":42,"siteName":"Site 42","latitude":"1.4242","longitude":"2.4242","status":"Status 42"}</kmlpipe:Hyperoptic>
+        <kmlpipe:Hyperoptic status-id="42">{"siteId":42,"siteName":"Site 42","latitude":"1.4242","longitude":"2.4242","status":"Status 42","statusId":42}</kmlpipe:Hyperoptic>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="hyperoptic:1337"/>
@@ -19,7 +19,7 @@
         <Point>
           <coordinates>2.1337,1.1337</coordinates>
         </Point>
-        <kmlpipe:Hyperoptic>{"siteId":1337,"siteName":"Site 1337","latitude":"1.1337","longitude":"2.1337","status":"Status 1337"}</kmlpipe:Hyperoptic>
+        <kmlpipe:Hyperoptic status-id="1337">{"siteId":1337,"siteName":"Site 1337","latitude":"1.1337","longitude":"2.1337","status":"Status 1337","statusId":1337}</kmlpipe:Hyperoptic>
       </Placemark>
       <kmlpipe:Hyperoptic/>
     </Folder>
