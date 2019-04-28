@@ -17,6 +17,11 @@
 	<!-- Supermarket times above this threshold are unacceptable. -->
 	<xsl:param name="max-supermarket-minutes" />
 
+	<!-- How many points to remove per meter of distance to closest Hyperoptic site. -->
+	<xsl:param name="hyperoptic-penalty-per-meter" />
+	<!-- Maximum number of points to remove for Hyperoptic distance. -->
+	<xsl:param name="hyperoptic-max-penalty" />
+
 	<!-- Load a keyword list from this file, adjust scores based on their presence. -->
 	<xsl:param name="keywords-file" />
 
@@ -47,6 +52,14 @@
 
 		<xsl:if test="not($penalty-per-supermarket-minute)">
 			<xsl:message terminate="yes">ERROR: penalty-per-supermarket-minute must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($hyperoptic-penalty-per-meter)">
+			<xsl:message terminate="yes">ERROR: hyperoptic-penalty-per-meter must be specified</xsl:message>
+		</xsl:if>
+
+		<xsl:if test="not($hyperoptic-max-penalty)">
+			<xsl:message terminate="yes">ERROR: hyperoptic-max-penalty must be specified</xsl:message>
 		</xsl:if>
 
 		<xsl:if test="not($keywords)">
@@ -120,6 +133,22 @@
 			<kmlpipe:PartialScore>
 				<xsl:attribute name="value"><xsl:value-of select="-$supermarket-penalty-adjusted" /></xsl:attribute>
 				<xsl:attribute name="description">Supermarket: <xsl:value-of select="$supermarket-duration/text" /></xsl:attribute>
+			</kmlpipe:PartialScore>
+
+			<xsl:variable name="hyperoptic-meters" select="kmlpipe:LinkSet[@name='Hyperoptic']/kmlpipe:Link/kmlpipe:Distance/@meters" />
+			<xsl:if test="count($hyperoptic-meters) != 1">
+				<xsl:message terminate="yes">ERROR: invalid Hyperoptic distance information on place ID <xsl:value-of select="$place-id" /></xsl:message>
+			</xsl:if>
+			<xsl:variable name="hyperoptic-penalty" select="$hyperoptic-meters * $hyperoptic-penalty-per-meter" />
+			<xsl:variable name="hyperoptic-penalty-adjusted">
+				<xsl:choose>
+					<xsl:when test="$hyperoptic-penalty &lt; $hyperoptic-max-penalty"><xsl:value-of select="$hyperoptic-penalty" /></xsl:when>
+					<xsl:otherwise><xsl:value-of select="$hyperoptic-max-penalty" /></xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<kmlpipe:PartialScore>
+				<xsl:attribute name="value"><xsl:value-of select="-$hyperoptic-penalty-adjusted" /></xsl:attribute>
+				<xsl:attribute name="description">Hyperoptic: <xsl:value-of select="$hyperoptic-meters" />m</xsl:attribute>
 			</kmlpipe:PartialScore>
 
 			<xsl:variable name="nestoria-keywords" select="kmlpipe:Nestoria/listings/@keywords" />

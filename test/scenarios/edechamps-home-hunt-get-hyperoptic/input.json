@@ -1,0 +1,42 @@
+[
+  {
+    "siteId": 1,
+    "siteName": "Site 1 taking orders",
+    "latitude": "51.532455",
+    "longitude": "-0.112054",
+    "status": "Taking orders",
+    "statusId": 0
+  },
+  {
+    "siteId": 2,
+    "siteName": "Site 2 registering interest",
+    "latitude": "51.532772",
+    "longitude": "-0.118398",
+    "status": "Registering interest",
+    "statusId": 1
+  },
+  {
+    "siteId": 3,
+    "siteName": "Site 3 installation agreed",
+    "latitude": "51.548119",
+    "longitude": "-0.001002",
+    "status": "Installation agreed",
+    "statusId": 2
+  },
+  {
+    "siteId": 4,
+    "siteName": "Site 4 going live",
+    "latitude": "51.543474",
+    "longitude": "-0.011123",
+    "status": "Going live",
+    "statusId": 4
+  },
+  {
+    "siteId": 5,
+    "siteName": "Site 5 out of zones",
+    "latitude": "51.535091",
+    "longitude": "-0.039907",
+    "status": "Taking orders",
+    "statusId": 0
+  }
+]

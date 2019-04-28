@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Hyperoptic map</name>
+      <Placemark>
+        <kmlpipe:Place place-id="hyperoptic1"/>
+        <name>Hyperoptic 1</name>
+        <Point>
+          <coordinates>-0.123,51.5456</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="hyperoptic2"/>
+        <name>Hyperoptic 2</name>
+        <Point>
+          <coordinates>-0.121,51.5234</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

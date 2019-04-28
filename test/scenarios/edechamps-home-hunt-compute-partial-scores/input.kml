@@ -57,6 +57,9 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link><kmlpipe:Distance meters="1" /></kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
@@ -98,6 +101,9 @@
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link><kmlpipe:Distance meters="10" /></kmlpipe:Link>
         </kmlpipe:LinkSet>
       </Placemark>
       <Placemark>
@@ -141,6 +147,9 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link><kmlpipe:Distance meters="100" /></kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:stratford2"/>
@@ -182,6 +191,9 @@
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link><kmlpipe:Distance meters="1000" /></kmlpipe:Link>
         </kmlpipe:LinkSet>
       </Placemark>
     </Folder>

@@ -58,10 +58,6 @@ run_cached() {
 	"$script" --cache-directory "$step_cache_directory" "$@"
 }
 
-run_cached get-supermarkets "$kmlpipe_script_dir/get-supermarkets" \
-	--sainsburys-file "$kmlpipe_dir/sainsburys/sainsburys-london-main-closest25-20180725.json" --google-key "$google_key" \
-	> "$kmlpipe_tmpdir/supermarkets.kml"
-
 zones_file="$kmlpipe_script_dir/zones.kml"
 pages_per_zone=1
 listings_per_page=5
@@ -72,17 +68,24 @@ then
 	listings_per_page=50
 fi
 
+run_cached get-supermarkets "$kmlpipe_script_dir/get-supermarkets" \
+	--sainsburys-file "$kmlpipe_dir/sainsburys/sainsburys-london-main-closest25-20180725.json" --google-key "$google_key" \
+	> "$kmlpipe_tmpdir/supermarkets.kml"
+
+"$kmlpipe_script_dir/get-hyperoptic" --input-zones-file "$zones_file" --zone-fudge-miles 0.25 < "$kmlpipe_dir/hyperoptic/hyperoptic-london-20190428.json" > "$kmlpipe_tmpdir/hyperoptic.kml"
+
 "$kmlpipe_script_dir/get-listings" \
 	--input-zones-file "$zones_file" \
 	--listing-type buy --price-max 1100000 --bedroom-min 1 \
 	--max-listings-pages-per-zone "$pages_per_zone" --max-listings-per-page "$listings_per_page" --sort newest > "$kmlpipe_tmpdir/listings.kml"
 
 run_cached widen "$kmlpipe_script_dir/widen" \
-	--input-listings-file "$kmlpipe_tmpdir/listings.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" --input-supermarkets-file "$kmlpipe_tmpdir/supermarkets.kml" \
+	--input-listings-file "$kmlpipe_tmpdir/listings.kml" --input-workplace-file "$kmlpipe_script_dir/workplace.kml" --input-supermarkets-file "$kmlpipe_tmpdir/supermarkets.kml" --input-hyperoptic-file "$kmlpipe_tmpdir/hyperoptic.kml" \
 	--google-key "$google_key" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-partial-scores.xsl" \
 	-s 'commute-allowance-minutes=10' -s 'penalty-per-commute-minute=1' -s 'max-commute-minutes=35' \
 	-s 'supermarket-allowance-minutes=5' -s 'penalty-per-supermarket-minute=2' -s 'max-supermarket-minutes=15' \
+	-s 'hyperoptic-penalty-per-meter=0.02' -s 'hyperoptic-max-penalty=5' \
 	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-total-scores.xsl" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/present.xsl" |

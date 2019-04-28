@@ -57,9 +57,15 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link>
+            <kmlpipe:Distance meters="1"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="5" description="Zone: St. Pancras"/>
         <kmlpipe:PartialScore value="0" description="Commute: workplace 59s pancras1"/>
         <kmlpipe:PartialScore value="-21" description="Supermarket: supermarket 10m pancras1"/>
+        <kmlpipe:PartialScore value="-2" description="Hyperoptic: 1m"/>
       </Placemark>
       <Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
@@ -102,9 +108,15 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link>
+            <kmlpipe:Distance meters="10"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="5" description="Zone: St. Pancras"/>
         <kmlpipe:PartialScore value="-8" description="Commute: workplace 5m pancras2"/>
         <kmlpipe:PartialScore value="-1033" description="Supermarket: supermarket 14m pancras2"/>
+        <kmlpipe:PartialScore value="-20" description="Hyperoptic: 10m"/>
         <kmlpipe:PartialScore value="2" description="'Add2' keyword"/>
       </Placemark>
       <Placemark>
@@ -148,9 +160,15 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link>
+            <kmlpipe:Distance meters="100"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-3" description="Zone: Stratford"/>
         <kmlpipe:PartialScore value="-1022" description="Commute: workplace 12m stratford1"/>
         <kmlpipe:PartialScore value="0" description="Supermarket: supermarket 2m stratford1"/>
+        <kmlpipe:PartialScore value="-200" description="Hyperoptic: 100m"/>
         <kmlpipe:PartialScore value="2" description="'Add2' keyword"/>
         <kmlpipe:PartialScore value="-7" description="'Remove7' keyword"/>
       </Placemark>
@@ -195,9 +213,15 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link>
+            <kmlpipe:Distance meters="1000"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
         <kmlpipe:PartialScore value="-3" description="Zone: Stratford"/>
         <kmlpipe:PartialScore value="-1047" description="Commute: 25 mins"/>
         <kmlpipe:PartialScore value="-1052.7" description="Supermarket: supermarket 1234 stratford2"/>
+        <kmlpipe:PartialScore value="-300" description="Hyperoptic: 1000m"/>
         <kmlpipe:PartialScore value="3" description="'Add3' keyword"/>
         <kmlpipe:PartialScore value="-11" description="'Remove11' keyword"/>
       </Placemark>

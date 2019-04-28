@@ -1,0 +1,51 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
+
+input_zones_file=''
+zone_fudge_miles=''
+kmlpipe_usage_define <<EOF
+Computes Hyperoptic data for the Edechamps Home Hunt Pipeline.
+
+Input is the hyperoptic site locations JSON file (see hyperoptic/README.md for
+details).
+
+  --input-zones-file FILE (required) 
+    Only keep Hyperoptic sites within the zones in this file.
+
+  --zone-fudge-miles MILES (required)
+    Make zones larger by this number of miles.
+EOF
+
+while :
+do
+	if ! kmlpipe_args_pop argument
+	then
+		break
+	fi
+	case "$argument" in
+		--input-zones-file) kmlpipe_args_pop_or_error input_zones_file;;
+		--zone-fudge-miles) kmlpipe_args_pop_or_error zone_fudge_miles;;
+		--) break;;
+		*) kmlpipe_usage_error;;
+	esac
+done
+[[ -n "$input_zones_file" ]] || kmlpipe_usage_error
+[[ -n "$zone_fudge_miles" ]] || kmlpipe_usage_error
+kmlpipe_args_end
+
+kmlpipe_create_tmpdir
+
+kmlpipe_jq --raw-output --from-file "$kmlpipe_dir/hyperoptic/hyperoptic-map.jq" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/hyperoptic/filter-status.xsl" -s 'drop-registering-interest=true' > "$kmlpipe_tmpdir/hyperoptic.kml"
+
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Hyperoptic Zones' "$input_zones_file" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/zones-add-radius.xsl" -s "additional-radius-miles=$zone_fudge_miles" > "$kmlpipe_tmpdir/zones.kml"
+
+# The reason why we remove out-of-zone Hyperoptic sites is because otherwise there are way too many, and they overwhelm the widening process.
+"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/hyperoptic.kml" "$kmlpipe_tmpdir/zones.kml" |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/link-folders.xsl" -s 'source-folder-name=Hyperoptic map' -s 'destination-folder-name=Hyperoptic Zones' -s 'link-set-name=Hyperoptic Zones' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/distance.xsl" -s 'link-set-name=Hyperoptic Zones' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/filter-zones.xsl" -s 'link-set-name=Hyperoptic Zones' |
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/remove-empty-link-sets.xsl" -s 'link-set-name=Hyperoptic Zones' |
+kmlpipe_output_xml

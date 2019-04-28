@@ -58,6 +58,11 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link place-id="hyperoptic1">
+            <kmlpipe:Distance meters="1088.67909660869"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="listings:pancras2"/>
@@ -112,6 +117,11 @@
                 </row>
               </DistanceMatrixResponse>
             </kmlpipe:GoogleDistance>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link place-id="hyperoptic2">
+            <kmlpipe:Distance meters="883.800785993658"/>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
       </kml:Placemark>
@@ -170,6 +180,11 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link place-id="hyperoptic1">
+            <kmlpipe:Distance meters="8149.82767400743"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
       <kml:Placemark>
         <kmlpipe:Place place-id="listings:stratford2"/>
@@ -226,6 +241,11 @@
             </kmlpipe:GoogleDistance>
           </kmlpipe:Link>
         </kmlpipe:LinkSet>
+        <kmlpipe:LinkSet name="Hyperoptic">
+          <kmlpipe:Link place-id="hyperoptic2">
+            <kmlpipe:Distance meters="8279.41383505002"/>
+          </kmlpipe:Link>
+        </kmlpipe:LinkSet>
       </kml:Placemark>
     </kml:Folder>
     <Folder xmlns="http://www.opengis.net/kml/2.2">
@@ -257,6 +277,24 @@
       </Placemark>
       <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
     </Folder>
+    <Folder xmlns="http://www.opengis.net/kml/2.2">
+      <name>Hyperoptic map</name>
+      <Placemark>
+        <kmlpipe:Place place-id="hyperoptic1"/>
+        <name>Hyperoptic 1</name>
+        <Point>
+          <coordinates>-0.123,51.5456</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="hyperoptic2"/>
+        <name>Hyperoptic 2</name>
+        <Point>
+          <coordinates>-0.121,51.5234</coordinates>
+        </Point>
+      </Placemark>
+      <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+    </Folder>
   </kml:Document>
   <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
     <kml xmlns="http://www.opengis.net/kml/2.2">
@@ -272,6 +310,15 @@
       <Document>
         <Folder>
           <name>Supermarkets</name>
+        </Folder>
+      </Document>
+    </kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Document>
+        <Folder>
+          <name>Hyperoptic map</name>
         </Folder>
       </Document>
     </kml>
