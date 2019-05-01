@@ -2,6 +2,6 @@
 
 source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
-kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Remove Folder' -s 'compare-against-folder-name=Compare Folder' "$kmlpipe_script_dir/input.kml" > "$kmlpipe_tmpdir/output.kml"
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'move-from-folder-name=Source Folder' -s 'move-to-folder-name=Destination Folder' -s 'compare-against-folder-name=Compare Folder' "$kmlpipe_script_dir/input.kml" > "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
 kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.kml" < "$kmlpipe_tmpdir/output.kml"
