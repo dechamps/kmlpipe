@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
+
+kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folder.xsl" -s 'source-folder-name=Folder 1' -s 'destination-folder-name=Folder 3' "$kmlpipe_script_dir/input.kml" > "$kmlpipe_tmpdir/output.kml"
+kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
+kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.kml" < "$kmlpipe_tmpdir/output.kml"
