@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Supermarket Blacklist</name>
+
+      <!-- Contrary to what Google Maps claims, this is a Little Waitrose, not a large one. -->
+      <Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
+        <kmlpipe:Place place-id="google-place-id:ChIJ5RFn1bEEdkgRkhGAsTTeCj0"/>
+        <name>Waitrose South Bank Tower (Stamford Street)</name>
+        <description>https://www.google.com/maps/search/?api=1&amp;query=51.5071648,-0.1056882&amp;query_place_id=ChIJ5RFn1bEEdkgRkhGAsTTeCj0</description>
+        <Point>
+          <coordinates>-0.1056882,51.5071648</coordinates>
+        </Point>
+        <address>Unit 10b South Bank Tower Estate,Stamford Street South Bank Tower London SE1 9LS</address>
+        <kmlpipe:Google>
+          <result xmlns="">
+            <name>Waitrose South Bank Tower (Stamford Street)</name>
+            <vicinity>Unit 10b South Bank Tower Estate,Stamford Street South Bank Tower London SE1 9LS</vicinity>
+            <type>supermarket</type>
+            <type>grocery_or_supermarket</type>
+            <type>store</type>
+            <type>point_of_interest</type>
+            <type>food</type>
+            <type>establishment</type>
+            <geometry>
+              <location>
+                <lat>51.5071648</lat>
+                <lng>-0.1056882</lng>
+              </location>
+              <viewport>
+                <southwest>
+                  <lat>51.5057835</lat>
+                  <lng>-0.1070391</lng>
+                </southwest>
+                <northeast>
+                  <lat>51.5084831</lat>
+                  <lng>-0.1043395</lng>
+                </northeast>
+              </viewport>
+            </geometry>
+            <rating>0.0</rating>
+            <icon>https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png</icon>
+            <reference>ChIJ5RFn1bEEdkgRkhGAsTTeCj0</reference>
+            <id>49677fc2f4a2cac273f290fb7ab5c4754a640c75</id>
+            <user_ratings_total>0</user_ratings_total>
+            <place_id>ChIJ5RFn1bEEdkgRkhGAsTTeCj0</place_id>
+            <scope>GOOGLE</scope>
+            <plus_code>
+              <global_code>9C3XGV4V+VP</global_code>
+              <compound_code>GV4V+VP South Bank, London, UK</compound_code>
+            </plus_code>
+          </result>
+        </kmlpipe:Google>
+        <kmlpipe:MergedFolder name="Google Place Search Results Page 3"/>
+        <kmlpipe:MergedFolder name="Waitrose supermarkets"/>
+        <kmlpipe:TotalScore value="0"/>
+        <styleUrl>#waitrose</styleUrl>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
