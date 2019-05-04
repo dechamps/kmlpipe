@@ -6,7 +6,7 @@ The store locator website uses a clean HTTP API to fetch the store list in JSON 
 
 ## Getting a store list
 
-Note: as an alternative to getting the JSON store list by hand, you can use the sample file `sainsburys-london-main-closest25-20180725.json`, which contains the 25 *super* (main) stores closest to the center of London as of 2018-07-25.
+Note: as an alternative to getting the JSON store list by hand, you can use the sample file `sainsburys-london-main-closest25-20190504.json`, which contains the 25 *super* (main) stores closest to the center of London as of 2019-05-04.
 
 1. Go to the [Sainsbury's store locator][].
 2. Start tracing network requests using your browser's developer tools.

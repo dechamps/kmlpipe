@@ -11,17 +11,318 @@
         "end_date": null, 
         "start_date": null
       }, 
+      "code": "0500", 
+      "contact": {
+        "address1": "31-41 Liverpool Road", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Adam Bye", 
+        "post_code": "N1 0RW", 
+        "telephone": "020 7278 1789"
+      }, 
+      "distance": 1.1493652476152578, 
+      "district_code": "0500", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.53420", 
+        "lon": "-0.10773"
+      }, 
+      "name": "Islington", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:59", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:59", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:59", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:59", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:59", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Islington", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0460", 
+      "contact": {
+        "address1": "1 Cambridge Heath Road", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Rob McCracken", 
+        "post_code": "E1 5SD", 
+        "telephone": "020 7247 2604"
+      }, 
+      "distance": 1.1981918704143861, 
+      "district_code": "0460", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "23:00", 
+          "reason": 5, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "23:00", 
+          "reason": 5, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }
+      ], 
+      "location": {
+        "lat": "51.52110", 
+        "lon": "-0.05864"
+      }, 
+      "name": "Whitechapel", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "23:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "23:00", 
+          "exception": false, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Whitechapel", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
       "code": "2019", 
       "contact": {
         "address1": "129-133 Kingsway", 
         "address2": "", 
-        "city": "London", 
+        "city": "LONDON", 
         "county": "Greater London", 
         "manager": "Tom Shooter", 
         "post_code": "WC2B 6NH", 
-        "telephone": "020 7242 6320"
+        "telephone": "02072424696"
       }, 
-      "distance": 0.8551630005807817, 
+      "distance": 1.5706851273353784, 
       "district_code": "2019", 
       "exception_times": [], 
       "location": {
@@ -30,8 +331,8 @@
       }, 
       "name": "Holborn LL", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:59", 
         "today": {
@@ -48,13 +349,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:59", 
+          "end_time": "19:00", 
           "exception": false, 
-          "start_time": "06:00", 
+          "start_time": "13:00", 
           "times": [
             {
-              "end_time": "23:59", 
-              "start_time": "06:00"
+              "end_time": "19:00", 
+              "start_time": "13:00"
             }
           ]
         }
@@ -148,17 +449,154 @@
         "end_date": null, 
         "start_date": null
       }, 
+      "code": "0539", 
+      "contact": {
+        "address1": "Dalston Cross Shopping Centre", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Carl Meaney", 
+        "post_code": "E8 2LX", 
+        "telephone": "020 7241 6942"
+      }, 
+      "distance": 1.6710688633058965, 
+      "district_code": "0539", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.54743", 
+        "lon": "-0.07338"
+      }, 
+      "name": "Dalston", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Dalston", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
       "code": "2020", 
       "contact": {
         "address1": "15-17 Tottenham Court Road", 
         "address2": "", 
         "city": "London", 
         "county": "", 
-        "manager": "Luke Ade-McNamara", 
+        "manager": "Asish Parmar", 
         "post_code": "W1T 1BJ", 
-        "telephone": "020 7580 7820"
+        "telephone": "0207 580 5092"
       }, 
-      "distance": 1.310822672606794, 
+      "distance": 2.015858027443498, 
       "district_code": "2020", 
       "exception_times": [], 
       "location": {
@@ -167,8 +605,8 @@
       }, 
       "name": "Tottenham Crt Rd LL", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:59", 
         "today": {
@@ -185,13 +623,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:59", 
+          "end_time": "18:00", 
           "exception": false, 
-          "start_time": "06:00", 
+          "start_time": "12:00", 
           "times": [
             {
-              "end_time": "23:59", 
-              "start_time": "06:00"
+              "end_time": "18:00", 
+              "start_time": "12:00"
             }
           ]
         }
@@ -291,21 +729,48 @@
         "address2": "", 
         "city": "London", 
         "county": "", 
-        "manager": "Tunc Adsoy", 
+        "manager": "Ahmed Hasan", 
         "post_code": "SE1 6TJ", 
         "telephone": "0203 1266825"
       }, 
-      "distance": 1.3755835526911564, 
+      "distance": 2.1310673876042623, 
       "district_code": "2499", 
-      "exception_times": [], 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
       "location": {
         "lat": "51.49475", 
         "lon": "-0.09877"
       }, 
       "name": "Elephant and Castle", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "22:00", 
         "today": {
@@ -322,13 +787,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "22:00", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "22:00", 
-              "start_time": "07:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -422,50 +887,50 @@
         "end_date": null, 
         "start_date": null
       }, 
-      "code": "0500", 
+      "code": "2116", 
       "contact": {
-        "address1": "31-41 Liverpool Road", 
+        "address1": "145 Tottenham Court Road", 
         "address2": "", 
         "city": "London", 
         "county": "", 
-        "manager": "Adam Bye", 
-        "post_code": "N1 0RW", 
-        "telephone": "020 7278 1789"
+        "manager": "Luke Ade-McNamara", 
+        "post_code": "W1T 7NE", 
+        "telephone": "02073885990"
       }, 
-      "distance": 1.3824595119224559, 
-      "district_code": "0500", 
+      "distance": 2.20862493627123, 
+      "district_code": "2116", 
       "exception_times": [], 
       "location": {
-        "lat": "51.53420", 
-        "lon": "-0.10773"
+        "lat": "51.52420", 
+        "lon": "-0.13733"
       }, 
-      "name": "Islington", 
+      "name": "Warren St LL", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:59", 
         "today": {
           "24hrs": false, 
           "end_time": "23:59", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "06:00", 
           "times": [
             {
               "end_time": "23:59", 
-              "start_time": "07:00"
+              "start_time": "06:00"
             }
           ]
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:59", 
+          "end_time": "18:00", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "12:00", 
           "times": [
             {
-              "end_time": "23:59", 
-              "start_time": "07:00"
+              "end_time": "18:00", 
+              "start_time": "12:00"
             }
           ]
         }
@@ -474,203 +939,66 @@
         {
           "day": 0, 
           "end_time": "23:59", 
-          "start_time": "07:00", 
+          "start_time": "06:00", 
           "times": [
             {
               "end_time": "23:59", 
-              "start_time": "07:00"
+              "start_time": "06:00"
             }
           ]
         }, 
         {
           "day": 1, 
           "end_time": "23:59", 
-          "start_time": "07:00", 
+          "start_time": "06:00", 
           "times": [
             {
               "end_time": "23:59", 
-              "start_time": "07:00"
+              "start_time": "06:00"
             }
           ]
         }, 
         {
           "day": 2, 
           "end_time": "23:59", 
-          "start_time": "07:00", 
+          "start_time": "06:00", 
           "times": [
             {
               "end_time": "23:59", 
-              "start_time": "07:00"
+              "start_time": "06:00"
             }
           ]
         }, 
         {
           "day": 3, 
           "end_time": "23:59", 
-          "start_time": "07:00", 
+          "start_time": "06:00", 
           "times": [
             {
               "end_time": "23:59", 
-              "start_time": "07:00"
+              "start_time": "06:00"
             }
           ]
         }, 
         {
           "day": 4, 
           "end_time": "23:59", 
-          "start_time": "07:00", 
+          "start_time": "06:00", 
           "times": [
             {
               "end_time": "23:59", 
-              "start_time": "07:00"
+              "start_time": "06:00"
             }
           ]
         }, 
         {
           "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
           "times": [
             {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Islington", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "2500", 
-      "contact": {
-        "address1": "38 Stratton Street", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Angeliki Triantafyllou", 
-        "post_code": "W1J 8LT", 
-        "telephone": "020 7499 8221"
-      }, 
-      "distance": 1.8680525181419756, 
-      "district_code": "2500", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.50804", 
-        "lon": "-0.14343"
-      }, 
-      "name": "Mayfair LL", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:00", 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:00", 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:00", 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:00", 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:00", 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "23:00", 
-          "start_time": "06:30", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "06:30"
+              "end_time": "23:59", 
+              "start_time": "06:00"
             }
           ]
         }, 
@@ -687,281 +1015,7 @@
         }
       ], 
       "opening_times_message": "", 
-      "other_name": "Mayfair", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0460", 
-      "contact": {
-        "address1": "1 Cambridge Heath Road", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Rob McCracken", 
-        "post_code": "E1 5SD", 
-        "telephone": "020 7247 2604"
-      }, 
-      "distance": 1.887757821128111, 
-      "district_code": "0460", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.52110", 
-        "lon": "-0.05864"
-      }, 
-      "name": "Whitechapel", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Whitechapel", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0009", 
-      "contact": {
-        "address1": "99 Wilton Road", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Shady Issa", 
-        "post_code": "SW1V 1DT", 
-        "telephone": "020 7931 8988"
-      }, 
-      "distance": 2.2739997610541396, 
-      "district_code": "0009", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.49302", 
-        "lon": "-0.14121"
-      }, 
-      "name": "Pimlico", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Pimlico", 
+      "other_name": "Warren Street Local", 
       "store_type": "main"
     }, 
     {
@@ -980,7 +1034,7 @@
         "post_code": "NW1 9LJ", 
         "telephone": "020 7482 3828"
       }, 
-      "distance": 2.4674043369616516, 
+      "distance": 2.6033684715247287, 
       "district_code": "0649", 
       "exception_times": [], 
       "location": {
@@ -989,31 +1043,31 @@
       }, 
       "name": "Camden", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
-        "open_until": "23:00", 
+        "open_until": "22:00", 
         "today": {
           "24hrs": false, 
-          "end_time": "23:00", 
+          "end_time": "22:00", 
           "exception": false, 
           "start_time": "07:00", 
           "times": [
             {
-              "end_time": "23:00", 
+              "end_time": "22:00", 
               "start_time": "07:00"
             }
           ]
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:00", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "23:00", 
-              "start_time": "07:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1107,27 +1161,297 @@
         "end_date": null, 
         "start_date": null
       }, 
-      "code": "0539", 
+      "code": "2500", 
       "contact": {
-        "address1": "Dalston Cross Shopping Centre", 
+        "address1": "38 Stratton Street", 
         "address2": "", 
         "city": "London", 
         "county": "", 
-        "manager": "Carl Meaney", 
-        "post_code": "E8 2LX", 
-        "telephone": "020 7241 6942"
+        "manager": "Angeliki Triantafyllou", 
+        "post_code": "W1J 8LT", 
+        "telephone": "0207 495 2169"
       }, 
-      "distance": 2.5660842470488476, 
-      "district_code": "0539", 
+      "distance": 2.721588719273789, 
+      "district_code": "2500", 
       "exception_times": [], 
       "location": {
-        "lat": "51.54743", 
+        "lat": "51.50804", 
+        "lon": "-0.14343"
+      }, 
+      "name": "Mayfair LL", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "23:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "23:00", 
+          "exception": false, 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "18:00", 
+          "exception": false, 
+          "start_time": "12:00", 
+          "times": [
+            {
+              "end_time": "18:00", 
+              "start_time": "12:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:00", 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:00", 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:00", 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:00", 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:00", 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "23:00", 
+          "start_time": "06:30", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "06:30"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "18:00", 
+          "start_time": "12:00", 
+          "times": [
+            {
+              "end_time": "18:00", 
+              "start_time": "12:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Mayfair", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0009", 
+      "contact": {
+        "address1": "99 Wilton Road", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Shady Issa", 
+        "post_code": "SW1V 1DT", 
+        "telephone": "020 7931 8988"
+      }, 
+      "distance": 3.223370502242342, 
+      "district_code": "0009", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.49302", 
+        "lon": "-0.14121"
+      }, 
+      "name": "Pimlico", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Pimlico", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": null, 
+      "code": "2257", 
+      "contact": {
+        "address1": "1 Amhurst Park", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Adam Short", 
+        "post_code": "N16 5LW", 
+        "telephone": "0203 1267200"
+      }, 
+      "distance": 3.409705585098137, 
+      "district_code": "2257", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.57327", 
         "lon": "-0.07338"
       }, 
-      "name": "Dalston", 
+      "name": "Stamford Hill", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "22:00", 
         "today": {
@@ -1144,13 +1468,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "22:00", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "08:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "22:00", 
-              "start_time": "08:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1234,8 +1558,8 @@
           ]
         }
       ], 
-      "opening_times_message": "", 
-      "other_name": "Dalston", 
+      "opening_times_message": null, 
+      "other_name": "Stamford Hill", 
       "store_type": "main"
     }, 
     {
@@ -1250,21 +1574,48 @@
         "address2": "", 
         "city": "London", 
         "county": "", 
-        "manager": "Rav Singh", 
+        "manager": "Helen Thompson", 
         "post_code": "SW8 2LF", 
         "telephone": "0203 1266826"
       }, 
-      "distance": 2.5676239412198023, 
+      "distance": 3.4889391565273122, 
       "district_code": "2665", 
-      "exception_times": [], 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "22:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
       "location": {
         "lat": "51.48139", 
         "lon": "-0.12808"
       }, 
       "name": "Nine Elms", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:00", 
         "today": {
@@ -1281,13 +1632,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:00", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "23:00", 
-              "start_time": "07:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1377,6 +1728,139 @@
     }, 
     {
       "closed": null, 
+      "code": "0406", 
+      "contact": {
+        "address1": "Williamson Road", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Paul Miller", 
+        "post_code": "N4 1UJ", 
+        "telephone": "020 8809 6065"
+      }, 
+      "distance": 3.662751592950239, 
+      "district_code": "0406", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.57721", 
+        "lon": "-0.09568"
+      }, 
+      "name": "Harringay", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": null, 
+      "other_name": "Harringay", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": null, 
       "code": "0031", 
       "contact": {
         "address1": "263d New Cross Road", 
@@ -1387,17 +1871,44 @@
         "post_code": "SE14 5UQ", 
         "telephone": "020 7732 6433"
       }, 
-      "distance": 3.6221446316489936, 
+      "distance": 3.773325322173995, 
       "district_code": "0031", 
-      "exception_times": [], 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
       "location": {
         "lat": "51.47716", 
         "lon": "-0.04234"
       }, 
       "name": "New Cross Gate", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "22:00", 
         "today": {
@@ -1414,13 +1925,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "22:00", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "08:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "22:00", 
-              "start_time": "08:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1509,7 +2020,312 @@
       "store_type": "main"
     }, 
     {
-      "closed": null, 
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0002", 
+      "contact": {
+        "address1": "38-40 The Mall", 
+        "address2": "The Stratford Centre", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Kevin O'Sullivan", 
+        "post_code": "E15 1XE", 
+        "telephone": "020 8534 7597"
+      }, 
+      "distance": 3.8406359036930184, 
+      "district_code": "0002", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "10:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "10:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "10:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "10:00"
+            }
+          ]
+        }
+      ], 
+      "location": {
+        "lat": "51.54189", 
+        "lon": "-0.00106"
+      }, 
+      "name": "Stratford", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "22:00", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "22:00", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "22:00", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "22:00", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "22:00", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Stratford", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0932", 
+      "contact": {
+        "address1": "Twelve Trees Crescent", 
+        "address2": "", 
+        "city": "LONDON", 
+        "county": "", 
+        "manager": "Christopher May", 
+        "post_code": "E3 3TT", 
+        "telephone": ""
+      }, 
+      "distance": 3.958239123204223, 
+      "district_code": "0932", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.51911", 
+        "lon": "0.00570"
+      }, 
+      "name": "Bromley by Bow OFC", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "23:59", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "23:59", 
+          "exception": false, 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "16:00", 
+          "exception": false, 
+          "start_time": "10:00", 
+          "times": [
+            {
+              "end_time": "16:00", 
+              "start_time": "10:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "16:00", 
+          "start_time": "10:00", 
+          "times": [
+            {
+              "end_time": "16:00", 
+              "start_time": "10:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Bromley by Bow OFC", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
       "code": "0054", 
       "contact": {
         "address1": "80 Dog Kennel Hill", 
@@ -1520,17 +2336,44 @@
         "post_code": "SE22 8BB", 
         "telephone": "020 7738 4900"
       }, 
-      "distance": 3.7000229471099515, 
+      "distance": 4.320234332734143, 
       "district_code": "0054", 
-      "exception_times": [], 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
       "location": {
         "lat": "51.46202", 
         "lon": "-0.08496"
       }, 
       "name": "Dulwich", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:59", 
         "today": {
@@ -1547,13 +2390,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:59", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "23:59", 
-              "start_time": "07:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1637,7 +2480,7 @@
           ]
         }
       ], 
-      "opening_times_message": null, 
+      "opening_times_message": "", 
       "other_name": "Dulwich", 
       "store_type": "main"
     }, 
@@ -1647,27 +2490,683 @@
         "end_date": null, 
         "start_date": null
       }, 
-      "code": "0526", 
+      "code": "0612", 
       "contact": {
-        "address1": "133 Clapham High Street", 
+        "address1": "02 Centre", 
+        "address2": "255 Finchley Road", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Danny Marks", 
+        "post_code": "NW3 6LU", 
+        "telephone": "020 7433 1493"
+      }, 
+      "distance": 4.434974507692729, 
+      "district_code": "0612", 
+      "exception_times": [], 
+      "location": {
+        "lat": "51.54802", 
+        "lon": "-0.18200"
+      }, 
+      "name": "Finchley Rd", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "23:30", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "23:30", 
+          "exception": false, 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:30", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:59", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:59", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "23:30", 
+          "start_time": "06:00", 
+          "times": [
+            {
+              "end_time": "23:30", 
+              "start_time": "06:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Finchley Road", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "2332", 
+      "contact": {
+        "address1": "Smithfield Square", 
+        "address2": "High Street Hornsey", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Dave Hudson", 
+        "post_code": "N8 7SA", 
+        "telephone": "0203 1266819"
+      }, 
+      "distance": 4.6231161769741185, 
+      "district_code": "2332", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
+      "location": {
+        "lat": "51.58853", 
+        "lon": "-0.11743"
+      }, 
+      "name": "Hornsey", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Hornsey", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0207", 
+      "contact": {
+        "address1": "112 High Street", 
         "address2": "", 
         "city": "London", 
         "county": "", 
-        "manager": "Richard Hayes", 
-        "post_code": "SW4 7SL", 
-        "telephone": "020 7498 9396"
+        "manager": "Dave Gaffney", 
+        "post_code": "E17 7JY", 
+        "telephone": "020 8521 6113"
       }, 
-      "distance": 3.924265903392787, 
-      "district_code": "0526", 
-      "exception_times": [], 
+      "distance": 4.733860885947522, 
+      "district_code": "0207", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "18:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "18:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "18:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "18:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
       "location": {
-        "lat": "51.46207", 
-        "lon": "-0.13598"
+        "lat": "51.58256", 
+        "lon": "-0.02734"
       }, 
-      "name": "Clapham Common", 
+      "name": "Walthamstow", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "21:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "21:00", 
+          "exception": false, 
+          "start_time": "07:30", 
+          "times": [
+            {
+              "end_time": "21:00", 
+              "start_time": "07:30"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "20:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "20:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "20:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "21:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "21:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "21:00", 
+          "start_time": "08:00", 
+          "times": [
+            {
+              "end_time": "21:00", 
+              "start_time": "08:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "21:00", 
+          "start_time": "07:30", 
+          "times": [
+            {
+              "end_time": "21:00", 
+              "start_time": "07:30"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Walthamstow", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0302", 
+      "contact": {
+        "address1": "88-92 Kilburn High Road", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Gerald Kelly", 
+        "post_code": "NW6 4HS", 
+        "telephone": "020 7328 3536"
+      }, 
+      "distance": 4.7463578552795, 
+      "district_code": "0302", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "21:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "21:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "21:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "21:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
+      "location": {
+        "lat": "51.53865", 
+        "lon": "-0.19403"
+      }, 
+      "name": "Kilburn", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "22:00", 
+        "today": {
+          "24hrs": false, 
+          "end_time": "22:00", 
+          "exception": false, 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "22:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "22:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Kilburn", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "2118", 
+      "contact": {
+        "address1": "54-58 High Road", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Bobby Radmore", 
+        "post_code": "N22 6BX", 
+        "telephone": "020 8365 8271"
+      }, 
+      "distance": 4.766810791990167, 
+      "district_code": "2118", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "19:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "19:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
+      "location": {
+        "lat": "51.59248", 
+        "lon": "-0.10529"
+      }, 
+      "name": "Wood Grn", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:00", 
         "today": {
@@ -1684,6 +3183,158 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      }, 
+      "opening_times": [
+        {
+          "day": 0, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 1, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 2, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 3, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 4, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 5, 
+          "end_time": "23:00", 
+          "start_time": "07:00", 
+          "times": [
+            {
+              "end_time": "23:00", 
+              "start_time": "07:00"
+            }
+          ]
+        }, 
+        {
+          "day": 6, 
+          "end_time": "17:00", 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
+            }
+          ]
+        }
+      ], 
+      "opening_times_message": "", 
+      "other_name": "Wood Green", 
+      "store_type": "main"
+    }, 
+    {
+      "closed": {
+        "description": "", 
+        "end_date": null, 
+        "start_date": null
+      }, 
+      "code": "0526", 
+      "contact": {
+        "address1": "133 Clapham High Street", 
+        "address2": "", 
+        "city": "London", 
+        "county": "", 
+        "manager": "Lukasz Romanowski", 
+        "post_code": "SW4 7SL", 
+        "telephone": "020 7498 9396"
+      }, 
+      "distance": 4.823230294321031, 
+      "district_code": "0526", 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
+      "location": {
+        "lat": "51.46207", 
+        "lon": "-0.13598"
+      }, 
+      "name": "Clapham Common", 
+      "open": {
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
+        "is_open": true, 
+        "open_until": "23:00", 
+        "today": {
+          "24hrs": false, 
           "end_time": "23:00", 
           "exception": false, 
           "start_time": "07:00", 
@@ -1691,6 +3342,18 @@
             {
               "end_time": "23:00", 
               "start_time": "07:00"
+            }
+          ]
+        }, 
+        "tomorrow": {
+          "24hrs": false, 
+          "end_time": "17:00", 
+          "exception": false, 
+          "start_time": "11:00", 
+          "times": [
+            {
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1792,9 +3455,9 @@
         "county": "", 
         "manager": "Chris Young", 
         "post_code": "SW7 4EJ", 
-        "telephone": "020 7373 8313"
+        "telephone": "0207 373 8313"
       }, 
-      "distance": 3.9818861355614197, 
+      "distance": 4.8517794878694, 
       "district_code": "0229", 
       "exception_times": [], 
       "location": {
@@ -1803,31 +3466,31 @@
       }, 
       "name": "Cromwell Rd", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
-        "open_until": "23:59", 
+        "open_until": "22:00", 
         "today": {
           "24hrs": false, 
-          "end_time": "23:59", 
+          "end_time": "22:00", 
           "exception": false, 
           "start_time": "06:00", 
           "times": [
             {
-              "end_time": "23:59", 
+              "end_time": "22:00", 
               "start_time": "06:00"
             }
           ]
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:59", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "06:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "23:59", 
-              "start_time": "06:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -1931,17 +3594,44 @@
         "post_code": "SW2 2TP", 
         "telephone": "0203 1267399"
       }, 
-      "distance": 4.165556721860199, 
+      "distance": 4.965498191159964, 
       "district_code": "2316", 
-      "exception_times": [], 
+      "exception_times": [
+        {
+          "date": "2019-05-06", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }, 
+        {
+          "date": "2019-05-27", 
+          "description": "Bank Holiday", 
+          "end_time": "20:00", 
+          "reason": 5, 
+          "start_time": "09:00", 
+          "times": [
+            {
+              "end_time": "20:00", 
+              "start_time": "09:00"
+            }
+          ]
+        }
+      ], 
       "location": {
         "lat": "51.45483", 
         "lon": "-0.11399"
       }, 
       "name": "Brixton", 
       "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
+        "current_date": "2019-05-04", 
+        "current_time": "13:39", 
         "is_open": true, 
         "open_until": "23:00", 
         "today": {
@@ -1958,13 +3648,13 @@
         }, 
         "tomorrow": {
           "24hrs": false, 
-          "end_time": "23:00", 
+          "end_time": "17:00", 
           "exception": false, 
-          "start_time": "07:00", 
+          "start_time": "11:00", 
           "times": [
             {
-              "end_time": "23:00", 
-              "start_time": "07:00"
+              "end_time": "17:00", 
+              "start_time": "11:00"
             }
           ]
         }
@@ -2050,1368 +3740,6 @@
       ], 
       "opening_times_message": "", 
       "other_name": "Brixton", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0612", 
-      "contact": {
-        "address1": "02 Centre", 
-        "address2": "255 Finchley Road", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Danny Marks", 
-        "post_code": "NW3 6LU", 
-        "telephone": "020 7433 1493"
-      }, 
-      "distance": 4.167593348084493, 
-      "district_code": "0612", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.54802", 
-        "lon": "-0.18200"
-      }, 
-      "name": "Finchley Rd", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:59", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "23:30", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:30", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Finchley Road", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": null, 
-      "code": "2257", 
-      "contact": {
-        "address1": "1 Amhurst Park", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Adam Short", 
-        "post_code": "N16 5LW", 
-        "telephone": "0203 1267200"
-      }, 
-      "distance": 4.227508297323147, 
-      "district_code": "2257", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.57327", 
-        "lon": "-0.07338"
-      }, 
-      "name": "Stamford Hill", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "22:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": null, 
-      "other_name": "Stamford Hill", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0302", 
-      "contact": {
-        "address1": "88-92 Kilburn High Road", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Gerald Kelly", 
-        "post_code": "NW6 4HS", 
-        "telephone": "020 7328 3536"
-      }, 
-      "distance": 4.319295166865303, 
-      "district_code": "0302", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.53865", 
-        "lon": "-0.19403"
-      }, 
-      "name": "Kilburn", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "22:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Kilburn", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": null, 
-      "code": "0406", 
-      "contact": {
-        "address1": "Williamson Road", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Paul Miller", 
-        "post_code": "N4 1UJ", 
-        "telephone": "020 8809 6065"
-      }, 
-      "distance": 4.332816947191178, 
-      "district_code": "0406", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.57721", 
-        "lon": "-0.09568"
-      }, 
-      "name": "Harringay", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:59", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": null, 
-      "other_name": "Harringay", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0932", 
-      "contact": {
-        "address1": "Twelve trees Crescent", 
-        "address2": "UNCONFIRMED ADDRESS", 
-        "city": "LONDON", 
-        "county": "", 
-        "manager": "Christopher May", 
-        "post_code": "E3 3TT", 
-        "telephone": ""
-      }, 
-      "distance": 4.610454649882878, 
-      "district_code": "0932", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.51911", 
-        "lon": "0.00570"
-      }, 
-      "name": "Bromley by Bow OFC", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:59", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "23:59", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "16:00", 
-          "start_time": "10:00", 
-          "times": [
-            {
-              "end_time": "16:00", 
-              "start_time": "10:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Bromley by Bow OFC", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "2055", 
-      "contact": {
-        "address1": "Fulham Broadway Retail Centre", 
-        "address2": "Fulham Broadway", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Jason Amarasekera", 
-        "post_code": "SW6 1BW", 
-        "telephone": "020 7385 4712"
-      }, 
-      "distance": 4.629736420864509, 
-      "district_code": "2055", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.48102", 
-        "lon": "-0.19443"
-      }, 
-      "name": "Fulham Broadway", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "23:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "18:00", 
-          "start_time": "12:00", 
-          "times": [
-            {
-              "end_time": "18:00", 
-              "start_time": "12:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Fulham Broadway", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0002", 
-      "contact": {
-        "address1": "38-40 The Mall", 
-        "address2": "The Stratford Centre", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Kevin O'Sullivan", 
-        "post_code": "E15 1XE", 
-        "telephone": "020 8534 7597"
-      }, 
-      "distance": 4.70280169097033, 
-      "district_code": "0002", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.54189", 
-        "lon": "-0.00106"
-      }, 
-      "name": "Stratford", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "22:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "22:00", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "22:00", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "22:00", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "22:00", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "22:00", 
-          "start_time": "06:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "06:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Stratford", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "2658", 
-      "contact": {
-        "address1": "27 Townmead Road", 
-        "address2": "Fulham", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Leigh Brown", 
-        "post_code": "SW6 2GD", 
-        "telephone": "0203 1266840"
-      }, 
-      "distance": 4.9366183533369545, 
-      "district_code": "2658", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.46715", 
-        "lon": "-0.18708"
-      }, 
-      "name": "Fulham Wharf", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "22:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "16:00", 
-          "start_time": "10:00", 
-          "times": [
-            {
-              "end_time": "16:00", 
-              "start_time": "10:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Fulham Wharf", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "0602", 
-      "contact": {
-        "address1": "Ladbroke Grove", 
-        "address2": "", 
-        "city": "London", 
-        "county": "", 
-        "manager": "David Mackenzie", 
-        "post_code": "W10 5AA", 
-        "telephone": "020 8960 4324"
-      }, 
-      "distance": 5.070697007595682, 
-      "district_code": "0602", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.52630", 
-        "lon": "-0.21772"
-      }, 
-      "name": "Ladbroke Grove", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "23:59", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "23:59", 
-          "exception": false, 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "23:59", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "23:59", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "23:59", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "23:59", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "23:59", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "23:59", 
-          "start_time": "07:00", 
-          "times": [
-            {
-              "end_time": "23:59", 
-              "start_time": "07:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Ladbroke Grove", 
-      "store_type": "main"
-    }, 
-    {
-      "closed": {
-        "description": "", 
-        "end_date": null, 
-        "start_date": null
-      }, 
-      "code": "2332", 
-      "contact": {
-        "address1": "Smithfield Square", 
-        "address2": "High Street Hornsey", 
-        "city": "London", 
-        "county": "", 
-        "manager": "Dave Hudson", 
-        "post_code": "N8 7SA", 
-        "telephone": "0203 1266819"
-      }, 
-      "distance": 5.15513516608131, 
-      "district_code": "2332", 
-      "exception_times": [], 
-      "location": {
-        "lat": "51.58853", 
-        "lon": "-0.11743"
-      }, 
-      "name": "Hornsey", 
-      "open": {
-        "current_date": "2018-07-25", 
-        "current_time": "21:25", 
-        "is_open": true, 
-        "open_until": "22:00", 
-        "today": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        "tomorrow": {
-          "24hrs": false, 
-          "end_time": "22:00", 
-          "exception": false, 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }
-      }, 
-      "opening_times": [
-        {
-          "day": 0, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 1, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 2, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 3, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 4, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 5, 
-          "end_time": "22:00", 
-          "start_time": "08:00", 
-          "times": [
-            {
-              "end_time": "22:00", 
-              "start_time": "08:00"
-            }
-          ]
-        }, 
-        {
-          "day": 6, 
-          "end_time": "17:00", 
-          "start_time": "11:00", 
-          "times": [
-            {
-              "end_time": "17:00", 
-              "start_time": "11:00"
-            }
-          ]
-        }
-      ], 
-      "opening_times_message": "", 
-      "other_name": "Hornsey", 
       "store_type": "main"
     }
   ]
