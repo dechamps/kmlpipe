@@ -118,7 +118,7 @@
 			</kmlpipe:PartialScore>
 
 			<xsl:variable name="supermarket-duration" select="kmlpipe:LinkSet[@name='Supermarkets']/kmlpipe:Link/kmlpipe:GoogleDistance/DistanceMatrixResponse/row/element/duration" />
-			<xsl:if test="count($commute-duration/value) != 1">
+			<xsl:if test="count($supermarket-duration/value) != 1">
 				<xsl:message terminate="yes">ERROR: invalid supermarket distance information on place ID <xsl:value-of select="$place-id" /></xsl:message>
 			</xsl:if>
 			<xsl:variable name="supermarket-minutes" select="$supermarket-duration/value div 60" />
