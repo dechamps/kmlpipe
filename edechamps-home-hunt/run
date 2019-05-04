@@ -97,12 +97,11 @@ fi
 
 if [[ -n "$diff_against" ]]
 then
-	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Nestoria Listings' -s 'obliterate=true' < "$diff_against" |
-	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Nestoria Listings Reference' > "$kmlpipe_tmpdir/reference.kml"
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folder.xsl" -s 'source-folder-name=Nestoria Listings' -s 'destination-folder-name=Previous Nestoria Listings' < "$diff_against" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Previous Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/previous.kml"
 
-	"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$kmlpipe_tmpdir/reference.kml" |
-	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Nestoria Listings' -s 'compare-against-folder-name=Nestoria Listings Reference' -s 'obliterate=true' |
-	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/listings-diff.kml"
+	"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$kmlpipe_tmpdir/previous.kml" |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Nestoria Listings' -s 'compare-against-folder-name=Previous Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/listings-diff.kml"
 	mv "$kmlpipe_tmpdir/listings-diff.kml" "$kmlpipe_tmpdir/listings.kml"
 fi
 
