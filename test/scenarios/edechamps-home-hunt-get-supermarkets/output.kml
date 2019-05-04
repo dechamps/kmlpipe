@@ -5,25 +5,27 @@
       <kml:name xmlns:kml="http://www.opengis.net/kml/2.2">Supermarkets</kml:name>
       <kmlpipe:Renamed from="Sainsbury's Store Locator Results Page"/>
       <Placemark>
-        <kmlpipe:Place place-id="sainsburys:null"/>
+        <kmlpipe:Place place-id="sainsburys:holborn"/>
         <name>Holborn LL</name>
         <description>Type: null</description>
         <Point>
           <coordinates>-0.12065,51.51742</coordinates>
         </Point>
-        <kmlpipe:Sainsburys>{"location":{"lat":"51.51742","lon":"-0.12065"},"name":"Holborn LL"}</kmlpipe:Sainsburys>
+        <kmlpipe:Sainsburys>{"code":"holborn","location":{"lat":"51.51742","lon":"-0.12065"},"name":"Holborn LL"}</kmlpipe:Sainsburys>
         <address>null null null</address>
       </Placemark>
-      <Placemark>
-        <kmlpipe:Place place-id="sainsburys:null"/>
-        <name>Tottenham Crt Rd LL</name>
-        <description>Type: null</description>
-        <Point>
-          <coordinates>-0.13143,51.51743</coordinates>
-        </Point>
-        <kmlpipe:Sainsburys>{"location":{"lat":"51.51743","lon":"-0.13143"},"name":"Tottenham Crt Rd LL"}</kmlpipe:Sainsburys>
-        <address>null null null</address>
-      </Placemark>
+      <kmlpipe:DifferenceRemoved>
+        <Placemark>
+          <kmlpipe:Place place-id="sainsburys:tottenham"/>
+          <name>Tottenham Crt Rd LL</name>
+          <description>Type: null</description>
+          <Point>
+            <coordinates>-0.13143,51.51743</coordinates>
+          </Point>
+          <kmlpipe:Sainsburys>{"code":"tottenham","location":{"lat":"51.51743","lon":"-0.13143"},"name":"Tottenham Crt Rd LL"}</kmlpipe:Sainsburys>
+          <address>null null null</address>
+        </Placemark>
+      </kmlpipe:DifferenceRemoved>
       <kmlpipe:Sainsburys>{}</kmlpipe:Sainsburys>
       <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
         <kmlpipe:Place place-id="google-place-id:ChIJpx9o_1UbdkgRqRE9UDY-8_c"/>
@@ -85,29 +87,31 @@
         </kmlpipe:Google>
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
-      <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
-        <kmlpipe:Place place-id="google-place-id:ChIJl_PNVfscdkgRTAyzuMin3HM"/>
-        <kml:name>Tesco Superstore</kml:name>
-        <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5468880,-0.0526980&amp;query_place_id=ChIJl_PNVfscdkgRTAyzuMin3HM</kml:description>
-        <kml:Point>
-          <kml:coordinates>-0.0526980,51.5468880</kml:coordinates>
-        </kml:Point>
-        <kml:address>55 Morning Ln, London</kml:address>
-        <kmlpipe:Google>
-          <result xmlns="">
-            <name>Tesco Superstore</name>
-            <vicinity>55 Morning Ln, London</vicinity>
-            <geometry>
-              <location>
-                <lat>51.5468880</lat>
-                <lng>-0.0526980</lng>
-              </location>
-            </geometry>
-            <place_id>ChIJl_PNVfscdkgRTAyzuMin3HM</place_id>
-          </result>
-        </kmlpipe:Google>
-        <kmlpipe:MergedFolder name="Tesco supermarkets"/>
-      </kml:Placemark>
+      <kmlpipe:DifferenceRemoved>
+        <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
+          <kmlpipe:Place place-id="google-place-id:ChIJl_PNVfscdkgRTAyzuMin3HM"/>
+          <kml:name>Tesco Superstore</kml:name>
+          <kml:description>https://www.google.com/maps/search/?api=1&amp;query=51.5468880,-0.0526980&amp;query_place_id=ChIJl_PNVfscdkgRTAyzuMin3HM</kml:description>
+          <kml:Point>
+            <kml:coordinates>-0.0526980,51.5468880</kml:coordinates>
+          </kml:Point>
+          <kml:address>55 Morning Ln, London</kml:address>
+          <kmlpipe:Google>
+            <result xmlns="">
+              <name>Tesco Superstore</name>
+              <vicinity>55 Morning Ln, London</vicinity>
+              <geometry>
+                <location>
+                  <lat>51.5468880</lat>
+                  <lng>-0.0526980</lng>
+                </location>
+              </geometry>
+              <place_id>ChIJl_PNVfscdkgRTAyzuMin3HM</place_id>
+            </result>
+          </kmlpipe:Google>
+          <kmlpipe:MergedFolder name="Tesco supermarkets"/>
+        </kml:Placemark>
+      </kmlpipe:DifferenceRemoved>
       <kml:Placemark xmlns:kml="http://www.opengis.net/kml/2.2">
         <kmlpipe:Place place-id="google-place-id:ChIJZzp-xpIPdkgRtZn4TIVXxnk"/>
         <kml:name>Tesco Superstore</kml:name>
@@ -145,6 +149,17 @@
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
     </Folder>
+    <kmlpipe:FolderDifference compared-against-folder-name="Supermarket Blacklist"/>
+    <Folder>
+      <name>Supermarket Blacklist</name>
+      <Placemark>
+        <kmlpipe:Place place-id="sainsburys:tottenham"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="google-place-id:ChIJl_PNVfscdkgRTAyzuMin3HM"/>
+      </Placemark>
+      <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+    </Folder>
   </Document>
   <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
     <kml:kml xmlns:kml="http://www.opengis.net/kml/2.2">
@@ -168,6 +183,16 @@
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
     </kml:kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml>
+      <Document>
+        <Folder>
+          <name>Supermarket Blacklist</name>
+        </Folder>
+      </Document>
+    </kml>
   </kmlpipe:MergedDocument>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>

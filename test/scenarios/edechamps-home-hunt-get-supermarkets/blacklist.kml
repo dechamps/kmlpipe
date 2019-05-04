@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Supermarket Blacklist</name>
+      <Placemark>
+        <kmlpipe:Place place-id="sainsburys:tottenham" />
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="google-place-id:ChIJl_PNVfscdkgRTAyzuMin3HM" />
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
