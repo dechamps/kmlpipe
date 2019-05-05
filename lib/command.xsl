@@ -6,7 +6,7 @@
 	This is meant to add tracing information to aid with debugging and
 	troubleshooting.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<xsl:param name="name" />
 	<xsl:param name="args" />
 	<xsl:param name="time" />

@@ -5,7 +5,7 @@
 	Folder children that are not Placemarks (e.g. name) are set
 	aside in a kmlpipe:MergedFolder element.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<xsl:template match="/">
 		<xsl:if test="not(/kml:kml/kml:Document/kml:Folder)">
 			<xsl:message terminate="yes">ERROR: input does not look like valid KML, or contains no folders</xsl:message>

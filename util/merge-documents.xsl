@@ -5,7 +5,7 @@
 	Given a KML input and a KML "from" document, appends the KML Folders
 	in the from document to the input.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<xsl:param name="from" />
 	<xsl:variable name="from-document" select="document($from)" />
 	<xsl:variable name="input-document" select="/" />

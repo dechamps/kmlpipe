@@ -10,7 +10,7 @@ EOF
 kmlpipe_args_end
 
 kmlpipe_xmlstarlet sel \
-	-N 'kml=http://www.opengis.net/kml/2.2' -N 'kmlpipe=http://edechamps.fr/kmlpipe' --template \
+	-N 'kml=http://www.opengis.net/kml/2.2' -N 'kmlpipe=https://github.com/dechamps/kmlpipe' --template \
 		--match '/kml:kml/kml:Document/kml:Folder/kml:Placemark/kmlpipe:Nestoria/listings/@keywords' \
 			--value-of '.' --nl |
 tr ',' '\n' |

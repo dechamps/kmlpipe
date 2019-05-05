@@ -2,5 +2,5 @@
 <TestGoogleResponse>
   <SomeTestElement>test2</SomeTestElement>
   <next_page_token>test_page_token_2</next_page_token>
-  <kmlpipe:Command xmlns:kmlpipe="http://edechamps.fr/kmlpipe" name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command xmlns:kmlpipe="https://github.com/dechamps/kmlpipe" name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
 </TestGoogleResponse>

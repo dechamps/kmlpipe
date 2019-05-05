@@ -5,7 +5,7 @@
 	Given an input KML file and a distances XML file for a specific
 	Link Set name, adds the distance information to the links.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<xsl:param name="distances-file" />
 	<xsl:variable name="distances-document" select="document($distances-file)" />
 	<xsl:param name="link-set-name" />

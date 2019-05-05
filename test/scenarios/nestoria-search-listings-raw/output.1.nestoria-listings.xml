@@ -5,5 +5,5 @@
     <listings id="2"/>
     <listings id="3"/>
   </response>
-  <kmlpipe:Command xmlns:kmlpipe="http://edechamps.fr/kmlpipe" name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
+  <kmlpipe:Command xmlns:kmlpipe="https://github.com/dechamps/kmlpipe" name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
 </opt>

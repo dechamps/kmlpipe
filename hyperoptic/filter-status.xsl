@@ -2,7 +2,7 @@
 <!--
 	Removes Hyperoptic sites depending on their status.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<xsl:param name="drop-taking-orders" select="false" />
 	<xsl:param name="drop-registering-interest" select="false" />
 	<xsl:param name="drop-installation-agreed" select="false" />

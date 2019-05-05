@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<kml:Document some-document-attribute="document">
 		<kml:Folder some-folder-attribute="folder">
 			<kml:name>Old Folder</kml:name>

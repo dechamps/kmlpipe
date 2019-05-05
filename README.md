@@ -144,7 +144,7 @@ structure that kmlpipe expects. *Caveat emptor*.
 
 ### kmlpipe KML extensions
 
-kmlpipe defines its own XML namespace, `http://edechamps.fr/kmlpipe` (henceforth
+kmlpipe defines its own XML namespace, `https://github.com/dechamps/kmlpipe` (henceforth
 referred to using the `kmlpipe:` prefix), to extend KML with kmlpipe-specific
 structured data. This namespace is used to carry around kmlpipe metadata that
 does not have an obvious KML representation. For example, the `util/distance`
@@ -214,7 +214,7 @@ Here's an example of a KML file that uses Link Sets:
 ```xml
 <kml
     xmlns="http://www.opengis.net/kml/2.2"
-    xmlns:kmlpipe="http://edechamps.fr/kmlpipe"><Document>
+    xmlns:kmlpipe="https://github.com/dechamps/kmlpipe"><Document>
     <Folder>
         <name>Folder 1</name>
         <Placemark>

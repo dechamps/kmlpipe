@@ -6,7 +6,7 @@
 	when comparing against golden output files to avoid spurious
 	differences that would make the test scenario fail.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kmlpipe="http://edechamps.fr/kmlpipe" xmlns:kml="http://www.opengis.net/kml/2.2">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe" xmlns:kml="http://www.opengis.net/kml/2.2">
 	<xsl:template match="kmlpipe:Command/@name"><xsl:attribute name="name">[STRIPPED FOR CANONICALIZATION]</xsl:attribute></xsl:template>
 	<xsl:template match="kmlpipe:Command/@args"><xsl:attribute name="args">[STRIPPED FOR CANONICALIZATION]</xsl:attribute></xsl:template>
 	<xsl:template match="kmlpipe:Command/@run-id"><xsl:attribute name="run-id">[STRIPPED FOR CANONICALIZATION]</xsl:attribute></xsl:template>

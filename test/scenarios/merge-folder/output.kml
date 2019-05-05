@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe" some-kml-attribute="1">
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe" some-kml-attribute="1">
   <kml:Document some-document-attribute="1">
     <kmlpipe:MergedFolder from="Folder 1" to="Folder 3" some-folder-attribute="1">
       <kml:name>Folder 1</kml:name>

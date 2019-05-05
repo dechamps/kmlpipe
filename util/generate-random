@@ -39,7 +39,7 @@ then
 fi
 
 echo '<?xml version="1.0" encoding="utf-8"?>'
-echo '<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe"><Document>'
+echo '<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe"><Document>'
 
 for (( folder_index=0 ; folder_count-folder_index ; folder_index+=1 ))
 do

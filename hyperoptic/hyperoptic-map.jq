@@ -7,7 +7,7 @@
 #   jq --raw-output --from-file hyperoptic-map.jq \
 #     hyperoptic-london-20190428.json
 "<?xml version='1.0' encoding='UTF-8'?>\n" +
-"<kml xmlns='http://www.opengis.net/kml/2.2' xmlns:kmlpipe='http://edechamps.fr/kmlpipe'><Document><Folder>" +
+"<kml xmlns='http://www.opengis.net/kml/2.2' xmlns:kmlpipe='https://github.com/dechamps/kmlpipe'><Document><Folder>" +
 "<name>Hyperoptic map</name>" +
 (map(
 	"<Placemark>" +

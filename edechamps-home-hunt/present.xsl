@@ -2,7 +2,7 @@
 <!--
 	Sorts and annotates final Edechamps Home Hunt pipeline output for human consumption.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<xsl:variable name="listings" select="/kml:kml/kml:Document/kml:Folder[kml:name='Nestoria Listings']" />
 
 	<xsl:key name="place-by-id" match="/kml:kml/kml:Document/kml:Folder/kml:Placemark" use="kmlpipe:Place/@place-id" />

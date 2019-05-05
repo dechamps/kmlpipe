@@ -2,7 +2,7 @@
 <!--
 	Assigns partial scores to each property based on various criteria, leveraging the annotations from the widening step.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="http://edechamps.fr/kmlpipe">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
 	<!-- The commute time from which to start adding a penalty. -->
 	<xsl:param name="commute-allowance-minutes" />
 	<!-- For each additional minute of commute, remove penalty-per-commute-minute points. -->
