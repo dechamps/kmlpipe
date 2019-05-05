@@ -71,7 +71,7 @@ then
 	kmlpipe_error "cannot fetch remotely in hermetic mode (did you mean to use KMLPIPE_FETCH_REPLAY_DIR?)"
 fi
 
-curl_command=(kmlpipe_cmd_verbose curl --user-agent 'kmlpipe')
+curl_command=(kmlpipe_cmd_verbose curl --user-agent 'kmlpipe https://github.com/dechamps/kmlpipe')
 if kmlpipe_debug_enabled
 then
 	curl_command+=(--verbose)
