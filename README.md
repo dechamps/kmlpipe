@@ -33,9 +33,11 @@ To test your system, run `test/run-scenarios`. If all the tests succeed, your
 system has all the required and optional dependencies (with the possible
 exception of `curl`, as tests never make external requests).
 
-See [`dockerfiles/debian/Dockerfile`][] for a Docker image that provides all the
-dependencies. That file also contains a canonical `apt` command to install all
-the dependencies on a Debian system.
+To install all required and optional dependencies on an APT-based system, run:
+
+```shell
+apt install bash xmlstarlet curl jq
+```
 
 ### Required dependencies
 

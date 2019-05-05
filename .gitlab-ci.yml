@@ -1,4 +1,0 @@
-debian:
-  image: registry.gitlab.com/kmlpipe/kmlpipe/debian:latest
-  script:
-    - test/run-scenarios

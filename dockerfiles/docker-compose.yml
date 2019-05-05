@@ -1,5 +1,0 @@
-version: "3"
-services:
-  debian:
-    build: debian
-    image: registry.gitlab.com/kmlpipe/kmlpipe/debian:latest
