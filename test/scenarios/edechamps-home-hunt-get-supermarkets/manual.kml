@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Manual Supermarkets</name>
+      <Placemark>
+        <kmlpipe:Place place-id="manual1" />
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="manual2" />
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

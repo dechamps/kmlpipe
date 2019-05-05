@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Manual Supermarkets</name>
+
+      <!-- Google Maps does not list this Waitrose for some reason. -->
+      <Placemark>
+        <kmlpipe:Place place-id="manual-supermarket:waitrose:granarysquare"/>
+        <name>Waitrose Kings Cross, Granary Square</name>
+        <description>https://www.waitrose.com/content/waitrose/en/bf_home/bf/590.html</description>
+        <Point><coordinates>-0.123441,51.536114</coordinates></Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

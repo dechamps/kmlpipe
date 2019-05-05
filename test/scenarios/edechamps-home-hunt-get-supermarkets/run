@@ -3,7 +3,8 @@
 source "${BASH_SOURCE%/*}/../../lib/scenario.bash" || exit 1
 
 KMLPIPE_FETCH_REPLAY_DIR="$kmlpipe_script_dir/replay" "$kmlpipe_dir/edechamps-home-hunt/get-supermarkets" \
-	--sainsburys-file "$kmlpipe_script_dir/sainsburys.json" --google-key =TEST_GOOGLE_KEY --blacklist-file "$kmlpipe_script_dir/blacklist.kml" \
+	--sainsburys-file "$kmlpipe_script_dir/sainsburys.json" --google-key =TEST_GOOGLE_KEY \
+	--manual-file "$kmlpipe_script_dir/manual.kml" --blacklist-file "$kmlpipe_script_dir/blacklist.kml" \
 	> "$kmlpipe_tmpdir/output.kml"
 kmlpipe_validate_kml "$kmlpipe_tmpdir/output.kml"
 kmlpipe_check_golden_xml "$kmlpipe_script_dir/output.kml" < "$kmlpipe_tmpdir/output.kml"

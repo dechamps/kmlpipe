@@ -4,6 +4,7 @@ source "${BASH_SOURCE%/*}/../lib/common.bash" || exit 1
 
 sainsburys_file=''
 google_key=''
+manual_file=''
 blacklist_file=''
 cache_directory=''
 
@@ -17,6 +18,9 @@ Fetches supermarket data for the Edechamps Home Hunt Pipeline.
   --google-key =KEY (required)
   --google-key @KEYFILE (required)
     Google API Key.
+
+  --manual-supermarkets FILE
+    Add supermarkets that appear in the specified file.
 
   --blacklist-file FILE
     Remove supermarkets that appear in the 'Supermarket Blacklist'
@@ -36,6 +40,7 @@ do
 	case "$argument" in
 		--sainsburys-file) kmlpipe_args_pop_or_error sainsburys_file;;
 		--google-key) kmlpipe_args_pop_or_error google_key;;
+		--manual-file) kmlpipe_args_pop_or_error manual_file;;
 		--blacklist-file) kmlpipe_args_pop_or_error blacklist_file;;
 		--cache-directory) kmlpipe_args_pop_or_error cache_directory;;
 		--) break;;
@@ -86,7 +91,13 @@ blacklist() {
 	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Supermarkets' -s 'compare-against-folder-name=Supermarket Blacklist'
 }
 
-"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/sainsburys.kml" "$kmlpipe_tmpdir/waitrose.kml" "$kmlpipe_tmpdir/tesco.kml" |
+merge_documents=("$kmlpipe_tmpdir/sainsburys.kml" "$kmlpipe_tmpdir/waitrose.kml" "$kmlpipe_tmpdir/tesco.kml")
+if [[ -n "$manual_file" ]]
+then
+	merge_documents+=("$manual_file")
+fi
+
+"$kmlpipe_dir/util/merge-documents" -- "${merge_documents[@]}" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/merge-folders.xsl" |
 kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/rename-folder.xsl" -s 'new-folder-name=Supermarkets' |
 blacklist |

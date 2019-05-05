@@ -80,7 +80,7 @@ fi
 
 run_cached get-supermarkets "$kmlpipe_script_dir/get-supermarkets" \
 	--sainsburys-file "$kmlpipe_dir/sainsburys/sainsburys-london-main-closest25-20190504.json" --google-key "$google_key" \
-	--blacklist-file "$kmlpipe_script_dir/supermarket-blacklist.kml" \
+	--manual-file "$kmlpipe_script_dir/manual-supermarkets.kml" --blacklist-file "$kmlpipe_script_dir/supermarket-blacklist.kml" \
 	> "$kmlpipe_tmpdir/supermarkets.kml"
 
 "$kmlpipe_script_dir/get-hyperoptic" --input-zones-file "$zones_file" --zone-fudge-miles 0.25 < "$kmlpipe_dir/hyperoptic/hyperoptic-london-20190428.json" > "$kmlpipe_tmpdir/hyperoptic.kml"

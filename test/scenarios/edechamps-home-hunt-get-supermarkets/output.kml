@@ -148,6 +148,18 @@
         </kmlpipe:Google>
         <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
       </kmlpipe:MergedFolder>
+      <Placemark>
+        <kmlpipe:Place place-id="manual1"/>
+        <kmlpipe:MergedFolder name="Manual Supermarkets"/>
+      </Placemark>
+      <Placemark>
+        <kmlpipe:Place place-id="manual2"/>
+        <kmlpipe:MergedFolder name="Manual Supermarkets"/>
+      </Placemark>
+      <kmlpipe:MergedFolder>
+        <name>Manual Supermarkets</name>
+        <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]"/>
+      </kmlpipe:MergedFolder>
     </Folder>
     <kmlpipe:FolderDifference compared-against-folder-name="Supermarket Blacklist"/>
     <Folder>
@@ -183,6 +195,15 @@
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
       <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
     </kml:kml>
+  </kmlpipe:MergedDocument>
+  <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
+    <kml>
+      <Document>
+        <Folder>
+          <name>Manual Supermarkets</name>
+        </Folder>
+      </Document>
+    </kml>
   </kmlpipe:MergedDocument>
   <kmlpipe:Command name="[STRIPPED FOR CANONICALIZATION]" args="[STRIPPED FOR CANONICALIZATION]" time="[STRIPPED FOR CANONICALIZATION]" run-id="[STRIPPED FOR CANONICALIZATION]"/>
   <kmlpipe:MergedDocument from="[STRIPPED FOR CANONICALIZATION]">
