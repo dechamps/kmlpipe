@@ -302,6 +302,13 @@ Non-option arguments must always come after a `--` separator; e.g.
 Set the `KMLPIPE_DEBUG` environment variable to increase log verbosity. Set the
 `KMLPIPE_QUIET` environment variable to decrease log verbosity.
 
+Many kmlpipe tools need to create temporary files. `mktemp(1)` is used to
+create a temporary folder, which is then robustly destroyed when the tool ends,
+even on failure. If the `KMLPIPE_TMPDIR` environment variable is set then
+kmlpipe will create temporary directories under that location, and will *not*
+destroy them afterwards. This can be used to look at the contents of temporary
+files after the fact.
+
 kmlpipe tools that want to use the current time will get it from the system
 clock, unless the `KMLPIPE_TIMESTAMP` environment variable is set, in which
 case they will use that as the current Unix timestamp. Just like the replay
