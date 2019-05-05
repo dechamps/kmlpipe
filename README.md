@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/dechamps/kmlpipe.svg?branch=master)](https://travis-ci.com/dechamps/kmlpipe)
+
 # kmlpipe, a geographic data processing toolbox
 
 kmlpipe is a framework to retrieve, aggregate, join, and otherwise process data
