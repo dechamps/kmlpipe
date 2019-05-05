@@ -40,8 +40,8 @@ the dependencies on a Debian system.
 Most kmlpipe tools will not run unless the following is provided:
 
 - A POSIX-based system, such as GNU/Linux.
-- [bash][]. Note that a recent version (>= 4.4) is required, as kmlpipe tends to
-  use bleeding-edge bash features.
+- [bash][]. Note that a recent version (>= 4.4) is required, because kmlpipe
+  relies on `${...@Q}` expansion as well as [improved empty array handling][].
 - [xmlstarlet][].
 
 ### Optional dependencies
@@ -404,6 +404,7 @@ contain more than a few thousands of places.
 [Google Place ID]: https://developers.google.com/places/place-id
 [Hyperoptic]: https://www.hyperoptic.com/
 [Hyperoptic site map]: https://www.hyperoptic.com/map/
+[improved empty array handling]: https://stackoverflow.com/a/39687362
 [KML]: https://en.wikipedia.org/wiki/Keyhole_Markup_Language
 [Nestoria]: https://www.nestoria.co.uk/
 [Nestoria API]: https://www.nestoria.co.uk/help/api
