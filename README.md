@@ -49,6 +49,11 @@ Most kmlpipe tools will not run unless the following is provided:
 - [curl][] to make remote calls to external services, such as Google Maps.
 - [jq][] to process data that comes in JSON form.
 
+## Quick start
+
+The best way to see kmlpipe in action is to run a real pipeline, for example by
+taking the [edechamps Home Hunt][] pipeline for a [test run][].
+
 ## Components
 
 kmlpipe tools are roughly organized into folders. Currently, these are:
@@ -403,6 +408,7 @@ contain more than a few thousands of places.
 [Nestoria]: https://www.nestoria.co.uk/
 [Nestoria API]: https://www.nestoria.co.uk/help/api
 [Sainsbury's Store Map]: https://stores.sainsburys.co.uk/
+[test run]: edechamps-home-hunt/#running-the-pipeline
 [The Heron]: https://goo.gl/maps/VZovR2oeUQZCFSxZ9
 [xmlstarlet]: http://xmlstar.sourceforge.net/
 [XML]: https://en.wikipedia.org/wiki/XML
