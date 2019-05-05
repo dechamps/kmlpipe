@@ -102,7 +102,8 @@ then
 	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Previous Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/previous.kml"
 
 	"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/listings.kml" "$kmlpipe_tmpdir/previous.kml" |
-	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Nestoria Listings' -s 'compare-against-folder-name=Previous Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/listings-diff.kml"
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/folder-difference.xsl" -s 'remove-from-folder-name=Nestoria Listings' -s 'compare-against-folder-name=Previous Nestoria Listings' -s 'obliterate=true' |
+	kmlpipe_xmlstarlet tr "$kmlpipe_dir/util/trim-folders.xsl" -s 'folder-name=Nestoria Listings' -s 'obliterate=true' > "$kmlpipe_tmpdir/listings-diff.kml"
 	mv "$kmlpipe_tmpdir/listings-diff.kml" "$kmlpipe_tmpdir/listings.kml"
 fi
 
@@ -115,6 +116,19 @@ kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-partial-scores.xsl" \
 	-s 'hyperoptic-penalty-per-meter=0.02' -s 'hyperoptic-max-penalty=5' \
 	-s "keywords-file=$(realpath --canonicalize-existing -- "$kmlpipe_script_dir/keywords.xml")" |
 kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/compute-total-scores.xsl" |
-kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/present.xsl" |
+kmlpipe_xmlstarlet tr "$kmlpipe_script_dir/present.xsl" > "$kmlpipe_tmpdir/result.kml"
+
+{
+	if [[ -z "$diff_against" ]]
+	then
+		cat "$kmlpipe_tmpdir/result.kml"
+	else
+		# Bring back the Previous Nestoria Listings folder so that the next
+		# run will not reprocess properties that were already processed 2
+		# runs ago. We do this at the very end to avoid the main pipeline
+		# getting confused and processing the previous properties.
+		"$kmlpipe_dir/util/merge-documents" -- "$kmlpipe_tmpdir/result.kml" "$kmlpipe_tmpdir/previous.kml"
+	fi
+} |
 kmlpipe_output_xml
 
