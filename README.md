@@ -291,6 +291,21 @@ the supermarkets, answering that question is as simple as running
 each house, a single Link that points to the nearest supermarket, along with its
 distance to the house.
 
+### Zones
+
+A kmlpipe Zone is a special kind of Placemark that represents an area in the
+form of a circle (more specifically, a disc) centred on the coordinates of the
+Placemark. A Zone Placemark has a `kmlpipe:Radius` child element with a `miles`
+attribute that indicates the radius of the zone in miles.
+
+(TODO: the use of the mile unit here is due to the fact that the concept of
+Zones was originally specific to the Nestoria interface. We should really change
+that to use meters.)
+
+Zones are typically used as a filtering mechanism. For example, one can build
+Links between places and Zones and then use `util/filter-zones` to identify
+which places fall into which Zones.
+
 ## Practical considerations
 
 To simplify tool implementation, and to reduce the likelihood of invalid calls,
