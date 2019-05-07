@@ -5,7 +5,7 @@
 kmlpipe is a framework to retrieve, aggregate, join, and otherwise process data
 about geographic places. It was originally designed to rank London real estate
 property listings according to specific criteria, but the core of the framework
-is designed be reusable for a wide variety of use cases.
+is designed to be reusable for a wide variety of use cases.
 
 In some ways kmlpipe can be considered to be a
 [Geographic Information System][]. Its interface is probably quite different
