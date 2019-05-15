@@ -8,35 +8,35 @@
 				<name>Pancras</name>
 				<kmlpipe:Place place-id="zone:pancras" />
 				<Point><coordinates>-0.125971,51.533216</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="5" />
 			</Placemark>
 			<Placemark>
 				<name>Stratford</name>
 				<kmlpipe:Place place-id="zone:stratford" />
 				<Point><coordinates>-0.008604,51.544831</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="5" />
 			</Placemark>
 			<Placemark>
 				<name>Old Street</name>
 				<kmlpipe:Place place-id="zone:oldstreet" />
 				<Point><coordinates>-0.087506,51.525664</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="5" />
 			</Placemark>
 			<Placemark>
 				<name>City Thameslink</name>
 				<kmlpipe:Place place-id="zone:citythameslink" />
 				<Point><coordinates>-0.103572,51.513920</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="5" />
 			</Placemark>
 			<Placemark>
 				<name>Aldgate</name>
 				<kmlpipe:Place place-id="zone:aldgate" />
 				<Point><coordinates>-0.075535,51.514157</coordinates></Point>
-				<kmlpipe:Radius miles="0.5" />
+				<kmlpipe:Radius miles="0.75" />
 				<kmlpipe:ScoreBias value="5" />
 			</Placemark>
 
@@ -44,42 +44,42 @@
 				<name>Baker Street</name>
 				<kmlpipe:Place place-id="zone:bakerstreet" />
 				<Point><coordinates>-0.156990,51.523043</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="0" />
 			</Placemark>
 			<Placemark>
 				<name>Finsbury Park</name>
 				<kmlpipe:Place place-id="zone:finsburypark" />
 				<Point><coordinates>-0.106325,51.564719</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="0" />
 			</Placemark>
 			<Placemark>
 				<name>Leicester Square</name>
 				<kmlpipe:Place place-id="zone:leicestersquare" />
 				<Point><coordinates>-0.128413,51.511349</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="0" />
 			</Placemark>
 			<Placemark>
 				<name>Victoria</name>
 				<kmlpipe:Place place-id="zone:victoria" />
 				<Point><coordinates>-0.143999,51.495539</coordinates></Point>
-				<kmlpipe:Radius miles="0.5" />
+				<kmlpipe:Radius miles="0.75" />
 				<kmlpipe:ScoreBias value="0" />
 			</Placemark>
 			<Placemark>
 				<name>Vauxhall</name>
 				<kmlpipe:Place place-id="zone:vauxhall" />
 				<Point><coordinates>-0.122854,51.485944</coordinates></Point>
-				<kmlpipe:Radius miles="0.3" />
+				<kmlpipe:Radius miles="0.55" />
 				<kmlpipe:ScoreBias value="0" />
 			</Placemark>
 			<Placemark>
 				<name>Whitechapel</name>
 				<kmlpipe:Place place-id="zone:whitechapel" />
 				<Point><coordinates>-0.060621,51.519581</coordinates></Point>
-				<kmlpipe:Radius miles="0.3" />
+				<kmlpipe:Radius miles="0.55" />
 				<kmlpipe:ScoreBias value="0" />
 			</Placemark>
 
@@ -87,56 +87,56 @@
 				<name>Chalk Farm</name>
 				<kmlpipe:Place place-id="zone:chalkfarm" />
 				<Point><coordinates>-0.153521,51.544066</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>Holloway Road</name>
 				<kmlpipe:Place place-id="zone:hollowayroad" />
 				<Point><coordinates>-0.113009,51.552692</coordinates></Point>
-				<kmlpipe:Radius miles="1" />
+				<kmlpipe:Radius miles="1.25" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>Seven Sisters</name>
 				<kmlpipe:Place place-id="zone:sevensisters" />
 				<Point><coordinates>-0.072703,51.583287</coordinates></Point>
-				<kmlpipe:Radius miles="0.5" />
+				<kmlpipe:Radius miles="0.75" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>Tottenham Hale</name>
 				<kmlpipe:Place place-id="zone:tottenhamhale" />
 				<Point><coordinates>-0.060314,51.588173</coordinates></Point>
-				<kmlpipe:Radius miles="0.5" />
+				<kmlpipe:Radius miles="0.75" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>West Hampstead</name>
 				<kmlpipe:Place place-id="zone:westhampstead" />
 				<Point><coordinates>-0.192329,51.548351</coordinates></Point>
-				<kmlpipe:Radius miles="0.5" />
+				<kmlpipe:Radius miles="0.75" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>Elephant &amp; Castle</name>
 				<kmlpipe:Place place-id="zone:elephantcastle" />
 				<Point><coordinates>-0.100803,51.495250</coordinates></Point>
-				<kmlpipe:Radius miles="0.3" />
+				<kmlpipe:Radius miles="0.55" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>Walthamstow Central</name>
 				<kmlpipe:Place place-id="zone:walthamstow" />
 				<Point><coordinates>-0.019918,51.583034</coordinates></Point>
-				<kmlpipe:Radius miles="0.3" />
+				<kmlpipe:Radius miles="0.55" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 			<Placemark>
 				<name>Wood Green</name>
 				<kmlpipe:Place place-id="zone:woodgreen" />
 				<Point><coordinates>-0.109744,51.597374</coordinates></Point>
-				<kmlpipe:Radius miles="0.3" />
+				<kmlpipe:Radius miles="0.55" />
 				<kmlpipe:ScoreBias value="-5" />
 			</Placemark>
 		</Folder>
