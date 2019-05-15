@@ -40,6 +40,15 @@
 				<kmlpipe:ScoreBias value="5" />
 			</Placemark>
 
+			<!-- Note: theoretically this shouldn't be needed, since Angel is covered by Pancras, Old Street and Holloway Road. However, in practice Nestoria leaves a weird, large gap in this area, so we probe it explicitly. -->
+			<Placemark>
+				<name>Angel</name>
+				<kmlpipe:Place place-id="zone:angel" />
+				<Point><coordinates>-0.106065,51.532463</coordinates></Point>
+				<kmlpipe:Radius miles="0.75" />
+				<kmlpipe:ScoreBias value="0" />
+			</Placemark>
+
 			<Placemark>
 				<name>Baker Street</name>
 				<kmlpipe:Place place-id="zone:bakerstreet" />
