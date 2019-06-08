@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Folder>
+      <name>Other Folder 1</name>
+      <SomeFolderElement>other folder 1</SomeFolderElement>
+    </Folder>
+    <kmlpipe:RemovedFolder xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
+      <Folder>
+        <name>Folder</name>
+        <SomeFolderElement>folder</SomeFolderElement>
+      </Folder>
+    </kmlpipe:RemovedFolder>
+    <Folder>
+      <name>Other Folder 2</name>
+      <SomeFolderElement>other folder 2</SomeFolderElement>
+    </Folder>
+  </Document>
+  <kmlpipe:RemovedFolder xmlns:kmlpipe="https://github.com/dechamps/kmlpipe" xmlns:kml="http://www.opengis.net/kml/2.2" name="Folder"/>
+</kml>
