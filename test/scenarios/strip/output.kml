@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:kmlpipe="https://github.com/dechamps/kmlpipe">
+  <Document>
+    <Folder>
+      <name>Folder 1</name>
+    </Folder>
+    <Folder>
+      <name>Folder 2</name>
+      <Placemark>
+        <kmlpipe:Place place-id="place1"/>
+        <name>Place 1 name</name>
+        <description>Place 1 description</description>
+        <Point>
+          <coordinates>-42,42</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
